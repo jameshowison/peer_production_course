@@ -50,14 +50,7 @@ Experiment Setting
 - 3.Activation function: ReLu
 <br></br> 
 - 4.Dropout: 0.5
-</div>
-<br></br> 
-<br></br>
-<br></br> 
-<br></br>
-<br></br> 
-<br></br>
-<br></br> 
+</div> 
 - test ac: 0.669 loss:1.189 <br></br> 
 - test ac: 0.647027 loss: 1.175797 <br></br> 
 - test ac: 0.704753 loss: 0.994599 <br></br> 
@@ -66,9 +59,11 @@ Experiment Setting
 
 
 ## Result of Only Training the Last Fully Connected Layer:
-<img src="1.jpg"width="500px" height="93px"/></img><img src="2.jpg"/></img>
+<img src="1.jpg"width="500px" height="93px"/></img>
 
-###Visualization
+<img src="2.jpg"/></img>
+
+### Visualization
 <img src="dog1.jpg"/></img><img src="dog2.jpg"/></img>
 
 ## Conclusion
