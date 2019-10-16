@@ -1,0 +1,75 @@
+PEER ADAPTATION PAPER
+By Joshua Rock
+
+For my Peer Adaptation paper, I chose to examine the Wells Branch Community Garden in North Austin.  I spoke to Kellie Reed who is the Manager and Administrator of the Wells Branch Community Garden.  
+
+Wells Branch is the name of an old and established residential community in North Austin.  It is home to an estimated population of 18,000 residents and 5,490 households of diverse racial make-up.  Wells Branch contains many amenities from a community walking trail, a lake (with fishing allowed), a library, a disc golf course, soccer fields, baseball fields, swimming pools, a recreation center, a community center, and a community garden.
+
+The Wells Branch Community Garden is open to both residents and non-residents.  There is an upfront $50 deposit that is refundable at the end of the rental period.  The cost for rental of a 10 by 20 ft plot is $50 for in-district residents and $100 for out-of-district residents on an annual basis.
+
+The Wells Branch Community Garden provides 64 garden plots, water, mulch, hoes, and wheelbarrows.  The garden is open from 5 am to 10 pm each day.  The lease period is from February 1st to December 31st each year and must be renewed annually.  The month of February is reserved for annual maintenance of the garden plots although gardeners still have full access to their plots during this time.
+
+The garden only allows for organic gardening methods.  Fertilizers and pesticides cannot be used.  Renters are expected to utilize their plot for the majority of the year and must plant on their plot no later than the 1st of June.  Renters are also expected to maintain their plots and keep it free of weeds and to monitor the growth of plants on their plot.
+
+The renters have unlimited access to the provided water, mulch, wheelbarrows, and hoes.  Each plot has its own water spigot which provides easy access to water.  These resources cannot be removed from the premises or used outside of the garden.  The Wells Branch Municipal Utility District (MUD) also places trash and recycle bins for use by gardeners.  
+
+There are restrictions on the kinds of plants that can be grown.  For example, cacti and trees are not allowed.  Also, crops requiring excessive amounts of water are not allowed.  Plants cannot exceed 7 ft. in height.  Gardeners are not allowed to utilize unattended watering.  Gardeners also have to harvest their plots in a timely manner.  If a gardener cannot maintain their plot due to illness or another reason such as going on vacation, they have to arrange for someone else to maintain their plot in their absence.
+
+Gardeners who violate policies by having overgrown weeds, having unharvested produce, or leaving the water running are only given one letter of warning.  If they continue to be uncompliant, they risk immediate forfeiture of their gardening rights.  They may also lose their deposit and be subject to a one-year suspension from the garden.
+
+Kellie mentioned that all 64 plots were currently being actively gardened.  She also confirmed that there was a waiting list of 5 to 6 gardeners waiting for plots to become available.  She indicated that the gardeners were not just apartment renters and that a lot of the gardeners had homes with yards.  However, they wished to utilize the organized plots, the provided resources, and the feeling of community that came with the community garden.  Since the community garden can be used by in-district residents and out-of-district gardeners, I enquired what the benefit was for the Wells Branch community for them to offer communal gardening facilities.  Kellie indicated that there was no direct benefit but that this was just another one of the community’s amenities which added to the overall appeal of the Wells Branch residential community.
+
+I asked Kellie what her role was in the oversight and administration of the community garden.  She indicated that she was not a resident of the community and was just an employee of the MUD.  The community garden was one of the responsibilities assigned to her in her employment relationship with the MUD.  Kellie mentioned that she oversaw the collection of deposit and rental fees by the MUD.  She also maintained the information on plot rental and current tenants.  
+
+Kellie walked the garden once a week to look for any issues or violations and she would follow up on those with the MUD employees or gardeners as appropriate.  She also monitored the presence and condition of the resources provided by the community garden, such as the mulch, wheelbarrows, and hoes.  When asked about any challenges, Kellie mentioned that she occasionally had to respond to allegations of crop theft and it was hard to confirm the veracity of the accounts or the identity of the culprits.
+
+There are certainly similarities between a community garden and an open-source initiative.  Kellie and the Wells Branch MUD played an organizational role and provided resources that enabled the gardeners (or contributors) to perform the tasks they wanted to in terms of gardening.  This is similar to a non-profit such as the Linux Foundation or the Mozilla Foundation providing the needed resources and overall organization and structure for open-source participants to contribute to their efforts.  
+
+The garden community also had an administrator or manager (Kellie).  This person played a gatekeeper role to allow new entrants or contributors and also monitored current contributors’ actions.  The administrator and the Wells Branch MUD also set the rules for the community and monitored resource usage and rule adherence.  They also monitored the overall community garden premises and performed maintenance as needed.  This is also similar to the role of the open-source community organizers.
+
+There are also some dissimilarities.  First, there is the initial deposit and the ongoing rental fee required for participation.  There is also a little more of a formal contract in terms of expectations of the gardener’s responsibilities and conduct.  Gardeners also don’t have absolute autonomy in terms of their contributions and participation.  The gardeners are limited to their plot and to maintaining it in ways that are outlined by the community garden administrators.
+
+I would argue that the Wells Branch Community Garden is a peer-production community as it meets the three criteria specified by Benkler (2016) in form, if not substance.  
+ 
+First, there is decentralized conception and execution.  The Wells Branch Community Garden organizers create various plots and make them available in an organized manner for those wanting to participate.  The actual tasks undertaken by the gardeners are left up to them and there is not centralized conception and execution.  The gardeners have significant, though not absolute, autonomy in decision making and can tend to their gardens as they see fit while adhering to the overall rules set out by the community garden organizers.  
+ 
+Second, there are certainly diverse motivations, including non-monetary motivations.  Kellie indicated that the motivation for the community was to provide an amenity that added to the overall community.  She also mentioned that the community garden was a way to create a sense of community for neighbors to meet and to get to know each other.  In terms of the gardeners, I suspect that it is cost-effective to utilize the resources of the community such as free water, soil, and mulch.  There could also be a sense of community and peer learning in seeing the various gardening choices and techniques being utilized.
+ 
+Third, the organizational governance, resource management, and task definition were mostly separated from property and contract.  The framework for contribution was provided by the Wells Branch Community Garden organizers, but it had no managerial control of specific resource utilization other than to set limits that the resources be used on-premises.  Task definition was left up to the gardener who could define what they intended to do.  The contractual agreement was mainly about the duration of participation and adherence to the community rules.
+ 
+Hence, I feel that there are strong reasons to characterize the community gardening activity as very similar to a peer production effort.  It is true that each gardener is not working to a common goal like the next release of an open-source software product.  However, if we define the community garden’s goald as that of promoting responsible tenancy of the garden plots and a creating a community of shared values, then it could be argued that each gardener is working towards these overall common goals.
+ 
+The efforts of the community garden are a very basic and simplistic example of collaboration through open superposition (Howison and Crowston, 2014) and coordination theory (Malone and Crowston, 1994).  The community organizers have to prepare the plots, maintain the premises, provide the mulch, wheelbarrows, trash facilities, and water, and conduct the appropriate maintenance before the gardeners have an environment in which they can contribute.  These organizational contributions are repeated throughout the year.
+ 
+Kellie’s description of her role in the weekly examination of the plots for rules infractions also points to the use of a governance model as espoused by Gardler and Hanganu (2010).  Much like our reading, the community garden is very clear with the ground rules for participation and the roles and the responsibilities of the various parties.  The governance model can be described as a bazaar (more open to external contribution) that is overseen by a benevolent dictator (less open to participatory governance).  The physical workspace and the ownership of the property by the Wells Branch MUD preclude the possibility of “forking” or “splitting” as is possible with software-based open-source initiatives.
+ 
+The need for a governance model is very apparent with 64 parties and the constant bustle and activity and the need to keep the whole project from descending into chaos.  The gardeners need to be very clear on the rules of participation and the norms of the community.  It is also important to recognize that if Kellie was not monitoring the garden plots on a weekly basis and holding participants accountable, it would be very easy for the community garden to decline and lose its ongoing viability.
+ 
+Geiger and Ribes (2010) also describe the importance of sustaining order and the difficulty of working with “vandals” in the open-source process.  Kellie mentioned a similar issue with crop theft and vandalism.  She did not have a great solution to this issue other than appealing to the gardeners to always lock up and to respect other gardeners and their plots.  There was certainly not an automated way of dealing with vandals as outlined in the article with automated bots and timely and escalating warnings.  However, the written warning and the risk of plot and deposit forfeiture is certainly a manual way of achieving the same outcome.  The one-year suspension certainly meets the standard of the “banning of a vandal” and the similarity of the problem is striking.
+ 
+One area I enquired about was whether the Wells Branch Community Garden had any training to encourage new gardeners wanting to start out.  Kellie confirmed that this was not one of the benefits of being a part of the community garden.  The assumption was that participants would have a certain level of base knowledge and that the resources they had access to through the internet and social media resources such as YouTube were more than adequate for this purpose.  This is a little different than in the traditional open-source software sense where the community may designate some simple starter tasks for newbies in order to develop their confidence and to bring them into the fold of open-source and to encourage their ongoing participation in the community.
+ 
+It can certainly be argued that the tasks in the community garden are more basic and simplistic than coding an open-source project.  Also, the nature of participating at a physical location in close proximity to others certainly lends itself to knowledge-sharing and peer observation.
+ 
+The ideas promoted by Fogel (2005) in terms of managing participants were not really applicable in the community garden scenario.  There was no assignment other than the initial assignment of a plot.  Gardeners had autonomy after that as long as they followed the community rules.  The plots enforced territoriality rather than breaking it down but again the community governance model moderated over-territoriality with its community guidelines.  The nature of gardening also is an in-person activity so some of the recommendations by Fogel regarding OSS development did not have a corollary in this situation.
+ 
+Based on the preceding discussion, I feel the Wells Branch Community Garden meets the definition of a peer-production community.  Overall, this was an interesting assignment to work on.  Taking the principles of peer production and adapting it outside of software development to the context of a community garden was fascinating.  It promoted deeper introspection of peer production as a concept, a way of organizing work, and a way of promoting collaboration towards a common goal.
+ 
+
+
+
+
+
+----------------
+Yochai Benkler, 2016. "Peer production and cooperation," Chapters, in: Handbook on the Economics of the Internet, chapter 5, pages 91-119 Edward Elgar Publishing.
+ 
+Thomas W. Malone and Thomas W. Malone and Kevin Crowston. 1994. The interdisciplinary study of coordination. ACM Comput. Surv. 26, 1 (March 1994), 87-119. DOI: https://doi.org/10.1145/174666.174668
+ 
+James Howison and Kevin Crowston. 2014. Collaboration through open superposition: a theory of the open source way. MIS Q. 38, 1 (March 2014), 29-50. DOI: https://doi.org/10.25300/MISQ/2014/38.1.02
+ 
+Geiger, R. S., & Ribes, D. (2010). The Work of Sustaining Order in Wikipedia: The Banning of a Vandal. In Proceedings of the 2010 ACM Conference on Computer Supported Cooperative Work (pp. 117–126). New York, NY, USA: ACM
+ 
+Gardler,Ross and Hanganu, Gabriel;  Governance Models, 2010, http://oss-watch.ac.uk/resources/governancemodels
+ 
+Fogel, Karl;  How to Run a Successful Free Software Project, 2005,
+https://producingoss.com/en/share-management.html

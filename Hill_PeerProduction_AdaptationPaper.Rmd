@@ -1,0 +1,368 @@
+---
+title: "Adaptation of the Open Source Organizational Form: A Case Study and Heuristic Evaluation"
+author: "Damian Hill"
+date: "10/15/2019"
+output: html_document
+---
+
+
+# **Introduction**
+
+Peer production, open collaboration, open source, free software... These terms might convey operational differences that have led to their fair share of semantic discussions (which this paper will highlight only in brief, historical context), but they all have at their core an element of interactive collaboration, typically around the coordinated creation of an artifact (Levine, 2013) or a common interest or goal (Levine, ibid.; Millington, 2012), leading to innovation and adaptation (Benkler, 2016) more efficiently than traditional organizational forms. 
+
+The scholarly literature in this field of study includes many models and frameworks that attempt to provide a more granular working definition of these organizational models. However, because innovation and adaptation are key tenets of “the open source way,” one continues to find variation and overlap -- making absolute classification a real challenge.
+
+It is a far easier task to draw distinctions between what is “generally in the realm of open source” and what is a more traditional, private organizational structure. Traditional firms tend to restrict access to source materials and maintain a more rigid, hierarchical control over collaboration. Open organizational models provide varying degrees of access to source materials and actively encourage innovation through collaboration of individuals with diverse backgrounds and motivations.
+
+It is also a relatively easy task to define consistent benefits touted across the different open organizational models. According to Robert Young, writing about Red Hat and Linux: “Open-source code is a feature. Control is the benefit” (Young, 1999). Levine (ibid.) also mentions a level of direct control as a benefit of open collaboration. He further describes as benefits: innovation, interactive collaboration, distributed research and development costs, higher customer satisfaction, improvement of economic or social welfare, and even heightened morality. Yochai Benkler also concludes that the principles of peer production “make peer production practices adept at learning and experimentation, innovation, and adaptation in rapidly changing, persistently uncertain and complex environments” (Benkler, 2016).
+
+This paper will draw upon the literature to highlight a number of elements that researchers have identified as important to open source organizational models. These elements will then be used to perform a brief heuristic evaluation of the Community College Consortium of Open Education Resources ([https://www.cccoer.org](https://www.cccoer.org)), an active organization inspired by the open source movement. The goal of this comparison is to explore the ways adaptation leads to unique open source contexts outside of software development or wikis.
+
+
+# **Brief History of “Open Source”**
+
+“Before 1998, there was no movement. There was the Free Software Foundation, with its peculiar goals, and a very wide array of other projects, people, software, and ideas” (Kelty, p. 131). 
+
+Richard Stallman, surrounded currently by a cloud of controversy, nonetheless has been an important pioneer in modern software development. He founded the Free Software Foundation -- “free” as in liberty to access and change source code; not “free” as in without charge. Or, as he says, “Think of ‘free speech,’ not ‘free beer.” For a more formal working definition, see The Free Software Definition on WikiPedia ([https://en.wikipedia.org/wiki/The_Free_Software_Definition](https://en.wikipedia.org/wiki/The_Free_Software_Definition)). 
+
+Stallman also developed the first “copyleft” license, which conferred legal protections meant to prevent downstream users from adding restrictions of their own to software that had been created as free software. This original copyleft license evolved into the GNU General Public License (GPL), still in use today (Stallman, The GNU Project; Why Open Source Misses the Point of Free Software). 
+
+Stallman ardently defends his position that Free Software and Open Source Software are very different, despite many operational similarities (such as accessible source code, collaboration, and innovation). The key difference comes down to ideology: free software has a strong ideological component around justice and access; open source is more “business friendly” and doesn’t have clearly stated ideological goals. 
+
+“The label ‘open source’ was created and adopted by a group of people in the free-software movement at a strategy session<sup> </sup>… in reaction to Netscape's January 1998 announcement of a source-code release for Navigator. One of the reasons behind using the term was that "the [advantage] of using the term open source [is] that the business world usually tries to keep free technologies from being installed." (WikiPedia, Open-source-software movement) This open-source release of Netscape caused a strong reaction for two main reasons: 1) Netscape was giving away the software and the source code for free; and 2) because it involved a brand new, hybrid license, the Netscape Public License (NPL), which stands in stark contrast to the GPL because it aimed to strike a balance between business goals and encouraging open development of the code base (Hamerly, Paquin, Walton, 1999).
+
+One of the key players in the founding of the open source movement was Eric Raymond. “Raymond was determined to reject the philosophy of liberty that Stallman and the Free Software Foundation represented, but not in order to create a political movement of his own. Rather, Raymond (and the others at the Freeware Summit) sought to cash in on the rising tide of the Internet economy by turning the creation of Free Software into something that made more sense to investors, venture capitalists, and the stock-buying public” (Kelty, p.125).
+
+Raymond is also famously known for his work _The Cathedral and the Bazaar_, which documents his analysis of Linus Torvald’s approach to developing Linux and Raymond’s subsequent experiments to see if the “babbling bazaar” approach to software development was an effective model or just a fluke. Short answer: it wasn’t just a fluke (Raymond, The Cathedral and the Bazaar). 
+
+In summary, even from the beginnings of the movement, there was this reality of operational similarities between factions that separated themselves by ideologies. Kelty observed, “Free Software and Open Source share practices first, and ideologies second” (Kelty, p. 129). Shades of this same theme are still observed today, notably with Benkler making the case that peer production and open collaboration are separate models (Benkler, ibid.).
+
+
+# **Organizational Dimensions of Open Source Organizations**
+
+Having made the case that there are broad operational similarities between different classifications of open source models, are there dimensions one can pull out of the literature to use as a basic lens through which an open source organization can be evaluated?
+
+Levine, for instance, analyzes earlier research in order to synthesize a set of principles at the core of open collaboration: creating goods of economic value; open access to contribute to and consume the products of collaboration; central importance of interaction and exchange between collaborators; and the purposeful yet loose coordination of participant labor. (Levine, 2013)
+
+Benkler concludes three core characteristics common to peer production: decentralization of conception and execution of problems and solutions; harnessing diverse motivations; and, separation of governance and management from property and contract (Benkler, 2016). 
+
+Turning to OpenSource.org (https://opensource.com/open-organization/resources/open-org-definition), an open-source organization will embody the following characteristics: Transparency, Inclusivity, Adaptability, Collaboration, and Community.
+
+The principles from these disparate sources arguably could be organized into the following categories: motivation, coordination, governance, and licensing. Each of these categories could be further described by existing research, as highlighted below.
+
+**Motivation**
+
+Motivation classically can be broken down into intrinsic and extrinsic motivational factors, and “over three decades of research has shown that the quality of experience and performance can be very different when one is behaving for intrinsic versus extrinsic reasons” (Ryan, 2000). 
+
+What has research uncovered about individuals’ motivations for participating in an open source organization? Nov discovered that the top motivational factors for Wikipedians were fun and ideology, but other significant motivational factors included personal values, desire for understanding, desire to feel part of enhancing the community, self-protective behaviors, career goals, and social pressure to participate. (Nov, 2007). In a meta-analysis of existing empirical research, Crowston, et al. identified the following motivational factors from members Free/Libre Open Source Software (FLOSS) communities: reputation, potential for [career] reward, fun, sharing, learning opportunities, and the recognition of user needs not being met by the current features (Crowston, 2012).
+
+Additionally, research has shown that motivational factors evolve depending on the stage of participant engagement (Crowston, 2012.; Crowston, 2018). In other words, motivational factors that might encourage initial engagement don’t seem to carry through to motivations for ongoing participation. Continued contribution might be more influenced by factors such as feelings of obligation to the project, concerns about the structure of the overall project, or a sense of group membership (Crowston, 2018).
+
+At the level of the firm, motivations have been shown to be less about social factors and more about contributing to the quality and reliability of the product so that their firm can enjoy some of the benefits of the product (Crowston, 2012). Additionally, survey data indicate that as many as 45% of contributors are paid by their firms to participate in the community (Crowston, 2012).
+
+
+**Coordination**
+
+Harnessing the diverse motivations of a group requires coordination. Understanding mechanisms of coordination requires breaking group interactions down into dependencies and then evaluating how those dependencies create additional dynamics that must be managed.
+
+Coordination can be defined as “managing dependencies between activities” (Malone & Crowston, 1994), with dependencies arising between tasks rather than individuals. Some examples of dependencies include pooled dependencies (the outcome of the task is linked to the pooled effort of individuals); sequential dependencies (things have to be done in the right order to achieve a coordinated outcome); and usability dependencies (the completion of the task is dependent on compatible subcomponents). 
+
+Other researchers have extended expectancy theory to the prediction of individual behaviors in a group setting (Baumann & Bonner, 2016). Expectancy theory (Vroom, 1964) attempts to describe why an individual might choose one behavior over another. It relates valence (desirability of outcome), instrumentality (reward comes from meeting a performance expectation, and expectancy (that one’s efforts will meet the necessary performance goals). Each of these elements can be broken down further into personal beliefs and additional motivating factors ([https://en.wikipedia.org/wiki/Expectancy_theory](https://en.wikipedia.org/wiki/Expectancy_theory)).
+
+Tying these two approaches together, the challenge of participant coordination becomes identifying interdependencies specific to the organization and then identifying the motivations that factor into individuals’ expectancy calculations. Every participant is making a series of trade-offs at every decision point. Understanding those dynamics can lead to more effective coordination.
+
+One additional type of coordination that has been studied in the context of Free/Llibre Open-Source Software (FLOSS) groups is “open superposition.” Open superposition is described as “the process of depositing motivationally independent layers of work on top of each other over time,” and it explains two key findings: (1) the overwhelming majority of work is done with only programmer on each task, and (2) tasks that appear too large for any one individual are more likely to be deferred until they are easier rather than being undertaken through structured team work (Howison, 2014).
+
+
+**Governance**
+
+Beyond coordination of participants, an open source organization likely will need to determine a governance structure that meets its needs, especially as it reaches a certain level of maturity or complexity.
+
+The governance model an organization chooses needs to reflect an understanding of the motivations of its participants. As Shah points out, “the governance structure of the community dramatically affects the participation choices of volunteer software developers” (Shah, 2006). Shah goes on to identify a list of governance mechanisms and highlights their potential impact on the collective development process. While this study was focused on software development, the same basic premise will likely translate to other types of open-source communities as well.
+
+Fogel, in _Producing OSS: How to Run a Free Software Project_, describes a series of governance approaches and management tasks that an open-source community might need to address in its operational model. Will the governance style be that of a “benevolent dictator” or will it be a consensus-driven model? Does the organization pattern itself after any of the more established open-source communities (like the Apache Software Foundation, [https://apache.org](https://apache.org)), or does it start from scratch? How will the organization manage and motivate participants? How will it delegate and distribute management tasks? (Fogel, Ch 4 and 8, 2018) The answers to these questions will be unique to the organization and will reflect the values and operational realities the organization faces.
+
+
+**Licensing**
+
+Earlier sections described the historical context of “copyleft” and the evolution of the GNU GPL, and the ideological split that led Netscape to develop the NPL. Today, there are far too many licenses to describe in the confines of this paper, but there are a few primary concepts an organization must navigate, including copyright versus copyleft and permissive versus restrictive license types. The licensing choices an organization makes can give an onlooker clues about the organization’s goals and ideologies.
+
+
+# **Open Source in the Wild: The Community College Consortium for Open Educational Resources**
+
+Taking together the history and the organizational dimensions uncovered in the literature, how well does this information apply to an organization “in the wild” that has adapted the “open source way” beyond software or wiki?
+
+There are a great many organizations that have adapted the open source way. After general internet searching and searching through open source umbrella organizations ([https://opensource.com/resources/organizations](https://opensource.com/resources/organizations)), I identified several communities that aligned with my own personal interest, and then narrowed my search to organizations that had a certain degree of operational maturity. Primarily, given the time available, I was seeking organizations that were currently very active and had clear points of contact for communications or public outreach. Two that most captured my attention were The Open Education Consortium ([https://www.oeconsortium.org](https://www.oeconsortium.org)) and OpenHumans ([https://www.openhumans.org](https://www.openhumans.org)). OpenHumans was unavailable to participate at this time, but the Open Education Consortium’s Communications Director, Susan Huggins, got back to me and was of great assistance in connecting me with another staff member who could participate.
+
+The Open Education Consortium provides the top-level organizational structure for a number of nested open source organizations that are more involved at the level of content creation. Due to this complex structure, Susan used her discretion to direct my questions about collaboration and participant coordination to the Community College Consortium of Open Education Resources, which more actively deals with production.
+
+Una Daly, Director of the Community College Consortium of Open Education Resources ([https://www.cccoer.org](https://www.cccoer.org)) , graciously agreed to answer an email-based interview to answer my questions about their organizational structure, participant motivations, coordination, and governance models. I’ll begin with her responses to my questions, and then I will make additional analysis based on review of additional resources available on their websites.
+
+
+## **Email-Based Interview with Una Daly, Director, CCCOER.org**
+
+October 11, 2019
+
+“Hello Damian,
+
+This sounds like an interesting project.  CCCOER which I direct is a community of practice for open educators. You can find a lot more information on our website (webinar archives, blogs, and case studies, etc).  [https://www.cccoer.org/](https://www.cccoer.org/)  My answers below:
+
+
+
+1. **Can you briefly describe the ways in which you differ from a traditional publisher of educational materials?**
+
+    Una: CCCOER is a community that offers consulting and peer support to colleges that are developing open educational resources to replace expensive commercial textbooks.
+
+2. **What are your top 3 operational challenges as an open source organization? How have you overcome these (or what workarounds have you developed)?**
+
+    Una: Thanks for that question, I have to think about that.  
+
+
+    We are a membership based organization but most of our revenue comes from grant money and contract work (see below).  Providing support to our members is important, but given our revenue streams we have to devote a significant amount of our resources to meeting contractual requirements and grant goals which may not directly align with member needs.
+
+
+    Finally, the contractual work is not guaranteed and can impact our ability to maintain staff.
+
+3. **What are the sources of revenue for your organization?**
+
+    Una: We received grant money from private foundations as well as contract work from higher education and cultural organizations.
+
+4. **What efforts do you undertake to recruit content or distribution collaborators?**
+
+    Una: We provide many online opportunities for collaborators to interact with each other.  We also provide in-person events.
+
+5. **If you had to create a list of collaborator motivations, what are some of the reasons that individuals and/or institutions get involved with your organization? What real or perceived benefits do they receive from their involvement?**
+
+    Una: Collaborators often come to our organization for information on how to get started with open education. Over time they become the experts and help to “mentor” others who are getting started or trying something new.
+
+6. **How do you determine your content needs? Is this decided by a governance body or forum, or are contributors given broad control over content they create?**
+
+    Una: Our content needs are based on what our community requests through annual surveys and other communications. Our executive council prioritizes this feedback to make final decisions about what professional development content we provide.
+
+7. **How then are contributors managed? Do you have a dedicated editorial structure in place, or does each collaborator self-govern? Is there an approval or review process?**
+
+    Una: Collaborators self-govern to some extent, but staff and executive council have final review on topics and content. We do copyedit all blogs and case studies and provide overall editorial direction for content that we post to our website.
+
+8. **Do you have any other comments you'd like to share about your collaboration infrastructure?**
+
+    Una: (un-answered)
+
+9. **What license/licenses do you typically apply to the content you co-create? Does it belong to the Creative Commons, for example, or is there another license classification that better suits your needs?**
+
+    Una: We typically use the Creative Commons Attribution 4.0 licenses for all materials co-created with CCCOER.
+
+10. **Are you able to share a brief vision of the organization's future? What goals have you set for the coming 1-2 years?**
+
+    Una: We are in a strategic planning process this fall targeting a new vision and strategic goals for early next year. The vision statement we have had for most of the last decade is “To promote the adoption of open educational practices, policies, and resources to enhance teaching and learning while expanding access for all students.”
+
+
+
+# **A More In-Depth Look at CCCOER from Web Resources**
+
+CCCOER is an organization dedicated to the development and utilization of Open Educational Resources (OER). According to their website ([https://www.cccoer.org](https://www.cccoer.org), both the Home page and About Us), they are “committed to expanding access to education and increasing student success through adoption of open educational policy, practices, and resources. We provide a community and resources to learn about the evolving practice of open education.” 
+
+Even a cursory glance at their homepage newsroom showcases their commitment to their mission and value statements. News, blogs, webinars, and other resources demonstrate their dedication to inclusivity, access to open resources (OER), mentorship through case studies, and support through policy guidance (including copyright/licensing of OER).
+
+As Una mentioned in her interview, CCCOER engages with its members through a number of online and in-person events. Ways to engage are easily found on the organization’s website. Under the Get Involved tab from the top navigation, one finds links to member activities, including agenda items, e.g.,  [https://www.cccoer.org/about/members/member-activities/#sept2019](https://www.cccoer.org/about/members/member-activities/#sept2019). They also provide direct and open access to the archives of their listerv, which shows quite an active exchange environment where members share resources they’ve found or created. 
+
+The more one looks into the structure of CCCOER, the more layers one uncovers. From its top level, CCCOER coordinates and supports its members and contributes visibility to OER. However, one can also get involved at more downstream levels by clicking through to individual OER repositories ([https://www.cccoer.org/learn/find-oer/](https://www.cccoer.org/learn/find-oer/)).
+
+The repositories have their own open source organizational frameworks, allowing contributions and adhering to “the open source way.” For instance, one repository, Curriki ([https://www.curriki.org/publish-resources](https://www.curriki.org/publish-resources)), has a statement about participation that sounds like it was directly inspired by a FLOSS organization: “Our goal is to provide excellent curriculum so that everyone in the world has free and open access to not only use the resources we have, but to remix, reuse and share them with the world.” 
+
+
+# **Heuristic Evaluation of a Peer Production Community: CCCOER**
+
+Returning to the organizational dimensions distilled from the literature, the following is a brief heuristic profile of CCCOER:
+
+
+### **Motivation: Shared Values, Cost Savings**
+
+CCCOER members and participants appear to be motivated largely by their shared values of open access to quality educational resources at a significant savings to what these resources might cost through traditional publishers.
+
+These motivations align with what the literature uncovered at motivational factors for other open source organizations: shared values, career factors, feeling a part of a community of shared values, enhancing resources, intrinsic, extrinsic, and internalized extrinsic motivations (Nov, 2007; Crowston, 2012).
+
+Given the complexity of the organization (nested layers of open source organizations), it’s possible one could analyze higher stage motivations as well and contrast those with initial stage motivations (Crowston, 2018).
+
+
+### **Coordination: Unclear interdependencies, but favorable expectancy calculation**
+
+More investigation would be needed to determine the exact interdependencies might be for CCCOER collaborators. It can be assumed that each of the general categories (pooled dependencies, sequential dependencies, and usability dependencies) _could_ be present, but that was not borne out explicitly in this research.
+
+It’s possible, but unconfirmed, that there might be instances of open superpositioning as well, but this would need further investigation (Howison, 2014).
+
+Applying the expectancy theory to this community: Organization around a strong shared value system would imply a strong positive valence for participation; the provision of material and policy support would help encourage participants’ sense of instrumentality and expectancy. With each of these factors optimized, the expectancy theory should be a significant force in the coordination of individual participation. (Baumann & Bonner, 2016; [https://en.wikipedia.org/wiki/Expectancy_theory](https://en.wikipedia.org/wiki/Expectancy_theory)).
+
+
+### **Governance: highly developed, consensus-driven council model**
+
+Due to the mature complexity of the organization, it’s no surprise that CCCOER has a complex and fully formed governance structure. As Una described in her responses, there is an executive council that has a strong voice in the project topic selection and editorial approval process. CCCOER also has a strong policy section that offers guidance on topics from copyright/licensing to development and implementation resources.
+
+It’s difficult to draw to specific examples in the literature that overlap with this structure, but only because it’s difficult to transpose other governance structures onto different contexts. However, one could say that it aligns with examples of mature governance structures Fogel points out: Apache Software Foundation, Software Freedom Conservancy, Eclipse Foundation, Linux Foundation, Software in the Public Interest (Fogel, Ch 4, [https://producingoss.com/en/non-profit.html](https://producingoss.com/en/non-profit.html)). 
+
+
+### **Licensing: Creative Commons 4.0 Licenses**
+
+Una stated that CCCOER primarily uses the Creative Common 4.0 licenses. They offer clear guidance on their website to help members choose the best option for the resources they create or use. [https://www.cccoer.org/learn/open-licensing/](https://www.cccoer.org/learn/open-licensing/) 
+
+Creative Commons licenses have an established history in the open source community. [https://creativecommons.org](https://creativecommons.org)
+
+### **Additional dimensions from the literature:**
+
+Open Collaboration (Levine, 2013):
+
+**Creating goods of economic value:** Open education resources carry indirect economic value through significant savings.
+
+**Open access to contribute to and consume the products of collaboration:** Yes, through various direct and downstream involvement opportunities.
+
+**Central importance of interaction and exchange between collaborators:** Yes, all of the website materials highlight the importance of interacting with their members
+
+**The purposeful yet loose coordination of participant labor:** Yes, but with the caveat that I don’t know the exact dynamics of the executive council’s authority over content
+
+Peer Production (Benkler, 2016):
+
+**Decentralization of conception and execution of problems and solutions**: To some extent, yes, but similar to above, it depends on the full nature of the executive council oversight.
+
+**Harnessing diverse motivations:** Yes, this is a central value of CCCOER.
+
+**Separation of governance and management from property and contract**: I’m not certain on this one still, honestly. It feels like there are times when there is separation and times when there is more top-down control. I’d have to investigate further.** **
+
+Open Source ([https://opensource.com/open-organization/resources/open-org-definition](https://opensource.com/open-organization/resources/open-org-definition)):
+
+**Transparency:** Yes, policies, agendas, resources, etc. are clearly posted on their website.
+
+**Inclusivity: **Yes, this is a central value clearly stated on their website.
+
+**Adaptability: **Yes, this is evidenced in the breadth of the resources they help produce and the variety of organizations using these resources.
+
+**Collaboration:** Yes, CCCOER fosters collaboration on a number of levels.
+
+**Community:** Yes, CCCOER functions as an active community with open access to current and archived interactions between members.
+
+
+# **Discussion**
+
+A heuristic framework for analyzing the organizational dimensions of adapted open source organizations was developed after a review of the literature. The Community College Consortium for Open Education Resources (CCCOER) was selected as a test case because it is an active, robust, mature open source organization outside of the Free/Libre Open Source Software (FLOSS) or Wiki communities. I was able to use the proposed heuristic framework to compare CCCOER to dimensions common to FLOSS communities and highlight differences when they arose. While this test case provided a proof of concept for this heuristic framework, it would be useful to validate and refine this approach through additional case studies.
+
+
+# References:
+
+  <tr>
+   <td>Baumann, M.R & Bonner, B.L. (2016) An expectancy theory approach to group coordination: Expertise, task features, and member behavior. https://doi-org.ezproxy.lib.utexas.edu/10.1002/bdm.1954
+
+   </td>
+  </tr>
+  <tr>
+   <td>Benkler, Y. (2016). "Peer Production and Cooperation." Handbook on the Economics of the Internet. Ed.s Bauer & Latzer. 
+
+   </td>
+  </tr>
+  <tr>
+   <td>Crowston, K., & Fagnot, I. (2018). Stages of motivation for contributing user-generated content: A theory and empirical test. International Journal of Human-Computer Studies, 109, 89–101.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Eric Raymond. The Cathdral and the Bazaar
+
+   </td>
+  </tr>
+  <tr>
+   <td>Expectancy Theory (Wikipedia) https://en.wikipedia.org/wiki/Expectancy_theory
+
+   </td>
+  </tr>
+  <tr>
+   <td>Chapter 4 “Social and Political Infrastructure” from Fogel, Karl (2018) “Producing OSS: How to Run a Successful Free Software Project” https://producingoss.com/en/index.html
+
+   </td>
+  </tr>
+  <tr>
+   <td>Chapter 8 “Managing Participants” from from Fogel, Karl (2018) “Producing OSS: How to Run a Successful Free Software Project” https://producingoss.com/en/index.html
+
+   </td>
+  </tr>
+  <tr>
+   <td>Hamerly, J., Paquin, T., Walton, S. (1999) "Freeing the Source: The Story of Mozilla." Open Sources: Voices from the Open Source Revolution.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Kelty, C. M. (2008). Two Bits: The Cultural Significance of Free Software. Durham: Duke University Press Books.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Kiggundu, M. N. (1983). Task interdependence and job design: Test of a theory. Organizational Behavior and Human Performance, 31(2), 145–172.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Levine, S. S., & Prietula, M. J. (2013). Open Collaboration for Innovation: Principles and Performance. Organization Science, 25(5), 1414–1433.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Lindberg, A., Berente, N., Gaskin, J., & Lyytinen, K. (2016). Coordinating Interdependencies in Online Communities: A Study of an Open Source Software Project. Information Systems Research, 27(4), 751–772.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Malone, T. W., & Crowston, K. (1994). The interdisciplinary theory of coordination. ACM Computing Surveys, 26(1), 87–119.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Nov, O. (2007). What motivates Wikipedians? Communications of the ACM, 50(11), ACM New York, NY, USA.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Rest of Howison, J., & Crowston, K. (2014). Collaboration through open superposition: A theory of the open source way. MIS Quarterly, 38(1), 29–50.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Richard Millington. Types of online communities.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Ryan, R. M., & Deci, E. L. (2000). Intrinsic and Extrinsic Motivations: Classic Definitions and New Directions. Contemporary Educational Psychology, 25(1), 54–67.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Section on Motivations in: Crowston, K., Wei, K., Howison, J., & Wiggins, A. (2012). Free (Libre) Open Source Software Development: What We Know and What We Do Not Know. ACM Computing Surveys, 44(2), Article 7.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Shah, S. K. (2006). Motivation, governance, and the viability of hybrid forms in open source software development. Management Science, 52(7), 1000–1014.
+
+   </td>
+  </tr>
+  <tr>
+   <td>Stallman, R. The GNU Project. https://www.gnu.org/gnu/thegnuproject.en.html
+
+   </td>
+  </tr>
+  <tr>
+   <td>Stallman, R. Why Open Source Misses the Point of Free Software. https://www.gnu.org/philosophy/open-source-misses-the-point.html
+
+   </td>
+  </tr>
+  <tr>
+   <td>Vroom, V. H. (1964). Work and motivation. New York: John Wiley & Sons.
+
+   </td>
+  </tr>
+  <tr>
+   <td>WikiPedia. Open-source-software movement. https://en.wikipedia.org/wiki/Open-source-software_movement
+
+   </td>
+  </tr>
+  <tr>
+   <td>Young, R. (1999) "Giving it Away: How Red Hat Software Stumbled Across a New Economic Model and Helped Improve an Industry." Open Sources: Voices from the Open Source Revolution.
+
+   </td>
+  </tr>
