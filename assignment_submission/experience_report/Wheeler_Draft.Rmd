@@ -1,0 +1,167 @@
+---
+title: "PP Experience Report Draft"
+author: "Brenna Wheeler"
+date: "12/01/2019"
+output: html_document
+---
+## Identifying the Issue
+
+For this project, I decided to contribute by fixing a technical issue. As mentioned in my community identification paper, technical issues posted in the GitHub Issues discussions are clearly labelled and open for anyone to comment or contribute potential solutions. There were many options available for participation, but I had trouble locating an issue within my skill level. First, I tried to contribute code, and when that failed, I contributed to the documentation.
+
+## Contributing Code
+
+First, I wanted to try contributing code to learn more about R packages and how they worked. On November 7th, Claus Wilke (2019) posted the following issue:
+
+> See related discussion on [SO]( https://stackoverflow.com/questions/58761704/dodged-dumbbell-plots-with-ggplot2). `position_dodge()` doesn't dodge the `xend` aesthetic and as a consequence segments can't be dodged. In the reprex below, the desired effect is to connect the points of identical color within each group.
+
+```{r}
+library(tidyverse)
+set.seed(1234)
+
+df <- tibble(
+    group = rep(letters[1:3], each = 2),
+    subgroup = rep(c("A", "B"), 3)
+  ) %>%
+  mutate(
+    start = rpois(6, 10),
+    end = start + rpois(6, 3)
+  )
+
+ggplot(df) +
+  geom_point(
+    aes(group, start, color = subgroup),
+    position = position_dodge(width = 1)
+  ) +
+  geom_point(
+    aes(group, end, color = subgroup),
+    position = position_dodge(width = 1)
+  ) +
+  geom_segment(
+    aes(x = group, xend = group, y = start, yend = end, color = subgroup),
+    position = position_dodge(width = 1)
+  ) +
+  coord_flip()
+```
+
+The `position_dodge` function allows overlapping objects to be moved side-to-side (Wickham et al., 2019a). To connect the dots, `position_nudge` perfectly to move both sides of the line, but it still allowed the lines to overlap.
+
+```{r}
+ggplot(df) +
+  geom_point(
+    aes(group, start, color = subgroup),
+    position = position_nudge(x = 0.5, y = 0)
+  ) +
+  geom_point(
+    aes(group, end, color = subgroup),
+    position = position_nudge(x = 0.5, y = 0)
+  ) +
+  geom_segment(
+    aes(x = group, xend = group, y = start, yend = end, color = subgroup),
+    position = position_nudge(x = 0.5, y = 0)
+  ) +
+  coord_flip()
+```
+
+On the first night I worked on worked on the project, I compared the two scripts closely for several hours. When it got late, I decided to post what I knew, even though I did not fully solve the problem. Issues seemed to be getting quick responses and solutions, so I thought just posting what I had might help someone else get closer to the solution. I posted the following:
+
+> If you use `position_nudge()` instead of `position_dodge()`, both the `x` and `xend` values for the segment are moved, allowing the dots to connect. I just can't figure out how `position_nudge()` is able to work with `xend`, but `position_dodge()` is not. It looks like `position_dodge()` is pulling the values from `df$x`, so it's missing `xend`. I'm not sure how `position_nudge()` is pulling both.
+
+```{r}
+library(tidyverse)
+
+set.seed(1234)
+
+df <- tibble(
+    group = rep(letters[1:3], each = 2),
+    subgroup = rep(c("A", "B"), 3)
+  ) %>%
+  mutate(
+    start = rpois(6, 10),
+    end = start + rpois(6, 3)
+  )
+
+ggplot(df) +
+  geom_point(
+    aes(group, start, color = subgroup),
+    position = position_nudge(x = 0.5, y = 0)
+  ) +
+  geom_point(
+    aes(group, end, color = subgroup),
+    position = position_nudge(x = 0.5, y = 0)
+  ) +
+  geom_segment(
+    aes(x = group, xend = group, y = start, yend = end, color = subgroup),
+    position = position_nudge(x = 0.5, y = 0)
+  ) +
+  coord_flip()
+```
+
+There has yet to be a response, but a few days later, the issue received a `bug` lablel. Hiroaki Yutani (2019) posted an issue the next day about issues in related documentation, so they might have been looking into the issue. 
+
+To work with the source package code, I was able to successfully fork and clone the GitHub repository, but I was unable to use the software tools required to develop packages. According to R Studio warning messages when I install libraries, `R Tools` is necessary for building R packages. However, when I tried to install the tool, my computer kept popping up error messages and refusing to run the program. I was finally able to download R Tools using a script from *R Packages* (Wickham, 2015), but my computer continued to have issues opening the file.
+
+The *R Packages* script also recommended I download `devtools`, `roxygen`, and `testthat` packages. When tried to work on the source package using `devtools`, it had trouble identifying the `ggplot` function that most ggplot scripts start with. `testthat` also kicked back several error messages.  After not finding many solutions online for these issues and due to the closeness of deadlines, I put this aside for now to revisit later.
+
+## Documentation
+
+After failing to find a solution and contribute code, I took Dr. Howison’s suggestion about finding a way to contribute to documentation. I made several attempts, but the last one was successful.
+
+To contribute to the documentation, GitHub users can make edits to the R script for that specific function, and then create a pull request (Averick, 2018). The main issue is that many of these functions are spread out across multiple R files, only three of which were listed at the top of the page. If the page pulled from more than 3, they were simply listed as “x more”. For my first couple attempts to contribute to documentation, I had difficulty locating the exact part of the code that needed to be changed.
+
+My only successful attempt to contribute to the ggplot2 documentation was in response to Hadley Wickham’s post:
+
+> **Document font size units in theme_bw() etc** #3458
+
+> I assume they’re points?
+
+In a later post, Wickham added,
+
+> Should be explicit that it's not `mm` unlike `geom_text()` etc, and should probably mention `.pt`
+
+The issue was labelled as a “good first issue”, so I decided to work with it to at least get a feel for the actual contribution process. I located and changed the following code from this:
+
+```{r}
+#' @param base_size base font size
+#' @param base_family base font family
+#' @param base_line_size base size for line elements
+#' @param base_rect_size base size for rect elements
+```
+
+To this:
+
+```{r}
+#' @param base_size Base font size, in points. Unlike `geom_label` and others, the default unit is in `points`, not `mm`, so adding `.pt` is not needed.
+#' @param base_family Base font family.
+#' @param base_line_size Base size for line elements, in mm.
+#' @param base_rect_size Base size for rect elements, in mm.
+```
+
+Then, I made a pull request with the following description:
+
+> **Updated theme-defaults.r**
+
+> I used the changes proposed in [#3458]( https://github.com/tidyverse/ggplot2/issues/3458) by explicitly that it's not `mm` and mentioning `.pt`. Also capitalized first letters and added punctuation to be consistent with other text on page.
+
+The pull request was then approved by the `continuous-integration/appveyor/pr` check but failed the `continuous-integration/travis-ci/pr` check. According to the fail log, three of the figures did not match, which was strange because I did not make any changes to those figures. The pull request is currently pending review.
+
+## Conclusion
+
+In my community identification paper, I wrote that there was “a good possibility of me finding a way to contribute to the project, as well as a good number of people to communicate with to fix problems and work out solutions”. While it was incredibly easy to contribute work, I found it difficult to find an “easy enough” project to work with. I also did not receive many responses, but that could have been due to a poorly-made post created late at night. (I was also hesitant to post again after that.) I will agree that it is easy to make contributions, but you need the proper knowledge and experience.
+
+## References
+
+Averick, M. (2018). “Improving the ggplot2 documentation” on GitHub. Retrieved https://github.com/tidyverse/ggplot2/wiki/Improving-the-ggplot2-documentation 
+
+Wickham, H. (2015). *R Packages*. Sebastopol, CA: O’Reilly Media, Inc. Retrieved from http://r-pkgs.had.co.nz/ 
+
+Wickham, H. (2019) “Document font size units in theme_bw() etc #3458” on GitHub. Retrieved https://github.com/tidyverse/ggplot2/issues/3458 
+
+Wickham, H., Chang, W., Henry, L., Pederson, T.L., Takahashi, K., Wilke, C., Woo, K., & Yutani, H. (2019a). “Dodge overlapping objects side-to-side” on ggplot2:tidyverse. Retrieved from https://ggplot2.tidyverse.org/reference/position_dodge.html 
+
+Wickham, H., Chang, W., Henry, L., Pederson, T.L., Takahashi, K., Wilke, C., Woo, K., & Yutani, H. (2019b). “Vertical intervals: lines, crossbars & errorbars” on ggplot2:tidyverse (developer version). Retrieved from https://ggplot2.tidyverse.org/dev/reference/geom_linerange.html 
+
+Wickham, H., Chang, W., Henry, L., Pederson, T.L., Takahashi, K., Wilke, C., Woo, K., & Yutani, H. (2019c). “Vertical intervals: lines, crossbars & errorbars” on ggplot2:tidyverse. Retrieved from https://ggplot2.tidyverse.org/reference/geom_linerange.html
+
+Wilke, C. (2019). “position_dodge() doesn't properly dodge segments #3617” on GitHub. Retrieved from https://gisthub.com/tidyverse/ggplot2/issues/3617
+
+Yutani, H. (2019). “Duplicated aesthetics on some documentations of Geom/Stat #3618” on GitHub. Retrieved from https://github.com/tidyverse/ggplot2/issues/3618 
