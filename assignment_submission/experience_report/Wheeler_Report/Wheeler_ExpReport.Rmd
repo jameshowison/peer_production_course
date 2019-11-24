@@ -12,7 +12,7 @@ For this project, I decided to contribute by fixing a technical issue. As mentio
 
 ## Contributing Code
 
-First, I wanted to try contributing code to learn more about R packages and how they worked. On November 7th, Claus Wilke (2019) posted the following issue:
+First, I wanted to try contributing code to learn more about R packages and how they worked. On November 7th, Wilke [-@wilke_position_dodge_2019] posted the following issue:
 
 > See related discussion on [SO]( https://stackoverflow.com/questions/58761704/dodged-dumbbell-plots-with-ggplot2). `position_dodge()` doesn't dodge the `xend` aesthetic and as a consequence segments can't be dodged. In the reprex below, the desired effect is to connect the points of identical color within each group.
 
@@ -45,7 +45,7 @@ ggplot(df) +
   coord_flip()
 ```
 
-The `position_dodge` function allows overlapping objects to be moved side-to-side (Wickham et al., 2019). To connect the dots, `position_nudge` perfectly to move both sides of the line, but it still allowed the lines to overlap.
+The `position_dodge` function allows overlapping objects to be moved side-to-side [@wickham_dodge_2019]. To connect the dots, `position_nudge` perfectly to move both sides of the line, but it still allowed the lines to overlap.
 
 On the first night I worked on worked on the project, I compared the two scripts closely for several hours. When it got late, I decided to post what I knew, even though I did not fully solve the problem. Issues seemed to be getting quick responses and solutions, so I thought just posting what I had might help someone else get closer to the solution. I posted the following:
 
@@ -81,19 +81,19 @@ ggplot(df) +
   coord_flip()
 ```
 
-There has yet to be a response, but a few days later, the issue received a `bug` lablel. Hiroaki Yutani (2019) posted an issue the next day about issues in related documentation, so they might have been looking into the issue. 
+There has yet to be a response, but a few days later, the issue received a `bug` lablel. Yutani [-@yutani_duplicated_2019] posted an issue the next day about issues in related documentation, so they might have been looking into the issue. 
 
-To work with the source package code, I was able to successfully fork and clone the GitHub repository, but I was unable to use the software tools required to develop packages. According to R Studio warning messages when I install libraries, `R Tools` is necessary for building R packages. However, when I tried to install the tool, my computer kept popping up error messages and refusing to run the program. I was finally able to download R Tools using a script from *R Packages* (Wickham, 2015), but my computer continued to have issues opening the file.
+To work with the source package code, I was able to successfully fork and clone the GitHub repository, but I was unable to use the software tools required to develop packages. According to R Studio warning messages when I install libraries, `R Tools` is necessary for building R packages. However, when I tried to install the tool, my computer kept popping up error messages and refusing to run the program. I was finally able to download R Tools using a script from *R Packages* [@wickham_r_2015], but my computer continued to have issues opening the file.
 
-The *R Packages* script also recommended I download `devtools`, `roxygen`, and `testthat` packages. When tried to work on the source package using `devtools`, it had trouble identifying the `ggplot` function that most ggplot scripts start with. `testthat` also kicked back several error messages.  After not finding many solutions online for these issues and due to the closeness of deadlines, I put this aside for now to revisit later. Ultimately, I enjoyed learning about the mechanics of R packages, even if it was frusterating not to be able to use the R Packages.
+The *R Packages* script also recommended I download `devtools`, `roxygen`, and `testthat` packages. When tried to work on the source package using `devtools`, it had trouble identifying the `ggplot` function that most ggplot scripts start with. `testthat` also kicked back several error messages.  After not finding many solutions online for these issues and due to the closeness of deadlines, I put this aside to revisit later, if there was time. Ultimately, I enjoyed learning about the mechanics of R packages, despite not being able to experiment with what I learned.
 
 ## Documentation
 
 After failing to find a solution and contribute code, I took Dr. Howison’s suggestion about finding a way to contribute to documentation. I made several attempts, but the last one was successful.
 
-To contribute to the documentation, GitHub users can make edits to the R script for that specific function, and then create a pull request (Averick, 2018). The main issue is that many of these functions are spread out across multiple R files, only three of which were listed at the top of the page. If the page pulled from more than 3, they were simply listed as “x more”. For my first couple attempts to contribute to documentation, I had difficulty locating the exact part of the code that needed to be changed.
+To contribute to the documentation, GitHub users can make edits to the R script for that specific function, and then create a pull request [@averick_improving_nodate]. The main issue is that many of these functions are spread out across multiple R files with only the first three listed at the top of the page. If the page pulled from more than 3, they were simply listed as “x more”. For my first couple attempts to contribute to documentation, I had difficulty locating the exact part of the code that needed to be changed.
 
-My only successful attempt to contribute to the ggplot2 documentation was in response to Hadley Wickham’s post:
+My only successful attempt to contribute to the ggplot2 documentation was in response to Hadley Wickham’s [-@wickham_document_2019] post:
 
 > **Document font size units in theme_bw() etc** [#3458](https://github.com/tidyverse/ggplot2/issues/3458)
 
@@ -121,7 +121,7 @@ To this:
 #' @param base_rect_size Base size for rect elements, in mm.
 ```
 
-Then, I made a pull request with the following description:
+Then, on November 18th, I made a pull request with the following description:
 
 > **Updated theme-defaults.r**
 
@@ -131,6 +131,6 @@ The pull request was then approved by the `continuous-integration/appveyor/pr` c
 
 ## Conclusion
 
-In my community identification paper, I wrote that there was “a good possibility of me finding a way to contribute to the project, as well as a good number of people to communicate with to fix problems and work out solutions”. While it was incredibly easy to contribute work, I found it difficult to find an “easy enough” project to work with. I also did not receive any responses from the community, but that could have been due to a poorly-made post created late at night or due to a lack of time on their part to review pull requests. Either way, their lack of response made me less willing to post again. As someone who is not a man, if online strangers don't assume you know nothing, then you get a very small amount of tries for them to come to that conclusion. I will agree that it is easy to make contributions, but you still require the proper amount of knowledge and experience.
+In my community identification paper, I wrote that there was “a good possibility of me finding a way to contribute to the project, as well as a good number of people to communicate with to fix problems and work out solutions”. While it was incredibly easy to contribute work, I found it difficult to find an “easy enough” project to work with. I also did not receive any responses from the community, but that could have been due to a poorly-made post created late at night or due to a lack of time on their part to review pull requests. Either way, their lack of response made me less willing to post again, especially since I had very little experience with developing code and some of the major contributors literally wrote the book on R packages [@wickham_r_2015]. I felt very motivated to not appear like a complete idiot to ensure whatever contribution I was able to make would be taken seriously. I will agree that it is easy to make contributions, but you still require the proper amount of knowledge and experience.
 
 ## References
