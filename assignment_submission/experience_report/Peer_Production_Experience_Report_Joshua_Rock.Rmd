@@ -1,0 +1,39 @@
+---
+title: "Peer Production Experience Report"
+author: "Joshua Rock"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*I am using the APA Citation Style.*
+
+### Introduction
+
+My Peer Production community for class was the Mozilla Developer Network (MDN).  This is a site for developers and technical writers interested in improving the Mozilla suite of web tools and its documentation.  The community supports the technologies surrounding web development such as HTML, CSS, JavaScript, graphics, and gaming technologies.  The site offers tutorials, reference materials, and developer guides.  Contributions of a technical nature can include creating code samples, setting up build environments, submitting new demos, or writing technical reviews.  Non-technical contributions comprise summarizing web page content, writing editorial reviews, composing articles to help folks learn about the internet, or updating existing documentation. 
+
+### Contribution Experience
+The MDN site is well-organized for newcomers to get started with contributions.  The site avoids too much jargon and quickly guides participants to create an account.  I was relieved to have the choice to work with "words" (non-technical), "code" (technical), or both.  I picked the non-technical option and was presented with choices I could work on and the estimated time that each contribution would take.  This allowed me to pick the contribution level I was comfortable with.  Newcomers, like myself, were presented with reassurances that we could not "break" the site and should not worry if a mistake was made as it would be easily corrected.  I found this to be encouraging and empowering.
+
+I found "safe" edits that I could make that I was fairly sure would be correct and would be approved.  I could edit the web site in "wiki" mode and correct the page and immediately be presented with the revised version of the page with my edit applied.  There was a review queue where edits could be reviewed for accuracy and appropriateness.  When I returned to the site at a later date, I could review the history for any page and the history of the actions I had taken.
+
+### Contribution Reflection
+The MDN community could be depicted as a community of practice (professional progress focus) or community of interest (passion and knowledge share focus), based on the motivation of the contributor (Millington, 2012).  The contribution model of MDN matched the bazaar model (Raymond, 2005).  New contributors were made to feel welcome and empowered to make an initial contribution.  The project operationalizes efficient participant contributions to an OSS project as expounded by Fogel, 2013.  Participants were quickly and seamlessly transformed into confident contributors in a short timeframe.  I did not get a chance to verify the usage of automated tools to prevent problems such as territoriality as outlined by Fogel, 2013.  I assumed that user contributions to MDN are less subjective and prone to territoriality than in contexts such as Wikipedia.
+
+My motivation for contribution was mainly to participate in a community as required by our class.  The MDN community was well setup to facilitate such casual contribution.  However, MDN seems to really cater to the intrinsically motivated (Ryan and Deci, 2000) and did not seem to utilize features that supported more extrinsic motivation.  This might have been a deliberate decision to allow contribution efforts that a participant was comfortable with.  However, I never received a summary of my monthly contributions or an invitation to re-engage with the community.  I would have welcomed such communications and recognition and likely would have felt a greater sense of community while working on the project.  This lack of recognition was a little disconcerting on a personal level.  
+
+### Conclusion
+I enjoyed the process of becoming a part of the MDN community.  Their site tools and governance model allowed a quick transition from a participant to a contributor.  I felt I had the tools, support, and framework to succeed with the project.  I would recommend utilizing a few more follow-up, recognition, and re-engagement prompts that would allow the project to tap into the possible extrinsic motivations behind user contribution.  However, I enjoyed my work with the MDN community and feel project is well setup for robust peer production contributions into the future. 
+
+### Citations
+Fogel, K. (2013). Producing Open Source Software: How to Run a Successful Free Software Project (First). O'Reilly Media.
+
+Millington, R. (2012, October 8). Types of Community and Activity Within the Community. Retrieved from https://www.feverbee.com/types-of-community-and-activity-within-the-community/.
+
+Raymond, E. (2005). The Cathedral and the Bazaar (originally published in Volume 3, Number 3, March 1998). *First Monday*, 0(0). doi: 10.5210/fm.v0i0.1472
+
+Ryan, R. M., & Deci, E. L. (2000). Intrinsic and Extrinsic Motivations: Classic Definitions and New Directions. *Contemporary Educational Psychology*, 25(1), 54-67. doi: 10.1006/ceps.1999.1020
+
+
