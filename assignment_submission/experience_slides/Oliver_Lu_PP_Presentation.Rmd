@@ -1,0 +1,33 @@
+---
+title: "Peer Production Presentation"
+subtitle: "g0v HackMD"
+author: Oliver Lu
+output: ioslides_presentation
+class: center, middle
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## g0v
+![](https://g0v.tw/imgs/g0v-about-en.png){#id .class width=500 height=500px}
+
+## Fork the Government
+![](https://miro.medium.com/max/3072/1*cbVyghGWr8wPIF0kDw9lsQ.jpeg){#id .class width=800 height=500px}
+
+---
+
+![](https://i.imgur.com/I9ZtWn2.png){#id .class width=800 height=450px}
+
+
+---
+
+### Comment & Review
+![](https://i.imgur.com/2JMAPL7.png){#id .class width=800 height=450px}
+
+
+---
+
+### Hackthon in NewYork and Tainan
+![](https://i.imgur.com/SoD8Htj.png){#id .class width=800 height=450px}
