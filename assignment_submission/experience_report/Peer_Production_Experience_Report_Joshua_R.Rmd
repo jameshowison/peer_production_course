@@ -1,6 +1,6 @@
 ---
 title: "Peer Production Experience Report"
-author: "Joshua Rock"
+author: "Joshua R"
 output: html_document
 ---
 
