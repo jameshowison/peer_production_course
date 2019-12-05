@@ -1,0 +1,45 @@
+---
+title: "HUIJIWIKI"
+author: "Fangjiang Wu"
+output: ioslides_presentation
+---
+
+
+
+## Introduction
+
+Huijiwiki is a chinese mediawiki platform for players in Final Fantasy XV.
+
+Participants contribute to the platform by sharing information of game strategy guide here.
+
+<div align = center>[![QKu8Tx.md.png](https://s2.ax1x.com/2019/12/03/QKu8Tx.md.png)](https://imgse.com/i/QKu8Tx)
+
+## Motivation 
+
+<div align = center>[![QKJiX8.md.png](https://s2.ax1x.com/2019/12/03/QKJiX8.md.png)](https://imgse.com/i/QKJiX8)
+
+## Open Source
+<div align = center>[![QKJZkj.md.png](https://s2.ax1x.com/2019/12/03/QKJZkj.md.png)](https://imgse.com/i/QKJZkj)
+
+## Open Source
+
+<div align = center>[![QKJthR.md.png](https://s2.ax1x.com/2019/12/03/QKJthR.md.png)](https://imgse.com/i/QKJthR)
+
+## Entry Edit
+
+<div align = center><a href="https://imgse.com/i/QKtVWn"><img src="https://s2.ax1x.com/2019/12/03/QKtVWn.png" alt="QKtVWn.png" border="0" width=70% height=70%></a>
+
+
+## Entry Creation
+
+<div align = center>[![QKJzbF.md.png](https://s2.ax1x.com/2019/12/03/QKJzbF.md.png)](https://imgse.com/i/QKJzbF)
+
+## Entry Creation
+
+<div align = center>[![QKYF81.md.png](https://s2.ax1x.com/2019/12/03/QKYF81.md.png)](https://imgse.com/i/QKYF81)
+
+## Conclusion
+
+<div align = center>[![Q3pMsx.png](https://s2.ax1x.com/2019/12/05/Q3pMsx.png)](https://imgse.com/i/Q3pMsx)</div>
+
+
