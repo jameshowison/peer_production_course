@@ -2,8 +2,8 @@
 title: "Syllabus for Peer Production (Open Source Software, Wikipedia, & Beyond)"
 author: "James Howison"
 subtitle: INF 385T - Special Topics in Information Science
+always_allow_html: yes
 output:
-
   html_document:
     toc: yes
     toc_depth: 2
@@ -302,18 +302,23 @@ insight_readings <- tribble(
   "Expectancy Theory (useful figure)",
     "https://iedunote.com/expentancey-theory",
     "Coordination",
-  "Kiggundu, M. N. (1983). Task interdependence and job design: Test of a theory. Organizational Behavior and Human Performance, 31(2), 145–172.",
-    "https://doi.org/10.1016/0030-5073(83)90118-6",
-    "Coordination",
+#  "Kiggundu, M. N. (1983). Task interdependence and job design: Test of a theory. Organizational Behavior and Human Performance, 31(2), 145–172.",
+ #   "https://doi.org/10.1016/0030-5073(83)90118-6",
+#    "Coordination",
+
   "Rest of Howison, J., & Crowston, K. (2014). Collaboration through open superposition: A theory of the open source way. MIS Quarterly, 38(1), 29–50.",
     "http://james.howison.name/pubs/howison-2014-superposition.pdf",
     "Coordination",
   "Slides for Open Superposition presentation",
     "Howison-PP-OpenSuperposition.pdf",
     "Coordination",
+"Crowston, K., Saltz, J. S., Rezgui, A., Hegde, Y., & You, S. (2019). Socio-technical Affordances for Stigmergic Coordination Implemented in MIDST, a Tool for Data-Science Teams. Proceedings of the ACM on Human-Computer Interaction, 3(CSCW), 1–25.",
+"https://doi.org/10.1145/3359219",
+"Coordination",
   "Lindberg, A., Berente, N., Gaskin, J., & Lyytinen, K. (2016). Coordinating Interdependencies in Online Communities: A Study of an Open Source Software Project. Information Systems Research, 27(4), 751–772.",
     "https://doi.org/10.1287/isre.2016.0673",
     "Coordination",
+
   "OSS Watch Governance Models",
     "http://oss-watch.ac.uk/resources/governancemodels",
     "Governance",
