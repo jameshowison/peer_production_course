@@ -1,0 +1,77 @@
+---
+title: "Scribes of the Cairo Geniza"
+author: "Lucy Flamm"
+date: "12/01/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## **The Project**
+*Hidden for centuries in an attic in Cairo, over 300,000 fragments of pre-modern and medieval Jewish texts—from everyday receipts to biblical works—have yet to be fully deciphered.* 
+
+![*Hard at work then and now...*](https://i.ibb.co/LvkjRxP/Screen-Shot-2019-11-20-at-1-55-16-PM.png) 
+
+
+
+## **Involvement**
+
+![ ](https://i.ibb.co/0fY414s/Screen-Shot-2019-12-01-at-4-40-30-PM.png" alt="Screen-Shot-2019-12-01-at-4-40-30-PM) 
+
+### ***What is the identified workflow?*** 
+
+
+
+1. Sorting the fragments by script type and level of difficulty.
+2. Analyzing the sorted piles by transcribing the relatively easy fragments.
+3. Noting margins, fonts, and visuals.
+4. Finding key phrases that will eventually be used to help decipher the more difficult ones.
+
+![ ](https://i.ibb.co/0fY414s/Screen-Shot-2019-12-01-at-4-40-30-PM.png" alt="Screen-Shot-2019-12-01-at-4-40-30-PM) 
+
+## **My Efforts - Part 1** 
+### ***What did I do to contribute?***
+
+- Identify where words end and begin:
+![ ](https://i.ibb.co/4jgpGrN/Screen-Shot-2019-12-01-at-4-48-58-PM.png" alt="Screen-Shot-2019-12-01-at-4-48-58-PM)
+
+- Interpret older fonts, or *khut*, into modern Arabic fonts:
+![ ](https://i.ibb.co/Cs8SWDb/Screen-Shot-2019-12-01-at-5-50-01-PM.png" alt="Screen-Shot-2019-12-01-at-5-50-01-PM)
+
+- Transcribe on keyboard:
+
+![ ](https://i.ibb.co/Y2L3396/Screen-Shot-2019-12-01-at-4-49-08-PM.png" alt="Screen-Shot-2019-12-01-at-4-49-08-PM)
+
+## **My Efforts - Part 2**
+### ***What did I do to contribute?***
+
+### Again, I examine manuscript:
+![ ](https://i.ibb.co/4jgpGrN/Screen-Shot-2019-12-01-at-4-48-58-PM.png" alt="Screen-Shot-2019-12-01-at-4-48-58-PM)
+
+### I see and type:
+
+```قلنا لنا مداخبر فله الباب الواحد```
+       
+### Think about meaning:
+
+```    He told us the entrance has one door.  ```
+
+
+## Lingering Thoughts and Questions
+
+### 
+
+***Observations***
+
+- Community of interest
+- Reveal motivations of "fun" and "social value"
+- Institutionally-hosted peer production initiative
+
+***What am I still thinking about?***
+
+### 
+- Issues with digital platform 
+- No mechanism for knowing if my work has been reviewed
+- No transparency of which transcription becomes the committed transcription (Fogel)

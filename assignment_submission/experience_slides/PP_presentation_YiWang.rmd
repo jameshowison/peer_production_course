@@ -30,6 +30,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Metabase - Contribution
 ### README.md
 ![](https://i.loli.net/2019/12/06/JWFoYLPneOCbI6m.png)
+
 <style>
   img{
       width:700px;
@@ -43,14 +44,10 @@ body
 
 ## Metabase - Contribution
 ### Contribution Guide
-![](https://i.loli.net/2019/12/06/5yga2GwPArflMIb.png
-)
-
-
+![](https://i.loli.net/2019/12/06/5yga2GwPArflMIb.png)
 
 
 ## Failure
 ![](https://i.loli.net/2019/12/06/3Bokc4hVOXN9bYD.png)
-
 
 
