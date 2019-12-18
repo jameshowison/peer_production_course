@@ -37,7 +37,11 @@ Exercises done in groups of three.  Incidentally [George Simmel](http://socio.ch
 
 # Vizualizer
 
-Access the [github vizualizer for pretty branching diagrams](https://git-school.github.io/visualizing-git/).
+Access the [LearnGitBranching vizualizer](https://learngitbranching.js.org/?NODEMO) or the [github vizualizer for pretty branching diagrams](https://git-school.github.io/visualizing-git/).
+
+# Cheatsheet picture
+
+![](images/Git-MovingStuffAround.png)
 
 # Generate merge conflict
 
