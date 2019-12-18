@@ -1,10 +1,14 @@
 ---
-title: "Additional Git Exercises"
+title: "Git Exercises"
 author: "James Howison"
-date: "3/27/2018"
 output:
   html_document:
     highlight: pygments
+    toc: yes
+    toc_depth: 2
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
 ---
 
 ```{css, echo=FALSE}
@@ -31,16 +35,16 @@ Exercises done in groups of three.  Incidentally [George Simmel](http://socio.ch
 
 **Arrange your chairs so that you can see each other's screens. That means sitting kinda back to back, which is unnatural but you do want to easily see what each other are seeing**
 
-### Generate merge conflict
+# Generate merge conflict
 
-1. *p3* should pick (or create) a repository on github as the shared/upstream repository, and work with an up to date clone. Create, add, commit, and push a file called `animals.txt` with this content:
+1. *Maintainer* should pick (or create) a repository on github as the shared/upstream repository, and work with an up to date clone. Create, add, commit, and push a file called `animals.txt` with this content:
 ```
 lion
 tiger
 leopard
 turtle
 ```
-2. *p2* and *p1* should make forks of the shared repository on github, and create clones of their forks. They should set the shared repository as upstream.
+2. *Contributor A* and *Contributor B* should make forks of the shared repository on github, and create clones of their forks. They should set the shared repository as upstream.
 
 <div class="spoiler">
 ```sh
@@ -49,81 +53,13 @@ $ git remote add upstream <shared_repo_url>
 ```
 </div>
 
-3. *p2* and *p1* should each edit the file by adding a different color to the first line in the `animals.txt` (so it reads `lion red` or `lion green`). They add, commit, push to their forks. *Note that these edits are incompatible, so they will generate a conflict when we try to merge them below*
+3. *Contributor A* and *Contributor B* should each edit the file by adding a different color to the first line in the `animals.txt` (so it reads `lion red` or `lion green`). They add, commit, push to their forks. *Note that these edits are incompatible, so they will generate a conflict when we try to merge them below*
 
-4. *p2* and *p1* should then go to github and look at their forks.  They should create a pull request by hitting the 'New Pull Request' button. 
+4. *Contributor A* and *Contributor B* should then go to github and look at their forks.  They should create a pull request by hitting the 'New Pull Request' button. 
 
-5. With everyone looking at *p3*'s computer, *p3* should refresh the github page for the shared repository and will see two pull-requests in the pull-request tab. Accept each one, resolving any conflicts that emerge. They can choose whatever contributions they want (the original line, the line with the color from *p1* or the line with the color from *p2*); however the file is after removing the `<<<<<` `========` and `>>>>>>` lines will be what is in the shared repository.
+5. With everyone looking at *Maintainer*'s computer, *Maintainer* should refresh the github page for the shared repository and will see two pull-requests in the pull-request tab. Accept each one, resolving any conflicts that emerge. They can choose whatever contributions they want (the original line, the line with the color from *Contributor B* or the line with the color from *Contributor A*); however the file is after removing the `<<<<<` `========` and `>>>>>>` lines will be what is in the shared repository.
 
-6. Each person should then synchronize. For *p3* that just means `git pull` (since they have a direct clone of upstream). For *p1* and *p2* they have to first get the changes in upstream, then push them to their fork.
-
-<div class="spoiler">
-```sh
-$ git pull upstream master
-$ git push
-```
-</div>
-
-### Allow on-going development in master and branch
-
-This extends the exercise to a situation in which the repository owner has also been working while the collaborators are making their edits.  The repository owner will be working in a branch, then when they are ready they will synchronize with the work the collaborators have been doing, and then add their work on that newly synchronzied base.  
-
-1. *p2* should pick (or create) a repository on github as the shared/upstream repository, and work with an up to date clone. Create, add, commit, and push a file called `animals.txt` with this content:
-```
-lion
-tiger
-leopard
-turtle
-```
-2. *p3* and *p1* should make forks of the shared repository on github, and create clones of their forks. They should set the shared repository as upstream.
-
-<div class="spoiler">
-```sh
-$ git clone <fork_repo_url>
-$ git remote add upstream <shared_repo_url>
-```
-</div>
-
-3. *p2* is working with a direct link to the shared repository, so they should preserve `master` as a place to gather contributions. That means to work on their own they should always use a branch. *p2* should create a branch on their local repo.
-
-<div class="spoiler">
-```sh
-$ git checkout -b my_color_branch
-```
-</div>
-
-4. *p2* should edit the `animals.txt` file to add a different color alongside `lion` (e.g., `lion purple`). Add and commit this edit to the new branch.
-
-5. *p3* and *p1* should each edit the file by adding a different color to the first line in the `animals.txt` (so it reads `lion red` or `lion green`). They add, commit, push to their forks.
-
-6. *p3* and *p1* should then go to github and look at their forks.  They should create a pull request by hitting the 'New Pull Request' button. 
-
-7. With everyone looking at *p2*'s computer, *p2* should refresh the github page for the shared repository and will see two pull-requests in the pull-request tab. Accept each one, resolving any conflicts that emerge. They can choose whatever contributions they want (the original line, the line with the color from *p1* or the line with the color from *p2*); however the file is after removing the `<<<<<` `========` and `>>>>>>` lines will be what is in the shared repository.
-
-8. *p2* now needs to synchronize with the work the collaborators have done since *p2* started the `my_color_branch` branch.  *p2* should ensure their changes are committed to the branch, then switch to master and pull the community's changes.  Then merge their work from `my_color_branch` and resolve any conflicts and complete the merge.
-
-<div class="spoiler">
-```sh
-$ git branch
-$ git status
-$ git checkout master
-$ git pull
-$ git merge my_color_branch
-$ git add animals.txt
-$ git commit -m "ensured my changes were synchronized with work from community"
-```
-</div>
-
-9. *p2* now has the latest, synchronized, version of the combined work in the master branch on their local repo.  That should be shared by pushing up to the shared repo.
-
-<div class="spoiler">
-```sh
-$ git push
-```
-</div>
-
-
-10. *p3* and *p1* should then obtain those changes by pulling upstream, then pushing to their forks.
+6. Each person should then synchronize. For *Maintainer* that just means `git pull` (since they have a direct clone of upstream). For *Contributor B* and *Contributor A* they have to first get the changes in upstream, then push them to their fork.
 
 <div class="spoiler">
 ```sh
@@ -132,17 +68,8 @@ $ git push
 ```
 </div>
 
-11. Finally *p2* should delete the now no longer used branch, which is only in their local repo.
 
-<div class="spoiler">
-```sh
-$ git branch -d my_color_branch
-```
-</div>
-
-Phew!
-
-### Upstream owner contributes via pull request
+# Upstream owner contributes via pull request
 
 When you own a repository (ie you clone something other than a fork), you sometimes want to make contributions via a pull request rather than directly pushing. You do this by working with a branch then making a pull request from that branch to master all inside the same repo.
 
@@ -246,18 +173,18 @@ $git push origin --delete for-pull-request
 To https://github.com/jameshowison/pp2019_pr_owner.git
  - [deleted]         for-pull-request
 ```
-</div>
 
-### Tags
+
+# Tags
 
 Your task is to create three tags, `tag-animals`, `tag-colors`, `tag-noises` which reflect the merge points of different branches.
 
-1. Have *p3* create a repository, and start with the file having only animals.
-2. *p3* tag repo with `tag-animals`
-3. *p2* create a branch `colors-for-tag`. *p1* and *p3* contribute to that branch (`lion yellow`) via pull requests.
-4. *p2* merge `colors-for-tag` branch to master, than tag master as `tag-colors`.
-5. *p1* create branch `noises-for-tag`. *p2* and *p3* contribute to that branch as well. (`lion yellow roar`)
-6. *p1* merges that branch to master, then tag master as `tag-noises`. Others update.
+1. Have *Maintainer* create a repository, and start with the file having only animals.
+2. *Maintainer* tag repo with `tag-animals`
+3. *Contributor A* create a branch `colors-for-tag`. *Contributor B* and *Maintainer* contribute to that branch (`lion yellow`) via pull requests.
+4. *Contributor A* merge `colors-for-tag` branch to master, than tag master as `tag-colors`.
+5. *Contributor B* create branch `noises-for-tag`. *Contributor A* and *Maintainer* contribute to that branch as well. (`lion yellow roar`)
+6. *Contributor B* merges that branch to master, then tag master as `tag-noises`. Others update.
 
 Look at the history via `git log`:
 
@@ -265,11 +192,13 @@ Look at the history via `git log`:
 git log --oneline --abbrev-commit --all --graph --decorate --color
 ```
 
-### Split a pull request
+# Split a pull request
 
 Here the scenario is that you've created a pull request but it hasn't yet been accepted. If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, "Please come to this repo and get everything on this branch." So it's not the same as puttings some commits in a zip file and mailing them, it's more like puttings things into a pigeonhole mail box and telling people to pick them up from there. So you can always add additional things before the person comes to pick them up.  This is useful because if there is a conversation around the pull request then you can easily update things. For example, if someone said “Please fix a typo or pull from upstream before we consider your pull request,” you'd be able to do so without opening another PR.
 
 However, it is an issue if you *accidentally* add new commits to a branch before a pull request is accepted. Now your pull request has two sets of commits: the first set you meant to include and the second set you didn't. This mistake is particularly easy to make if you are developing on the `master` branch in your fork.  If you’ve accidentally added too many files to your pull request—something that is easy to do if you use `git add *` or some variant—you'll also find yourself needing to remove content from your PR.
+
+## Split before submit
 
 Things would be better if you had created a new branch for the first set of commits, then a second branch for your second set of commits, never adding either set to your master branch. Then each set of commits would be "sent" through a different pull request.
 
@@ -502,7 +431,7 @@ Now the branching in this in-terminal visualization is a bit clearer.
 
 Ok, so that set up, with each file/commit on the correct branch is our goal
 
-## Simulating recovering from doing it wrongly
+## Recover via splitting a PR 
 
 Pretend we had never made the two additional branches but made those commits all on the master branch. Then if a pull request opened after the first set of files `51f2622` was never accepted, our second set would have just piled on top and been added to the pull request.
 
@@ -681,22 +610,21 @@ README          first_set_file  first_set_file2
 
 So now if we create pull requests from each of those branches, they'll contain just the content we wanted in each of them. Hurray!
 
-QUESTION: If upstream merges a cherry picked branch in, the commits on downstream's master branch stay, right? Undoing them is a separate process? Would pulling upstream later affect those files?
+### Exercise:
 
-## Exercise:
+Groups of 3. Nominate *Maintainer*, *Contributor A*, and *Contributor B*.
 
-Groups of 2 or 3. Nominate Person A, B, (and C).
+1. *Maintainer* creates a repo on Github.
+2. *Maintainer* adds 2 commits and pushes.
+3. *Contributor A* and *Contributor B* fork and clone (and add upstream).
+3. *Contributor A* and *Contributor B* create a feature branch called `will_need_split.
+4. *Contributor A* and *Contributor B* add four commits of four files on `will_need_split`
+5. *Contributor A* and *Contributor B* create a pull request to `upstream` from their `will_need_split` branch (including all four commits).
+6. *Maintainer* rejects the pull request, closing it and commenting "please split this up" (and direct which files go together, probably 2 in each.)
+7. *Contributor A* and *Contributor B* follow procedure above to end up with two new branches `split_branch_1` and `split_branch_2` send through separate pull requests with only the right commits/files in them.
+8. *Maintainer* eventually accepts each of the four split up pull requests.
 
-1. Person A creates a repo on Github.
-2. Person A adds 2 commits and pushes.
-3. Person B and C fork and clone (and add upstream).
-4. Person B and C add four commits of four files on their master.
-5. Person B and C create a pull request to "upstream" with all four commits.
-6. Person A rejects the pull request, closing it and commenting "please split this up" (and direct which files go together, probably 2 in each.)
-7. Person B and C follow procedure above to end up with two additional pull requests with just the right commits/files in them.
-8. Person A eventually accepts each of the split up pull requests.
-
-## Dealing with extra commits
+### Dealing with remaining commits
 
 Now we just have to consider what to do about the additional commits on `master`.  This is going to depend on a few things. Do you have additional commits on `master` that you haven't distributed among new branches? Do you want `master` to exactly reflect the history of `master` on `upstream`? How tolerant are you of "messy history"?  It's also going to depend on whether `master` had been pushed up and whether others might have built on top of it.
 
@@ -717,8 +645,6 @@ cp -r practice_split practice_split_revert
 ```
 ```sh
 cd practice_split_revert/
-```
-```
 ```
 ```sh
 git branch
@@ -862,11 +788,15 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 
 That seems neater, but keep in mind that if you'd pushed `master` to github while those commits were there, anyone else who had built on your repo would have lots of trouble.  The `revert` approach goes for messier history, but has the advantage that it doesn't disconnect anyone else.
 
-## Rebase examples
+# Rebase for synchronizing work
 
-When one is working on a problem, others may be working in parallel. And their parallel work may be finished before one's own work is. Thus the starting point for one person's work (branching point) can "go stale" making it harder to integrate. While `git merge` and resolving syntax level conflicts can resolve some of this, it is often easier to understand and review work if it is presented as changes against an updated starting point.
+When one is working on a problem, others may be working in parallel. And their parallel work may be finished before one's own work is. Thus the starting point for one person's work (branching point) can "go stale" making it harder to integrate. 
 
-As a concrete example imagine a project to build a dashboard. Imagine that you fork the repo in January to implement a new type of visualization (let's say a pie chart). You work on this during January and February, finally nailing it down at the start of March.  Meanwhile, though, others in the project have spent February replacing the database infrastructure, introducing a new way of accessing databases. By the time you make a pull request at the start of March things have changed a lot since you branched in January. The developers ask you to update your branch to make it work with the new database system.
+While `git merge` and resolving syntax level conflicts can resolve some of this, it is often easier to understand and review work if it is presented as changes against an updated starting point.
+
+As a concrete example imagine a project to build a dashboard. Imagine that you fork the repo in January to implement a new type of visualization (let's say a pie chart). You work on this during January and February, finally nailing it down at the start of March.  Meanwhile, though, others in the project have spent February introducing a whole new way of accessing databases. By the time you make a pull request at the start of March things have changed a lot since you branched in January. 
+
+If you submit a PR without updating, the maintainers will likely ask you to update your branch to make it work with the new database system.
 
 ```
 --January-|------February--------------|--March
@@ -879,16 +809,24 @@ master--|--|-----------------------|----|-------
 
 ```
 
-Two options (after using `git pull upstream master`)
+First thing to do is to update your local repository with the changes from upstream.
+
+```sh
+git pull upstream master
+```
+
+Then you could try two options:
 
 1. Either merge `master` into `pie_chart_branch` yourself
 2. Rebase `pie_chart_branch` on master (as though `pie_chart_branch` was created in late February and you did all the work very quickly!)
 
 Option 1 is possible, but often merging your work involves touching parts of the system you don't know what much about and is better left to the core developers.  In addition, merging in this way leaves merge commit messages and some projects really don't like those because they make the history harder to read.
 
-Option 2 is called `rebase` and is explained usefully at [this page from the EdX project](https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pull-Request).  As you rebase, you can also `squash` some of your commits (treat many commits as one) to make them easier to follow for those reviewing your pull request.
+Option 2 is generally preferred, since it focuses on clear communication via PRs that are easier to read and review.
 
-## Removing something from history entirely.
+Option 2 is called `rebase` and is explained usefully at [this page from the EdX project](https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pull-Request).  As you rebase, you can also `squash` some of your commits (treat many commits as one) to make them easier to follow for those reviewing your pull request. See the link above for details.
+
+# Removing something from history entirely.
 
 The purpose of `git` is to retain all of your history, so that you can go back to any point in development and recover (as well as experiment while not breaking the mainline of development). Simultaneously when we are working in the open that means that anyone can view any file that was ever in a repository. With that in mind it is not too surprising that if you accidentally add something to git and then push it to github you can have trouble putting "the genie back in the bottle."
 
@@ -977,8 +915,10 @@ swordfish
 
 Here I just used `git checkout HEAD~1` which goes one commit back in time, to before we deleted the SPECIAL_SECRET file. Even if we were far ahead, or over on other branches etc, I could always get back by asking to see the code just after the commit that added the file `git checkout 018f6b5` (btw, to get out of `DETACHED HEAD` state just checkout the branch again, we're working on master so it would be `git checkout master`).
 
-So using `git rm` removes a file from the working directories but it doesn't remove it from the git history.  And that's a sensible thing, usually you want to be able to go back in time.  But sometimes you want to remove something from the history entirely.  You can do that using the approaches outlined by Github here: [Removing sensitive data from a repository](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)
+So using `git rm` removes a file from the working directories but it doesn't remove it from the git history.  And that's a sensible thing, usually you want to be able to go back in time. But sometimes you want to remove something from the history entirely.  You can do that using the approaches outlined by Github here: [Removing sensitive data from a repository](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)
 
-The process is a bit complex (as it should be) but simplified with the `bfg` tool, as described at the link above.  First you have to download the tool (which requires Java to run) then follow the instructions step by step.
+The process is a bit complex (as it should be) but simplified with the `bfg` tool, as described at the link above. First you have to download the tool (which requires Java to run) then follow the instructions step by step.
 
-Keep in mind that if you had pushed this sensitive info to github and others had forked or cloned it then that info is not going to be deleted from the clones, so passwords should definitely be changed and you should ask everyone to delete forks/clones and start again.
+Keep in mind that if you had pushed this sensitive info to a repo on github and others had then forked or cloned it then that info is not going to be deleted from the clones, so passwords should definitely be changed and you should ask everyone to delete forks/clones and start again.
+
+THere are a set of approachs to avoid uploading sensitive data. A good starting point is discipline around using `.gitignore` which will prevent adding files that should not be added. Another approach is to become familar with using environment variables to hold secrets. This is an evolving area, so ask others how they handle secrets (usually access credentials) when using git.
