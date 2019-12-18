@@ -210,7 +210,7 @@ readings <- tribble(
   #   "https://wiki.creativecommons.org/wiki/Best_practices_for_attribution",
   #   "Machine Readable Creative Commons Licenses",
   # "Additional Git Exercises",
-  #   "additional_git_exercises.html",
+  #   "docs/additional_git_exercises.html",
   #   "Rewinding Git and additional exercises"
 )
 
@@ -400,14 +400,14 @@ insight_readings <- tribble(
 skills_topics <- tribble(
   ~skill_topic, ~tech_commands,
   #-------------------------------------
-  "Tech setup workshop", "[terminal, command line, git install, github account](./tech_setup.html)",
+  "Tech setup workshop", "[terminal, command line, git install, github account](./docs/tech_setup.html)",
   "Files. diffs, versions", "git diff, add, commit (locally)",
   "Commits, blobs, and tree", "git diff continued HEAD and HEAD~1",
   "Rewinding work", "revert, other undos, checking out old versions, rewriting history",
   "Branching", "git checkout, manual merge",  
   "Sharing and conflicts", "github fork, git clone, push, pull request, pull upstream, merge, conflicts, mark resolved, collaboration workflows",
   "Testing and Continuous Integration", "Test suites, Travis CI integration, github bots",
-  "Release management", "[Git exercises](additional_git_exercises.html) and github releases, git tag",
+  "Release management", "[Git exercises](docs/additional_git_exercises.html) and github releases, git tag",
   "Documentation and Q&A", "github flavored markdown",
   "Wikipedia Editing", "wiki syntax, referencing",
   "Executable Papers", "rmarkdown, knitr, rstudio",
