@@ -43,7 +43,146 @@ Access the [LearnGitBranching vizualizer](https://learngitbranching.js.org/?NODE
 
 ![](images/Git-MovingStuffAround.png)
 
+# Basic forking workflow setup.
+
+1. Group of three: *Maintainer*, *Contributor A*, *Contributor B*.
+
+2. *Maintainer* creates new repository on github.
+
+3. *Contributor A* and *Contributor B* log into github, find the new repository created by *Maintainer* and fork it.
+
+![Image showing fork button in top right](images/fork_button.png)
+
+4. *Maintainer*, *Contributor A*, *Contributor B* should all clone their individual repo to their laptop.  Everyone will have their own username in the URL.  You can quickly copy that with this button on github.
+
+![Image showing button that copies the URL](images/clone_repo.png)
+
+Before running git clone, everyone needs to ensure they are in a folder that is not inside another repo. To do this run `git status` and you *want* to see a fatal error.
+
+```sh
+git status
+```
+```
+fatal: Not a git repository (or any of the parent directories): .git
+```
+
+If you do not see the fatal error, then you need to move up in your folder hierarchy until you are not in a repo.  Use `cd ..`.
+
+Then clone your repository and change directory into it.
+
+<div class="spoiler">
+```sh
+$ git clone <fork_repo_url>
+$ cd <repository_name>
+```
+</div>
+
+5. Establish remotes.  *Maintainer* does not need to do this, since they have directly cloned the shared repository. *Contributor A* and *Contributor B* will specify the shared repository as "upstream". 
+
+<div class="spoiler">
+```sh
+$ git remote add upstream <maintainers_repo_url>
+```
+</div>
+
+If setup properly then the `git remote -v` command will show two lines for *Maintainer*, but four lines for *Contributor A* and *Contributor B*:
+
+*Maintainer*
+
+```sh
+git remote -v
+```
+```
+origin	<fork_repo_url> (fetch)
+origin	<fork_repo_url> (push)
+```
+
+*Contributor A* and *Contributor B*:
+
+```sh
+git remote -v
+```
+```
+origin	<fork_repo_url> (fetch)
+origin	<fork_repo_url> (push)
+upstream <maintainers_repo_url> (fetch)
+upstream <maintainers_repo_url> (push)
+```
+
+Note that git automatically creates the `origin` remote as whatever URL was used with `git clone`. This has the odd implication that for the *Maintainer* their `origin` is the shared repository, while for *Contributor A* and *Contributor B* their `origin` is their individual forks.
+
+Each exercise below assumes this setup in [Basic forking workflow setup](#basic_forking_workflow_setup) as the starting point.
+
+# Sharing work and synchronizing
+
+Now we are going to use `git push` and Github Pull Requests, followed by `git pull` to collect work from *Maintainer*, *Contributor A*, *Contributor B* and  in the shared repo, then synchronize so that everyone has a local copy of everyone's work.
+
+1. *Maintainer*, *Contributor A*, *Contributor B* each create a file named after their role (ie maintainer.txt, contributorA.txt, contributorB.txt). Use whichever editor you like (e.g., `vi`, Atom, Rstudio, etc.)
+
+2. Add and commit your new file.
+
+<div class="spoiler">
+```sh
+git add <your_new_file>
+git commit -m "Contributing a file"
+```
+</div>
+
+3. Push your new file. By default git push uses `origin` as the destination.
+
+<div class="spoiler">
+```sh
+git push
+```
+</div>
+
+For *Maintainer* the file has gone directly into the shared repo. For *Contributor A* and *Contributor B* these files are now at their fork, and will need a Pull Request to move to the shared repo.
+
+4. *Contributor A* and *Contributor B* go to github and look at their own fork. Github knows that the fork now has material that the shared repo doesn't, and will make a New Pull Request button available.
+
+![Image showing New Pull Request button](images/new_pr_button.png)
+
+Since we created files with unique file names, these PRs will show up as "Able to be automatically merged".
+
+5. The *Maintainer* should now see a number next to the Pull Request tab:
+
+![Image showing new Pull Requests available](images/new_pr_available.png)
+
+The *Maintainer* can accept both pull requests, which will merge files into the shared repo.
+
+Now each person needs to synchronize with the shared repo, bringing the new files from the other two group members into their local repo. This uses the `pull` command.
+
+6. *Contributor A* and *Contributor B* should pull upstream.
+
+<div class="spoiler">
+```sh
+git pull upstream master
+```
+</div>
+
+But *Maintainer* is pulling from their `origin`, so can use the default
+
+<div class="spoiler">
+```sh
+git pull
+```
+</div>
+
+7. Finally, *Contributor A* and *Contributor B* will push these new changes from the shared repo up to their forks.
+
+<div class="spoiler">
+```sh
+git push
+```
+</div>
+
+I've always thought it is a little strange that a contributor's fork doesn't distribute changes from upstream, but that new work from the shared repo gets to the fork via the contributor's local repo on their laptop.  After all, github knows the fork is connected to the shared repo ... but this is the roundabout way it works.
+
 # Generate merge conflict
+
+(If starting here, confirm that your Group of three has the setup in [Basic forking workflow setup](#basic_forking_workflow_setup) as the starting point.)
+
+The point of this exercise is to intentionall create conflicts in editing, to demonstrate how they show up in Pull Requests.
 
 1. *Maintainer* should pick (or create) a repository on github as the shared/upstream repository, and work with an up to date clone. Create, add, commit, and push a file called `animals.txt` with this content:
 ```
@@ -52,20 +191,22 @@ tiger
 leopard
 turtle
 ```
-2. *Contributor A* and *Contributor B* should make forks of the shared repository on github, and create clones of their forks. They should set the shared repository as upstream.
+
+3. *Contributor A* and *Contributor B* should synchronize to receive this file.
 
 <div class="spoiler">
 ```sh
-$ git clone <fork_repo_url>
-$ git remote add upstream <shared_repo_url>
+git pull upstream master
 ```
 </div>
 
-3. *Contributor A* and *Contributor B* should each edit the file by adding a different color to the first line in the `animals.txt` (so it reads `lion red` or `lion green`). They add, commit, push to their forks. *Note that these edits are incompatible, so they will generate a conflict when we try to merge them below*
+4. *Contributor A* and *Contributor B* each edit the file by adding a different color to the first line in the `animals.txt` (so it reads `lion red` or `lion green`). They add, commit, push to their forks. *Note that these edits are incompatible, so they will generate a conflict when we try to merge them below*
 
-4. *Contributor A* and *Contributor B* should then go to github and look at their forks.  They should create a pull request by hitting the 'New Pull Request' button. 
+4. *Contributor A* and *Contributor B* should then go to github and look at their forks.  They should create a pull request by hitting the 'New Pull Request' button. Note that the pull request will not say "Able to automatically merge" but create the PR anyway.
 
-5. With everyone looking at *Maintainer*'s computer, *Maintainer* should refresh the github page for the shared repository and will see two pull-requests in the pull-request tab. Accept each one, resolving any conflicts that emerge. They can choose whatever contributions they want (the original line, the line with the color from *Contributor B* or the line with the color from *Contributor A*); however the file is after removing the `<<<<<` `========` and `>>>>>>` lines will be what is in the shared repository.
+5. With everyone looking at *Maintainer*'s computer, *Maintainer* should refresh the github page for the shared repository and will see two pull-requests in the pull-request tab. Accept each one, resolving any conflicts that emerge. 
+
+They can choose whatever contributions they want (the original line, the line with the color from *Contributor B* or the line with the color from *Contributor A*); however the file is after removing the `<<<<<` `========` and `>>>>>>` lines will be what is in the shared repository.
 
 6. Each person should then synchronize. For *Maintainer* that just means `git pull` (since they have a direct clone of upstream). For *Contributor B* and *Contributor A* they have to first get the changes in upstream, then push them to their fork.
 
@@ -75,7 +216,6 @@ $ git pull upstream master
 $ git push
 ```
 </div>
-
 
 # Upstream owner contributes via pull request
 
