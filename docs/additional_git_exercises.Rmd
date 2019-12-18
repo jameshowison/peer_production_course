@@ -43,7 +43,7 @@ Access the [LearnGitBranching vizualizer](https://learngitbranching.js.org/?NODE
 
 ![](images/Git-MovingStuffAround.png)
 
-# Basic forking workflow setup.
+# Basic forking workflow setup
 
 1. Group of three: *Maintainer*, *Contributor A*, *Contributor B*.
 
@@ -184,7 +184,7 @@ I've always thought it is a little strange that a contributor's fork doesn't dis
 
 The point of this exercise is to intentionall create conflicts in editing, to demonstrate how they show up in Pull Requests.
 
-1. *Maintainer* should pick (or create) a repository on github as the shared/upstream repository, and work with an up to date clone. Create, add, commit, and push a file called `animals.txt` with this content:
+1. *Maintainer* should create, add, commit, and push a file called `animals.txt` with this content:
 ```
 lion
 tiger
@@ -217,11 +217,12 @@ $ git push
 ```
 </div>
 
-# Upstream owner contributes via pull request
+# Once more, but with branches
 
-When you own a repository (ie you clone something other than a fork), you sometimes want to make contributions via a pull request rather than directly pushing. This allows others to inspect, discuss, review, even the owner's contributions and increases transparency.
+In the exercises above all the work was on the `master` branch. That was to keep things simple, but in reality new work should always be on a branch, usually called a (short-lived) "feature branch". Pull requests then come from the feature branch to the master branch on the shared repo. This is also true for *Maintainer* as well as *Contributor A* and *Contributor B*, the only difference for the *Maintainer* is that their pull request is from a branch inside the shared repo, while the *Contributor A* and *Contributor B* is from a branch in a different repository.
 
-You do this by working with a branch then making a pull request from that branch to master all inside the same repo (rather than from a branch on a fork). This is just really the same advice as for others: always use a (short lived) feature branch for your contributions, so the owner on an upstream repo generally shouldn't push directly to master.
+(If starting here, confirm that your Group of three has the setup in [Basic forking workflow setup](#basic_forking_workflow_setup) as the starting point.)
+
 
 1. On local, create a branch (`for-pull-request`)
 
@@ -232,26 +233,33 @@ Switched to a new branch 'for-pull-request'
 ```
 </div>
 
-2. Edit a file, add, commit.
+2. Edit a file named after your role (ie "maintainer.txt", "contributorA.txt", or "contributorB.txt"), add, commit.
 
 <div class="spoiler">
 ```sh
-$ nano README.md
-$ git add README.md
-$ git commit -m "Edit to send via pull request"
+git add <your file>
+git commit -m "Edit to send via pull request"
 ```
 </div>
 
-3. Push the branch to origin (`git push` will fail but the error message will show you a command that will run).
+3. Push the branch to origin (`git push` will fail but the error message will show you a command that will run). Note that is the fork for *Contributor A* and *Contributor B* but the shared repo for *Maintainer*, but called `origin` for everyone.
 
 <div class="spoiler">
 ```sh
 $ git push
+```
+```
 fatal: The current branch for-pull-request has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin for-pull-request
+```
+Copy the `--set-upstream` line and execute. Note that the "upstream" here has nothing to do with the "upstream" remote (which is a name for the shared repo). Here it means "which remote should be connected to this branch" and almost always that is going to be an identically named branch in `origin`.
+
+```sh
 $git push --set-upstream origin for-pull-request
+```
+```
 Total 0 (delta 0), reused 0 (delta 0)
 remote: 
 remote: Create a pull request for 'for-pull-request' on GitHub by visiting:
@@ -263,23 +271,21 @@ Branch for-pull-request set up to track remote branch for-pull-request from orig
 ```
 </div>
 
-4. On github, looking at the branch (by choosing it from drop down mentu), open a PR.
+4. On github, make sure you are looking at the new branch (by choosing it from drop down menu) and open a PR from the new branch to `master` on the shared repo. All should do this (*Maintainer*, *Contributor A*, and *Contributor B*).
 
-<div class="spoiler">
 ![Image of drop down menu for branches, shows for-pull-request and master](images/selecting_branch_on_github.png)
 
 ![New Pull Request button](images/new_pr_button.png)
 
 ![Create PR screen](images/create_pr_screen.png)
-</div>
 
-5. Accept the PR on github.
+5. *Maintainer* can then accept all three PRs on github.
 
 <div class="spoiler">
 ![Image of accepting PR](images/merge_pr.png)
 </div>
 
-6. Back on local, switch to master.
+6. For all three, *Maintainer*, *Contributor A*, and *Contributor B*, back on local, switch to master.
 
 <div class="spoiler">
 ```sh
@@ -294,7 +300,8 @@ Your branch is up-to-date with 'origin/master'.
 7. Pull changes.
 <div class="spoiler">
 ```sh
-$ git pull
+git pull
+```
 remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
