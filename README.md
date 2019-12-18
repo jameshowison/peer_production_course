@@ -1,0 +1,1 @@
+The repository for James Howison's Peer Production class at the Information School at the University of Texas at Austin. See [full syllabus for the course](https://jameshowison.github.io/peer_production_course/pp_syllabus.html)
