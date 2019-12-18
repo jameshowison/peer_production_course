@@ -35,6 +35,10 @@ Exercises done in groups of three.  Incidentally [George Simmel](http://socio.ch
 
 **Arrange your chairs so that you can see each other's screens. That means sitting kinda back to back, which is unnatural but you do want to easily see what each other are seeing**
 
+# Vizualizer
+
+Access the [github vizualizer for pretty branching diagrams](https://git-school.github.io/visualizing-git/).
+
 # Generate merge conflict
 
 1. *Maintainer* should pick (or create) a repository on github as the shared/upstream repository, and work with an up to date clone. Create, add, commit, and push a file called `animals.txt` with this content:
