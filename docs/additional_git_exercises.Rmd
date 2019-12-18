@@ -71,7 +71,9 @@ $ git push
 
 # Upstream owner contributes via pull request
 
-When you own a repository (ie you clone something other than a fork), you sometimes want to make contributions via a pull request rather than directly pushing. You do this by working with a branch then making a pull request from that branch to master all inside the same repo.
+When you own a repository (ie you clone something other than a fork), you sometimes want to make contributions via a pull request rather than directly pushing. This allows others to inspect, discuss, review, even the owner's contributions and increases transparency.
+
+You do this by working with a branch then making a pull request from that branch to master all inside the same repo (rather than from a branch on a fork). This is just really the same advice as for others: always use a (short lived) feature branch for your contributions, so the owner on an upstream repo generally shouldn't push directly to master.
 
 1. On local, create a branch (`for-pull-request`)
 
@@ -139,7 +141,7 @@ Your branch is up-to-date with 'origin/master'.
 ```
 </div>
 
-(Note that I think that up-to-date message is wrong because branch is behind master, hence being able to pull things)
+(Note that I think that up-to-date message is wrong because branch is behind master, hence being able to pull things, if anyone knows what's up there please tell me!)
 
 7. Pull changes.
 <div class="spoiler">
@@ -177,6 +179,8 @@ To https://github.com/jameshowison/pp2019_pr_owner.git
 
 # Tags
 
+Tags help identify important points in the version history.  They are also used for releases on github.
+
 Your task is to create three tags, `tag-animals`, `tag-colors`, `tag-noises` which reflect the merge points of different branches.
 
 1. Have *Maintainer* create a repository, and start with the file having only animals.
@@ -194,13 +198,17 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 
 # Split a pull request
 
-Here the scenario is that you've created a pull request but it hasn't yet been accepted. If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, "Please come to this repo and get everything on this branch." So it's not the same as puttings some commits in a zip file and mailing them, it's more like puttings things into a pigeonhole mail box and telling people to pick them up from there. So you can always add additional things before the person comes to pick them up.  This is useful because if there is a conversation around the pull request then you can easily update things. For example, if someone said “Please fix a typo or pull from upstream before we consider your pull request,” you'd be able to do so without opening another PR.
+Here the scenario is that you've created a pull request but it hasn't yet been accepted. 
 
-However, it is an issue if you *accidentally* add new commits to a branch before a pull request is accepted. Now your pull request has two sets of commits: the first set you meant to include and the second set you didn't. This mistake is particularly easy to make if you are developing on the `master` branch in your fork.  If you’ve accidentally added too many files to your pull request—something that is easy to do if you use `git add *` or some variant—you'll also find yourself needing to remove content from your PR.
+If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, "Please come to this repo and get everything on this branch." So it's not the same as puttings some commits in a zip file and mailing them, it's more like puttings things into a pigeonhole mail box and telling people to pick them up from there. 
+
+So you can always add additional things before the person comes to pick them up. This is useful because if there is a conversation around the pull request then you can easily update things. For example, if someone said “Please fix a typo or pull from upstream before we consider your pull request,” you'd be able to do so without opening another PR (just add, commit, push to your branch on your fork and the PR is updated).
+
+However, it is an issue if you *accidentally* add new commits to a branch before a pull request is accepted. Now your pull request has two sets of commits: the first set you meant to include and the second set you didn't. This mistake is particularly easy to make if you are developing on the `master` branch in your fork (which you shouldn't do), but also happens if you are have more than one contribution that you are working on, as when you are doing something else while waiting for a PR to be accepted.  If you’ve accidentally added too many files to your pull request—something that is easy to do if you use `git add *` or some variant—you'll also find yourself needing to remove content from your PR.
 
 ## Split before submit
 
-Things would be better if you had created a new branch for the first set of commits, then a second branch for your second set of commits, never adding either set to your master branch. Then each set of commits would be "sent" through a different pull request.
+Things would be better if you had created a new branch for the first set of commits, then a second branch for your second set of commits, never adding either set to your master branch and following the "always work on a (short-lived) feature branch" rule. Then each set of commits would be "sent" through a different pull request.
 
 ```
         / Branch for first set.
@@ -429,7 +437,7 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 
 Now the branching in this in-terminal visualization is a bit clearer.
 
-Ok, so that set up, with each file/commit on the correct branch is our goal
+Ok, so this is the right way to do it: with each file/commit on the correct branch (and thus separate PRs).
 
 ## Recover via splitting a PR 
 
