@@ -3,8 +3,8 @@ title: "Wikidata"
 author: "Brenna Wheeler"
 date: "10/15/2019"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 # Introduction  
 According to its own Wikidata entry, Wikidata began in 2012 as a “free knowledge database project hosted by Wikimedia and edited by volunteers” (“Wikidata” 2019). As with many projects under the Wikimedia Foundation auspices, Wikidata relies heavily upon these volunteers for a wide variety of tasks, including generating content, repairing vandalism, and organizing the entire Wikidata volunteer community. The fulfillment of these tasks by volunteers reveals a successful adaptation of Peer Production methods from the Free and Open Source Software community, specifically Commons-Based Peer Production (CBPP). For this paper, I will be examining Wikidata’s adaptation of Peer Production using the three characteristics of Peer Production established by Benkler (2016):  
