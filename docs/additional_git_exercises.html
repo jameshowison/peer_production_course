@@ -1822,7 +1822,7 @@ Branch for-pull-request set up to track remote branch for-pull-request from orig
 </div>
 <div id="tags" class="section level1">
 <h1>Tags</h1>
-<p>Tags help identify important points in the version history. They are also used for releases on github.</p>
+<p>Tags help identify important points in the version history. They are also used for releases on github. They point to a specific commit, but are human readable, rather than the hash. So they are like a bookmark which brings you directly to a specific point in the repo history.</p>
 <p>Your task is to create three tags, <code>tag-animals</code>, <code>tag-colors</code>, <code>tag-noises</code> which reflect the merge points of different branches.</p>
 <ol style="list-style-type: decimal">
 <li>Have <em>Maintainer</em> create a repository, and start with the file having only animals.</li>
@@ -1834,11 +1834,14 @@ Branch for-pull-request set up to track remote branch for-pull-request from orig
 </ol>
 <p>Look at the history via <code>git log</code>:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<p>To see the status of the repo at a tag, you can use</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="fu">git</span> checkout <span class="op">&lt;</span>tag_name<span class="op">&gt;</span></a></code></pre></div>
+<p>You’ll see a message about a “Detached HEAD” which sounds awful but actually means that Git wouldn’t know where to put any new commits you make (since new commits are given HEAD as the parent). So tags are mostly used for read-only inspection of code at a particular point in history.</p>
 </div>
 <div id="split-a-pull-request" class="section level1">
 <h1>Split a pull request</h1>
 <p>Here the scenario is that you’ve created a pull request but it hasn’t yet been accepted.</p>
-<p>If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, “Please come to this repo and get everything on this branch.” So it’s not the same as puttings some commits in a zip file and mailing them, it’s more like puttings things into a pigeonhole mail box and telling people to pick them up from there.</p>
+<p>If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, “Please come to this repo and get everything on this branch.” So it’s not the same as puttings some commits in a zip file and mailing them, it’s more like puttings things into a particular spot (like a mailbox or deaddrop in a spy movie), and telling people to pick them up from there.</p>
 <p>So you can always add additional things before the person comes to pick them up. This is useful because if there is a conversation around the pull request then you can easily update things. For example, if someone said “Please fix a typo or pull from upstream before we consider your pull request,” you’d be able to do so without opening another PR (just add, commit, push to your branch on your fork and the PR is updated).</p>
 <p>However, it is an issue if you <em>accidentally</em> add new commits to a branch before a pull request is accepted. Now your pull request has two sets of commits: the first set you meant to include and the second set you didn’t. This mistake is particularly easy to make if you are developing on the <code>master</code> branch in your fork (which you shouldn’t do), but also happens if you are have more than one contribution that you are working on, as when you are doing something else while waiting for a PR to be accepted. If you’ve accidentally added too many files to your pull request—something that is easy to do if you use <code>git add *</code> or some variant—you’ll also find yourself needing to remove content from your PR.</p>
 <div id="split-before-submit" class="section level2">
@@ -1850,23 +1853,23 @@ master -
         \
          \ Branch for second set</code></pre>
 <p>The grey sections below are commands, the white is output.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="ex">This</span> is a git command that you should copy</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="ex">This</span> is a git command that you should copy</a></code></pre></div>
 <pre><code>This is output.</code></pre>
 <p>Below, I make a new repo, create a README file and make a commit, and edit it once making another commit:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="fu">git</span> init</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="fu">git</span> init</a></code></pre></div>
 <pre><code>Initialized empty Git repository in /Users/howison/Documents/UTexas/Courses/PeerProduction/practice/.git/</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="fu">touch</span> README</a></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="fu">git</span> add README</a></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;Adding readme&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="fu">touch</span> README</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="fu">git</span> add README</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;Adding readme&quot;</span></a></code></pre></div>
 <pre><code>[master (root-commit) d5eb1e8] Adding readme
  1 file changed, 1 insertion(+)
  create mode 100644 README</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* d5eb1e8 (HEAD -&gt; master) Adding readme</code></pre>
 <p>So now we have a single commit on a single branch <code>master</code>. To create a new file we can use <code>touch</code> (which creates an empty file here, but that’s ok).</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="fu">touch</span> master2</a></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="fu">git</span> add master2</a></code></pre></div>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;add master2&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="fu">touch</span> master2</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="fu">git</span> add master2</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;add master2&quot;</span></a></code></pre></div>
 <pre><code>[master 749454e] add master2
  1 file changed, 2 insertions(+)
 git log --oneline --abbrev-commit --all --graph --decorate --color
@@ -1874,50 +1877,50 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 * d5eb1e8 Adding readme</code></pre>
 <p>Now we have added a commit on <code>master</code> so the <code>HEAD -&gt; master</code> shows the ‘tip’ of the master branch.</p>
 <p>Now we can create the feature branch (<code>first_set_branch</code>) for the first set and look at the commits we’ve made. Using <code>git checkout</code> with <code>-b</code> creates a new branch:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="fu">git</span> checkout -b first_set_branch</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="fu">git</span> checkout -b first_set_branch</a></code></pre></div>
 <pre><code>Switched to a new branch 'first_set_branch'</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="fu">touch</span> first_set_file</a></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="fu">git</span> add first_set_file</a></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;first set edit&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="fu">touch</span> first_set_file</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="fu">git</span> add first_set_file</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;first set edit&quot;</span></a></code></pre></div>
 <pre><code>[first_set_branch d71ade9] first set edit
  1 file changed, 1 insertion(+)
  create mode 100644 first_set_file</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* d71ade9 (HEAD -&gt; first_set_branch) first set edit
 * 749454e (master) add master2
 * d5eb1e8 Adding readme</code></pre>
 <p>Now we can see that we have two branches <code>(master)</code> and <code>first_set_branch</code>. <code>HEAD</code> shows us that we are currently in the <code>first_set_branch</code> branch.</p>
 <p>Now we’re going to change back to master.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="fu">git</span> checkout master</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="fu">git</span> checkout master</a></code></pre></div>
 <pre><code>Switched to branch 'master'</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* d71ade9 (first_set_branch) first set edit
 * 749454e (HEAD -&gt; master) add master2
 * d5eb1e8 Adding readme</code></pre>
 <p>See how the <code>HEAD</code> changed, showing us that we’re looking at the master branch. Notice also that there is a commit (<code>d71ade9</code>) that isn’t in <code>master</code>.</p>
 <p>Now we can create the second branch:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="fu">git</span> checkout -b second_set_branch</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="fu">git</span> checkout -b second_set_branch</a></code></pre></div>
 <pre><code>Switched to a new branch 'second_set_branch'</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="fu">touch</span> second_set_file</a></code></pre></div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="fu">git</span> add second_set_file</a></code></pre></div>
-<div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;first edit in second set&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="fu">touch</span> second_set_file</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="fu">git</span> add second_set_file</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;first edit in second set&quot;</span></a></code></pre></div>
 <pre><code>[second_set_branch 9dc0a23] first edit in second set
  1 file changed, 1 insertion(+)
  create mode 100644 second_set_file</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 9dc0a23 (HEAD -&gt; second_set_branch) first edit in second set
 | * d71ade9 (first_set_branch) first set edit
 |/  
 * 749454e (master) add master2
 * d5eb1e8 Adding readme</code></pre>
 <p>Now the visualization has changed a bit. We can see that there are two branches that “come off” head after <code>749454e</code>. We can work independently, and could create pull requests for each branch separately. We are still on the second set’s branch, let’s add a second file to it:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="fu">touch</span> second_set_file2</a></code></pre></div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="fu">git</span> add second_set_file2</a></code></pre></div>
-<div class="sourceCode" id="cb64"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;added to second set&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="fu">touch</span> second_set_file2</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="fu">git</span> add second_set_file2</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;added to second set&quot;</span></a></code></pre></div>
 <pre><code>[second_set_branch 04d6967] added to second set
  1 file changed, 1 insertion(+)
  create mode 100644 second_set_file2</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 04d6967 (HEAD -&gt; second_set_branch) added to second set
 * 9dc0a23 first edit in second set
 | * d71ade9 (first_set_branch) first set edit
@@ -1925,7 +1928,7 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 * 749454e (master) add master2
 * d5eb1e8 Adding readme</code></pre>
 <p>And just for fun swap back to the first branch and add a second file there:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="fu">git</span> checkout first_set_branch</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="fu">git</span> checkout first_set_branch</a></code></pre></div>
 <pre><code>Switched to branch 'first_set_branch'
 git log --oneline --abbrev-commit --all --graph --decorate --color
 * 04d6967 (second_set_branch) added to second set
@@ -1934,14 +1937,14 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 |/  
 * 749454e (master) add master2
 * d5eb1e8 Adding readme</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="fu">touch</span> first_set_file2</a></code></pre></div>
-<div class="sourceCode" id="cb71"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="fu">git</span> add first_set_file2</a></code></pre></div>
-<div class="sourceCode" id="cb72"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;added second file to first set&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="fu">touch</span> first_set_file2</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="fu">git</span> add first_set_file2</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="fu">git</span> commit -m <span class="st">&quot;added second file to first set&quot;</span></a></code></pre></div>
 <pre><code>[first_set_branch b74cb32] added second file to first set
  1 file changed, 1 insertion(+)
  create mode 100644 first_set_file2</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="fu">git</span> add first_set_file2</a></code></pre></div>
-<div class="sourceCode" id="cb75"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="fu">git</span> add first_set_file2</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* b74cb32 (HEAD -&gt; first_set_branch) added second file to first set
 * d71ade9 first set edit
 | * 04d6967 (second_set_branch) added to second set
@@ -1965,9 +1968,9 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 <p>The problem here is that the top two commits (reading downward) are on <code>master</code> and should be on <code>second_set_branch</code> and the third and fourth commits are on <code>master</code> and should be on <code>first_set_branch</code>.</p>
 <p>So our challenge is to make this linear setup look like our branched setup above. There are a few routes we can take.</p>
 <p>First we’re going to use the ability to create a new branch from an earlier point in history. By default <code>git checkout -b newbranch</code> will branch from the current HEAD, but we can tell it to branch earlier. So first we’re going to create our two branches as though we’d done it before we started working, which is when HEAD was at <code>f945961</code>.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="fu">git</span> checkout -b first_set_branch f945961</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="fu">git</span> checkout -b first_set_branch f945961</a></code></pre></div>
 <pre><code>Switched to a new branch 'first_set_branch'</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* b5d4aff (master) added to second set
 * dfa98b0 first edit in second set
 * 43bc368 added second file to first set
@@ -1976,12 +1979,12 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 * 367e25a Adding readme</code></pre>
 <p>So now we can see <code>(HEAD -&gt; first_set_branch)</code> at <code>f945961</code> as the branching point for first_set_branch. However the commits we need on that branch are not on it, we need to bring them over from <code>master</code>.</p>
 <p>We can do that using <code>git cherry-pick</code> pointing to each of the two commits we want to bring over. Below we can see (moving up the left) that we have a <code>first_set_branch</code> which has both of our needed commits. Note that this doesn’t `<code>move'' them from the</code>master` branch, but creates new commits with the same content.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="fu">git</span> cherry-pick 51f2622</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="fu">git</span> cherry-pick 51f2622</a></code></pre></div>
 <pre><code>[first_set_branch ef2a3ee] first set edit
  Date: Tue Apr 10 17:42:47 2018 -0500
  1 file changed, 1 insertion(+)
  create mode 100644 first_set_file</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* ef2a3ee (HEAD -&gt; first_set_branch) first set edit
 | * b5d4aff (master) added to second set
 | * dfa98b0 first edit in second set
@@ -1990,12 +1993,12 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 |/  
 * f945961 add master2
 * 367e25a Adding readme</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="fu">git</span> cherry-pick 43bc368</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="fu">git</span> cherry-pick 43bc368</a></code></pre></div>
 <pre><code>[first_set_branch 9f2b69a] added second file to first set
  Date: Tue Apr 10 17:43:07 2018 -0500
  1 file changed, 1 insertion(+)
  create mode 100644 first_set_file2</code></pre>
-<div class="sourceCode" id="cb88"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 9f2b69a (HEAD -&gt; first_set_branch) added second file to first set
 * ef2a3ee first set edit
 | * b5d4aff (master) added to second set
@@ -2009,7 +2012,7 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 <p>We can do the same thing to create our separate <code>second_set_branch</code>, starting by pointing back at the same branching point:</p>
 <pre><code>git checkout -b second_set_branch f945961</code></pre>
 <pre><code>Switched to a new branch 'second_set_branch'</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 9f2b69a (first_set_branch) added second file to first set
 * ef2a3ee first set edit
 | * b5d4aff (master) added to second set
@@ -2019,17 +2022,17 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 |/  
 * f945961 (HEAD -&gt; second_set_branch) add master2
 * 367e25a Adding readme</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="fu">git</span> cherry-pick dfa98b0</a></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="fu">git</span> cherry-pick dfa98b0</a></code></pre></div>
 <pre><code>[second_set_branch 0d8e90d] first edit in second set
  Date: Tue Apr 10 17:43:35 2018 -0500
  1 file changed, 1 insertion(+)
  create mode 100644 second_set_file</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="fu">git</span> cherry-pick b5d4aff</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="fu">git</span> cherry-pick b5d4aff</a></code></pre></div>
 <pre><code>[second_set_branch 0841579] added to second set
  Date: Tue Apr 10 17:43:57 2018 -0500
  1 file changed, 1 insertion(+)
  create mode 100644 second_set_file2</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 0841579 (HEAD -&gt; second_set_branch) added to second set
 * 0d8e90d first edit in second set
 | * 9f2b69a (first_set_branch) added second file to first set
@@ -2043,15 +2046,15 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 * f945961 add master2
 * 367e25a Adding readme</code></pre>
 <p>So now we show three branches coming off at <code>f945961</code>: <code>master</code>, <code>first_set_branch</code>, and <code>second_set_branch</code>. Each of first_set_branch and second_set_branch have just the commits and files that they should:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="fu">git</span> branch</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="fu">git</span> branch</a></code></pre></div>
 <pre><code>  first_set_branch
   master
 * second_set_branch</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
 <pre><code>README           second_set_file  second_set_file2</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="fu">git</span> checkout first_set_branch</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="fu">git</span> checkout first_set_branch</a></code></pre></div>
 <pre><code>Switched to branch 'first_set_branch'</code></pre>
-<div class="sourceCode" id="cb106"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
 <pre><code>README          first_set_file  first_set_file2</code></pre>
 <p>So now if we create pull requests from each of those branches, they’ll contain just the content we wanted in each of them. Hurray!</p>
 <div id="exercise" class="section level3">
@@ -2080,20 +2083,20 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 <div id="using-revert" class="section level4">
 <h4>Using revert</h4>
 <p>First I created a copy of the repo, <code>practice_split_revert/</code>, so I could show both options. Then I switched to the <code>master</code> branch in that copy.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="bu">cd</span> ..</a></code></pre></div>
-<div class="sourceCode" id="cb109"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="fu">cp</span> -r practice_split practice_split_revert</a></code></pre></div>
-<div class="sourceCode" id="cb110"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="bu">cd</span> practice_split_revert/</a></code></pre></div>
-<div class="sourceCode" id="cb111"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="fu">git</span> branch</a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="bu">cd</span> ..</a></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="fu">cp</span> -r practice_split practice_split_revert</a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="bu">cd</span> practice_split_revert/</a></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="fu">git</span> branch</a></code></pre></div>
 <pre><code>* first_set_branch
   master
   second_set_branch</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="fu">git</span> checkout master</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="fu">git</span> checkout master</a></code></pre></div>
 <pre><code>Switched to branch 'master'</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="fu">git</span> branch</a>
-<a class="sourceLine" id="cb115-2" data-line-number="2">  <span class="ex">first_set_branch</span></a>
-<a class="sourceLine" id="cb115-3" data-line-number="3"><span class="ex">*</span> master</a>
-<a class="sourceLine" id="cb115-4" data-line-number="4">  <span class="ex">second_set_branch</span></a></code></pre></div>
-<div class="sourceCode" id="cb116"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="fu">git</span> branch</a>
+<a class="sourceLine" id="cb116-2" data-line-number="2">  <span class="ex">first_set_branch</span></a>
+<a class="sourceLine" id="cb116-3" data-line-number="3"><span class="ex">*</span> master</a>
+<a class="sourceLine" id="cb116-4" data-line-number="4">  <span class="ex">second_set_branch</span></a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 0841579 (second_set_branch) added to second set
 * 0d8e90d first edit in second set
 | * 9f2b69a (first_set_branch) added second file to first set
@@ -2120,7 +2123,7 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 [master 0e022e3] Revert &quot;first set edit&quot;
  1 file changed, 1 deletion(-)
  delete mode 100644 first_set_file</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 0e022e3 (HEAD -&gt; master) Revert &quot;first set edit&quot;
 * 302d9de Revert &quot;added second file to first set&quot;
 * 45731a7 Revert &quot;first edit in second set&quot;
@@ -2137,17 +2140,17 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 |/  
 * f945961 add master2
 * 367e25a Adding readme</code></pre>
-<div class="sourceCode" id="cb122"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="fu">ls</span></a></code></pre></div>
 <pre><code>README</code></pre>
 </div>
 <div id="git-reset-hard" class="section level4">
 <h4>git reset –hard</h4>
 <p>Again, I create a copy of the repo, practice_split_reset_master:</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="fu">cp</span> -r practice_split practice_split_reset_master</a></code></pre></div>
-<div class="sourceCode" id="cb125"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="bu">cd</span> practice_split_reset_master/</a></code></pre></div>
-<div class="sourceCode" id="cb126"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="fu">git</span> checkout master</a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="fu">cp</span> -r practice_split practice_split_reset_master</a></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="bu">cd</span> practice_split_reset_master/</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="fu">git</span> checkout master</a></code></pre></div>
 <pre><code>Switched to branch 'master'</code></pre>
-<div class="sourceCode" id="cb128"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
 <pre><code>* 0841579 (second_set_branch) added to second set
 * 0d8e90d first edit in second set
 | * 9f2b69a (first_set_branch) added second file to first set
@@ -2161,16 +2164,16 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 * f945961 add master2
 * 367e25a Adding readme</code></pre>
 <p>Now we use <code>git reset --hard</code> to force HEAD back to <code>f945961</code>. That disconnects the four unwanted commits (I <em>think</em> they aren’t actually gone from .git folder yet, but they could be deleted any time as they aren’t connected to anything.).</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="fu">git</span> reset --hard f945961</a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb131-1" data-line-number="1"><span class="fu">git</span> reset --hard f945961</a></code></pre></div>
 <pre><code>HEAD is now at f945961 add master2</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
-<div class="sourceCode" id="cb133"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="ex">*</span> 0841579 (second_set_branch) <span class="ex">added</span> to second set</a>
-<a class="sourceLine" id="cb133-2" data-line-number="2"><span class="ex">*</span> 0d8e90d first edit in second set</a>
-<a class="sourceLine" id="cb133-3" data-line-number="3"><span class="kw">|</span> <span class="ex">*</span> 9f2b69a (first_set_branch) <span class="ex">added</span> second file to first set</a>
-<a class="sourceLine" id="cb133-4" data-line-number="4"><span class="kw">|</span> <span class="ex">*</span> ef2a3ee first set edit</a>
-<a class="sourceLine" id="cb133-5" data-line-number="5"><span class="kw">|</span><span class="ex">/</span>  </a>
-<a class="sourceLine" id="cb133-6" data-line-number="6"><span class="ex">*</span> f945961 (HEAD -<span class="op">&gt;</span> master) <span class="ex">add</span> master2</a>
-<a class="sourceLine" id="cb133-7" data-line-number="7"><span class="ex">*</span> 367e25a Adding readme</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="fu">git</span> log --oneline --abbrev-commit --all --graph --decorate --color</a></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="ex">*</span> 0841579 (second_set_branch) <span class="ex">added</span> to second set</a>
+<a class="sourceLine" id="cb134-2" data-line-number="2"><span class="ex">*</span> 0d8e90d first edit in second set</a>
+<a class="sourceLine" id="cb134-3" data-line-number="3"><span class="kw">|</span> <span class="ex">*</span> 9f2b69a (first_set_branch) <span class="ex">added</span> second file to first set</a>
+<a class="sourceLine" id="cb134-4" data-line-number="4"><span class="kw">|</span> <span class="ex">*</span> ef2a3ee first set edit</a>
+<a class="sourceLine" id="cb134-5" data-line-number="5"><span class="kw">|</span><span class="ex">/</span>  </a>
+<a class="sourceLine" id="cb134-6" data-line-number="6"><span class="ex">*</span> f945961 (HEAD -<span class="op">&gt;</span> master) <span class="ex">add</span> master2</a>
+<a class="sourceLine" id="cb134-7" data-line-number="7"><span class="ex">*</span> 367e25a Adding readme</a></code></pre></div>
 <p>That seems neater, but keep in mind that if you’d pushed <code>master</code> to github while those commits were there, anyone else who had built on your repo would have lots of trouble. The <code>revert</code> approach goes for messier history, but has the advantage that it doesn’t disconnect anyone else.</p>
 </div>
 </div>
@@ -2191,7 +2194,7 @@ master--|--|-----------------------|----|-------
              \__new_database_____/
 </code></pre>
 <p>First thing to do is to update your local repository with the changes from upstream.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="fu">git</span> pull upstream master</a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="fu">git</span> pull upstream master</a></code></pre></div>
 <p>Then you could try two options:</p>
 <ol style="list-style-type: decimal">
 <li>Either merge <code>master</code> into <code>pie_chart_branch</code> yourself</li>

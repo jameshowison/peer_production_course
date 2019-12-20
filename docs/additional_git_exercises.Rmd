@@ -334,7 +334,7 @@ To https://github.com/jameshowison/pp2019_pr_owner.git
 
 # Tags
 
-Tags help identify important points in the version history.  They are also used for releases on github.
+Tags help identify important points in the version history.  They are also used for releases on github. They point to a specific commit, but are human readable, rather than the hash. So they are like a bookmark which brings you directly to a specific point in the repo history.
 
 Your task is to create three tags, `tag-animals`, `tag-colors`, `tag-noises` which reflect the merge points of different branches.
 
@@ -351,11 +351,20 @@ Look at the history via `git log`:
 git log --oneline --abbrev-commit --all --graph --decorate --color
 ```
 
+To see the status of the repo at a tag, you can use
+
+```sh
+git checkout <tag_name>
+```
+
+You'll see a message about a "Detached HEAD" which sounds awful but actually means that Git wouldn't know where to put any new commits you make (since new commits are given HEAD as the parent). So tags are mostly used for read-only inspection of code at a particular point in history.
+
+
 # Split a pull request
 
 Here the scenario is that you've created a pull request but it hasn't yet been accepted. 
 
-If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, "Please come to this repo and get everything on this branch." So it's not the same as puttings some commits in a zip file and mailing them, it's more like puttings things into a pigeonhole mail box and telling people to pick them up from there. 
+If you add additional commits to that branch then they will get added to the pull request. Remember, a pull request says, "Please come to this repo and get everything on this branch." So it's not the same as puttings some commits in a zip file and mailing them, it's more like puttings things into a particular spot (like a mailbox or deaddrop in a spy movie), and telling people to pick them up from there. 
 
 So you can always add additional things before the person comes to pick them up. This is useful because if there is a conversation around the pull request then you can easily update things. For example, if someone said “Please fix a typo or pull from upstream before we consider your pull request,” you'd be able to do so without opening another PR (just add, commit, push to your branch on your fork and the PR is updated).
 
