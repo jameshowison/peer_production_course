@@ -158,27 +158,39 @@ readings <- tribble(
   "DataCamp Git Chapter 1 - Basic Workflow",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/basic-workflow",
     "Files. diffs, versions",
+  
   "DataCamp Git Chapter 2 - Repositories",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/repositories",
     "Commits, blobs, and tree",
+  
   "Only the very first lesson of \"Learning Git Branching\" site (useful visualizations of trees)",
     "https://learngitbranching.js.org/",
     "Commits, blobs, and tree",
-  "DataCamp Git Chapter 3 - Undo",
+  
+  "Useful Blog on undo in git (keep for reference)",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/undo",
+  "Rewinding work",
+
+  "DataCamp Git Chapter 3 - Undo",
+  "https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/",
     "Rewinding work",
+  
   "DataCamp Git Chapter 4 - Branches",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/working-with-branches",
     "Branching",
+  
   "DataCamp Git Chapter 5 - Collaborating",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/collaborating",
     "Sharing and conflicts",
+  
   "Atlassian materials on git workflows (esp. forking workflow)",
   "https://www.atlassian.com/git/tutorials/comparing-workflows",
     "Sharing and conflicts",
+  
   "TravisCI For Beginners",
     "https://docs.travis-ci.com/user/for-beginners/",
     "Testing and Continuous Integration",
+  
   "TravisCI Getting Started",
     "https://docs.travis-ci.com/user/getting-started/",
     "Testing and Continuous Integration",

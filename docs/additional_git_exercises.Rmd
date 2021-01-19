@@ -1094,3 +1094,7 @@ The process is a bit complex (as it should be) but simplified with the `bfg` too
 Keep in mind that if you had pushed this sensitive info to a repo on github and others had then forked or cloned it then that info is not going to be deleted from the clones, so passwords should definitely be changed and you should ask everyone to delete forks/clones and start again.
 
 THere are a set of approachs to avoid uploading sensitive data. A good starting point is discipline around using `.gitignore` which will prevent adding files that should not be added. Another approach is to become familar with using environment variables to hold secrets. This is an evolving area, so ask others how they handle secrets (usually access credentials) when using git.
+
+# Undo almost anything
+
+Undo is sort of the point of version control, but it can be complicated.  Here's a useful blog entry: [How to undo almost anything with git](https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/)
