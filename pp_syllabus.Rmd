@@ -28,11 +28,11 @@ header <- tribble(
   ~`Course`, ~`INF 385T Peer Production (Open Source Software, Wikipedia, and Beyond)`,
   #----------------
   "Professor", "James Howison",
-  "Meeting Time", "Wednesdays 12—2:45pm",
-  "Location", "UTA 1.208",
-  "Semester", "Fall 2019",
-  "Unique No.", "27295",
-  "Office Hours", "Definitely, by appointment (please email first, then can meet in person, on phone, by email as best for you)",
+  "Meeting Time", "Thursdays 9-11:45",
+  "Location", "Zoom",
+  "Semester", "Spring 2021",
+  "Unique No.", "28405",
+  "Office Hours", "Definitely, by appointment (please email first, then can meet via Zoom",
   "Contact Email", "jhowison@ischool.utexas.edu"
 )
 library(knitr)
@@ -62,7 +62,7 @@ This is a course is about a sociotechnical phenomenon and it takes a sociotechni
 
 There are no pre-requistes for this course. While we will be discussing software development students will not be required to program. We will use the command line as we learn to use `git` and `github` everything will be covered in class.
 
-Students will need access to a computer for classes, any version of Windows, Mac, or Linux will do.  Systems can be borrowed from the iSchool lab if needed.
+Students will need access to a computer for classes, any version of Windows, Mac, or Linux will do.  Students facing difficulties with their IT should contact the iSchool help desk (via <help@ischool.utexas.edu>) who can refer on to other resources as available.
 
 ## Learning Objectives
 
@@ -89,9 +89,9 @@ assessments <- tribble(
   "Class Participation (discussion and activites)", "25%", "Throughout course",
   "Technical challenges", "25%", "Weekly from Content Class 1 through Content Class 6",
   "PP Participation Project: community identification", "10%", "Prior to Content Class 4",
-  "Peer production adaptation paper", "20%", "Prior to Content Class 7",
-  "PP Participation Project: experience report", "10%", "Prior to Final Class",
-  "PP Participation Project: presentation", "10%", "Final Class"
+  "Peer production adaptation paper", "20%", "Start of Spring Break",
+  "PP Participation Project: experience report", "10%", "Prior to Presentations",
+  "PP Participation Project: presentation", "10%", "Presentations"
 )
 ```
 ```{r assessment_output}
@@ -111,7 +111,7 @@ Hints on participation:
 - Useful participation can come from asking questions if you don't understand the point someone is making. If you have questions, very likely others do to.
 - You can also summarize discussion which helps everyone by giving them something to test their understanding of the discussion.
 - You can challenge or disagree with people, sometimes that can be introducing a counter-example or questioning whether evidence really means what the speaker originally thought.
-- I really welcome examples from your own experience. For example if there is an organization, movement, or line of thought in your culture that relates to peer production, I would love that to be part of the discussion.
+- I really welcome examples from your own experience. For example if there is an organization, movement, or line of thought (modern/traditional) in your culture that relates to peer production, I would love that to be part of the discussion.
 
 
 ### Technical Challenges
@@ -122,7 +122,7 @@ The course will have assignments based on the technical topics we are learning, 
 
 For this assignment students will write a 2,000 word scholarly essay describing and analyzing efforts to adapt peer production outside of software development and wikipedia. Examples could include open hardware, open governance, open culture, and everyone is encouraged to find a project relevant to their own interests. You are looking for ways of working inspired by peer production. The paper should draw on the conceptual literature to compare and contrast the challenge faced by these adaptation efforts to what we've learned about "the open source way". Students will conduct at least one interview with participants (or former participants if the effort is no longer continuing). The paper will also describe the collaboration infrastructure used and compare it to the technologies we have learned in class).
 
-The paper will be authored in Plain Text or Markdown and submitted via a pull request to the class github.  Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc).
+The paper will be authored in Plain Text or Markdown and submitted via a pull request to the class github.  Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc). Students are cautioned that as a scholarly paper proper citation and use of sources is required otherwise students will face academic misconduct proceedings. See ["Academic Integrity" presentation](https://utexas.zoom.us/rec/share/AjF6eoJH2heRWqQkTAHAQTfpp05UbE7WRhT-vQFw9wYevV8YBjpE2AJ_2PD07Mca.2v_7lGqZ0OoKbJzG) if at all unsure.
 
 ### Peer Production Participation Project
 
@@ -423,7 +423,8 @@ skills_topics <- tribble(
   "Documentation and Q&A", "github flavored markdown",
   "Wikipedia Editing", "wiki syntax, referencing",
   "Executable Papers", "rmarkdown, knitr, rstudio",
-  # "Rewinding Git and additional exercises", "git revert, rebase, cherry-pick"
+  "Rewinding Git and additional exercises", "[More Git exercises](docs/additional_git_exercises.html): git revert, rebase, cherry-pick",
+  # "Reserved class", "none"
   # "Machine Readable Creative Commons Licenses", "CC web tools and xml"
 ) %>% rownames_to_column()
 
@@ -468,17 +469,15 @@ no_meetings <- tribble(
   ~period_start, ~period_end, ~class_name,
   #--------------------
  #  "2019-10-22", "2019-10-23", "No meeting: Professor travel",
-   "2019-11-27", "2019-11-30", "No meeting: Thanksgiving Break",
-
-  "2019-11-05", "2019-11-08", "No meeting: Professor research travel"
+   "2021-03-15", "2021-03-20", "No meeting: Spring Break",
 ) %>%
   mutate(days_list = map2(period_start, period_end, expand_days)) %>%
   select(class_name, days_list) %>%
   unnest()
 
-first_class_day = parse_datetime("2019-08-28")
+first_class_day = parse_datetime("2021-01-21")
 
-last_class_day = parse_datetime("2019-12-09")
+last_class_day = parse_datetime("2021-05-07")
 
 # class Tuesday 9-11:45
 all_tuesdays <- seq(first_class_day, to = last_class_day, by = "week")
@@ -521,7 +520,7 @@ dated_readings <- readings %>% left_join(meetings, by = c("topic_assigned" = "sk
 group_counts <- dated_readings %>%
   arrange(class_day) %>%
   group_by(topic_assigned, class_day) %>%
-  summarize(group_size = n()) %>%
+  summarize(group_size = n(), .groups = 'drop') %>%
   arrange(class_day) %>%
   select(-class_day) %>%
   deframe()
@@ -548,7 +547,8 @@ insight_dated <- insight_readings %>% left_join(meetings, by = c("topic_assigned
 group_counts <- insight_dated %>%
   arrange(class_day) %>%
   group_by(topic_assigned, class_day) %>%
-  summarize(group_size = n()) %>%
+  # group_by(topic_assigned, class_day) %>%
+  summarize(group_size = n(), .groups = 'drop') %>%
   arrange(class_day) %>%
   select(-class_day) %>%
   deframe
@@ -567,6 +567,10 @@ insight_dated %>%
 ```
 
 # Policies
+
+## Class Recordings
+
+Class Recordings: Class recordings are reserved only for students in this class for educational purposes and are protected under FERPA. The recordings should not be shared outside the class in any form. Violation of this restriction by a student could lead to Student Misconduct proceedings. Guidance on public access to class recordings can be found [here](https://covid.provost.utexas.edu/faculty/search/?query=can%2520i%2520make%2520recordings%2520public).
 
 ## Academic Integrity
 
