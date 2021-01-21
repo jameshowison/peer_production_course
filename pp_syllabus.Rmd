@@ -242,7 +242,7 @@ insight_readings <- tribble(
   "https://www.feverbee.com/types-of-community-and-activity-within-the-community/",
   "Peer production vs other organizational forms",
   "Don Tapscott. Wikinomics. Chpt 3: \"Peer Pioneers\" (p. 77)",
-    "http://www.labeee.ufsc.br/~luis/egcec/livros/globaliz/Wikinomics.pdf",
+    "https://archive.org/details/wikinomicshowmas00taps_0",
     "Peer production vs other organizational forms",
   "Section \"Discovery: Participation Observation\" in Howison, J., & Crowston, K. (2014). Collaboration through open superposition: A theory of the open source way. MIS Quarterly, 38(1), 29–50.",
     "http://james.howison.name/pubs/howison-2014-superposition.pdf",
@@ -286,6 +286,8 @@ insight_readings <- tribble(
   "Broadening node.js contributions (Contributor Agreement)",
     "https://www.joyent.com/blog/broadening-node-js-contributions",
     "Licenses",
+  "Amazon: NOT OK - why we had to change Elastic licensing. (2021, January 19). Elastic Blog.", "https://www.elastic.co/blog/why-license-change-AWS",
+  "Licenses",
 
   "Nov, O. (2007). What motivates Wikipedians? Communications of the ACM, 50(11), ACM New York, NY, USA.",
   "https://doi.org/10.1145/1297797.1297798",
