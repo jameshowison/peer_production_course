@@ -60,7 +60,7 @@ As we learn about peer production we'll learn to distinguish it from different k
 
 This is a course is about a sociotechnical phenomenon and it takes a sociotechnical approach. In practice this means that we'll be learning both conceptual insight and practical skills. The course weaves together learning how to use key technologies of collaboration (e.g., git, github, travisCI, markdown) at the same time that we learn social and organizational theory about peer production (e.g., the role of copyright licenses, motivations of participants, governance models, coordination theory, models of collaboration risk, cultures of collaboration).
 
-There are no pre-requistes for this course. While we will be discussing software development students will not be required to program. We will use the command line as we learn to use `git` and `github` everything will be covered in class.
+There are no pre-requistes for this course. While we will be discussing software development students will not be required to program. We will use the command line as we learn to use `git` and `github` everything will be covered in class. I try to build [a set of analogies for git and github](analogies_for_git.html), going beyond teaching the commands to give ways to think about git.
 
 Students will need access to a computer for classes, any version of Windows, Mac, or Linux will do.  Students facing difficulties with their IT should contact the iSchool help desk (via <help@ischool.utexas.edu>) who can refer on to other resources as available.
 
