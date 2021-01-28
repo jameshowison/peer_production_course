@@ -288,7 +288,9 @@ insight_readings <- tribble(
     "Licenses",
   "Amazon: NOT OK - why we had to change Elastic licensing. (2021, January 19). Elastic Blog.", "https://www.elastic.co/blog/why-license-change-AWS",
   "Licenses",
-
+  "Cracks are showing in Enterprise Open Source's foundations",
+  "https://news.ycombinator.com/item?id=25943393",
+  "Licenses",
   "Nov, O. (2007). What motivates Wikipedians? Communications of the ACM, 50(11), ACM New York, NY, USA.",
   "https://doi.org/10.1145/1297797.1297798",
     "Motivations",
