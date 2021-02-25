@@ -326,7 +326,7 @@ insight_readings <- tribble(
     "http://james.howison.name/pubs/howison-2014-superposition.pdf",
     "Coordination",
   "Slides for Open Superposition presentation",
-    "Howison-PP-OpenSuperposition.pdf",
+    "presentations/Howison-PP-OpenSuperposition.pdf",
     "Coordination",
 "Crowston, K., Saltz, J. S., Rezgui, A., Hegde, Y., & You, S. (2019). Socio-technical Affordances for Stigmergic Coordination Implemented in MIDST, a Tool for Data-Science Teams. Proceedings of the ACM on Human-Computer Interaction, 3(CSCW), 1–25.",
 "https://doi.org/10.1145/3359219",
