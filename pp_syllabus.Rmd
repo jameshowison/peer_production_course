@@ -168,11 +168,11 @@ readings <- tribble(
     "Commits, blobs, and tree",
   
   "Useful Blog on undo in git (keep for reference)",
-    "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/undo",
+    "https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/",
   "Rewinding work",
 
   "DataCamp Git Chapter 3 - Undo",
-  "https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/",
+  "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/undo",
     "Rewinding work",
   
   "DataCamp Git Chapter 4 - Branches",
