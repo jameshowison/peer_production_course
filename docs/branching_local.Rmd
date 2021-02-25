@@ -257,3 +257,8 @@ git log --oneline --abbrev-commit --all --graph --decorate --color
 Which will show us this (using an image here because the color doesn't copy):
 
 ![](images/Git-branching_command_viz.png)
+
+
+We can also see this visually using learngitbranching, see the short video below.
+
+![](images/Git-branching_viz.mov)
