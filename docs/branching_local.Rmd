@@ -32,9 +32,9 @@ Branching (and merging) is a useful way to keep different tasks organized and sy
 
 ## A scenario
 
-Imagine you are running a coffee roaster. You have code that produces a daily report that is emailed to your team.  Each day the point of sale system saves a datafile in your repository (`data_monday.csv.`). Each night your computer executes a script to create and email the report (report_script.Rmd). 
+Imagine you are running a coffee roaster. You have code that produces a daily report that is emailed to your team.  Each day the point of sale system makes new data available. Each night your computer executes a script (`report_script.Rmd`) to access the data, create, and email the report. 
 
-Currently the report is pretty simple, it's a a table of sales divided up between in-store and online. Each day's sales are added as a new row in the table.
+Currently the report is pretty simple, it's just a table of sales divided up between in-store and online. Each day's sales are added as a new row in the table.
 
 ```sh
 mkdir scratch_branching
@@ -261,4 +261,6 @@ Which will show us this (using an image here because the color doesn't copy):
 
 We can also see this visually using learngitbranching, see the short video below.
 
-![](images/Git-branching_viz.mov)
+<video height="480" controls>
+  <source src="images/Git-branching_viz.mov" type="video/mp4">
+</video>

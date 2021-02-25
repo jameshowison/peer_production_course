@@ -420,7 +420,7 @@ skills_topics <- tribble(
   "Files. diffs, versions", "git diff, add, commit (locally)",
   "Commits, blobs, and tree", "git diff continued HEAD and HEAD~1",
   "Rewinding work", "revert, other undos, checking out old versions, rewriting history",
-  "Branching", "git checkout, manual merge",  
+  "Branching", "git checkout, merge. See [Local Branching](docs/branching_local.html)",  
   "Sharing and conflicts", "github fork, git clone, push, pull request, pull upstream, merge, conflicts, mark resolved, collaboration workflows",
   "Testing and Continuous Integration", "Test suites, Travis CI integration, github bots",
   "Release management", "[Git exercises](docs/additional_git_exercises.html) and github releases, git tag",
