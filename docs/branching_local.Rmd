@@ -1,0 +1,259 @@
+---
+title: "branching_locally"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{css, echo=FALSE}
+.spoiler {
+  visibility: hidden;
+}
+
+.spoiler::before {
+  visibility: visible;
+  content: "Take a Hint: Hover me to see the command."
+}
+
+.spoiler:hover {
+  visibility: visible;
+}
+
+.spoiler:hover::before {
+  display: none;
+}
+```
+
+# Branching with local git
+
+Branching (and merging) is a useful way to keep different tasks organized and synchronized, even when working locally with git.  Below we will work through a scenario for git branching, showing the commands and two different vizualizations.  Eventually branching becomes a key part of working with github and shared repositories, but it is useful to approach it separately first.
+
+## A scenario
+
+Imagine you are running a coffee roaster. You have code that produces a daily report that is emailed to your team.  Each day the point of sale system saves a datafile in your repository (`data_monday.csv.`). Each night your computer executes a script to create and email the report (report_script.Rmd). 
+
+Currently the report is pretty simple, it's a a table of sales divided up between in-store and online. Each day's sales are added as a new row in the table.
+
+```sh
+mkdir scratch_branching
+cd scratch_branching
+git init
+```
+```
+Initialized empty Git repository in scratch_branching/.git/
+```
+
+We can now add the reporting script and the data for monday. To simulate editing a file using an editor we can use some fancy syntax so you can copy and paste it.
+
+```sh
+cat >> reporting_script.Rmd <<< "# Initial code for table report"
+git add reporting_script.Rmd
+git commit -m "starting setup"
+```
+
+```
+[main (root-commit) 24bcda4] starting setup
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 data_monday.csv
+ create mode 100644 reporting_script.Rmd
+```
+
+Depending on the default setting for your git you may want to rename `master` to `main`
+
+```sh
+git branch -m master main
+```
+
+The scripts runs normally on Monday night.
+
+One Tuesday morning you decide that the data would be better presented as a chart. You have some ideas but rightly decide it will take more than a day or two to get that working. In the meantime you still have to produce the report. So you create a branch called `towards_chart` and begin working there, leaving the main branch untouched to produce the Tuesday night report.
+
+```sh
+git branch towards_chart
+git checkout towards_chart
+```
+
+Again we can simulate editing the file.
+
+```sh
+cat >> reporting_script.Rmd <<< "# Work towards charts"
+git status
+```
+
+```
+On branch towards_chart
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   reporting_script.Rmd
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```sh
+git add reporting_script.Rmd
+git commit -m "Worked towards charts"
+```
+
+```
+[towards_chart acc3f42] Worked towards charts
+ 1 file changed, 1 insertion(+)
+```
+On Tuesday you see that the report ran fine (using the code in `main`) and you continue to work on the charts.
+
+```sh
+cat >> reporting_script.Rmd <<< "# More work towards charts"
+git add reporting_script.Rmd
+git commit -m "More work towards charts"
+```
+
+```
+[towards_chart acc3f42] Worked towards charts
+ 1 file changed, 1 insertion(+)
+```
+
+
+On Wednesday morning, though, you get an error from your reporting script. The online sales system updated and the data files now include a new column saying whether a sale was cash or credit. You know how to get things working again, but you still aren't ready to launch your chart system. You don't want to wait until your chart work is finished to get the report going again.
+
+So you switch to main, edit the reporting file to handle the new column, then add and commit the change. 
+
+```sh
+git checkout main
+```
+```
+Switched to branch 'main'
+```
+
+Now we are back on the `main` branch and we won't see our work towards the charts at all.  So over on the `towards_chart` branch we can work away without upsetting the working code on `main`.
+
+```sh
+cat reporting_script.Rmd
+```
+```
+Initial code for table report
+```
+
+So now we can, without involving our work towards the chart, make the bugfix on `main`.
+
+```sh
+cat >> reporting_script.Rmd <<< "# Fix to match new data format"
+git add reporting_script.Rmd
+git commit -m "A fix to match new data format"
+```
+
+Happily the report runs fine on Wednesday night.
+
+Thursday morning you switch back to the `towards_chart` branch and are pleased to get things working.  
+
+```sh
+git checkout towards_chart
+cat >> reporting_script.Rmd <<< "# Code to finalize the charts"
+git add reporting_script.Rmd
+git commit -m "Finished up the charts"
+```
+
+You are ready to add the chart into the report by moving the code to the `main` branch. 
+
+But if you just merge the code back to `main` you may find that the code for the chart doesn't work with the change to handle the updated data files. So you may have some merging to do. But you don't know if you can get that done before the report has to run, and you don't want to get caught fiddling with `main` because if the report tries to run you could end up with nothing going out that night.
+
+So you first merge `main` over to your `towards_chart` branch, and ensure that things work well and the two pieces of work done in parallel work well together (charts and dealing with the new column). 
+
+First confirm which branch you are in, this command lists the branches and the one highlighted with the * is the current branch.  `git status` can also show you.
+```sh
+git branch -v 
+```
+```
+git branch -v
+  main          576bc90 A fix to match new data format
+* towards_chart bef7b72 Finished up the charts
+```
+
+Then merge over the `main` branch into the `towards_chart` branch.
+
+```sh
+git merge main
+```
+
+```
+Auto-merging reporting_script.Rmd
+CONFLICT (content): Merge conflict in reporting_script.Rmd
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Ah, good thing we did this on the branch because we do end up with a conflict.  Git can resolve some conflicts but not all.  Git shows conflicts by adding special lines of text into the file (using `>>>>>>` and `<<<<<` as indicators.  To resolve them we remove those lines and leve the file the way we want it to be.
+
+```
+# Initial code for table report
+<<<<<<< HEAD
+# Work towards charts
+# More work towards charts
+# Code to finalize the charts
+=======
+# Fix to match new data format
+>>>>>>> main
+```
+
+The parts separated by `========` show edits that conflict. Looking at this we can see that we want all the lines, so we edit the file to show:
+
+```
+# Initial code for table report
+# Fix to match new data format
+# Work towards charts
+# More work towards charts
+# Code to finalize the charts
+```
+
+Now we can save that file. Git knows that we are fixing a conflict, so `git status` shows:
+
+```
+On branch towards_chart
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   reporting_script.Rmd
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+And now we can `add` and `commit` to finish the merge.
+
+```sh
+git add reporting_script.Rmd
+git commit -m "merged bug fix with charts code"
+```
+
+```
+[towards_chart e420a05] merged bug fix with charts code
+```
+
+(Git can only flag syntactical conflicts, not semantic conflicts, so one would also try running some test reports to make sure things are all working).
+
+So once you've resolved all issues, then you can merge the `towards_chart` branch back to `main`, signalling that you are ready to launch your new report with charts.
+
+```sh
+git checkout main
+git merge towards_chart
+```
+
+```
+Switched to branch 'main'
+Updating 576bc90..e420a05
+Fast-forward
+ reporting_script.Rmd | 3 +++
+ 1 file changed, 3 insertions(+)
+```
+
+Finally we can visualize this branching, editing, and merging in two ways.  First we can use this handy command to see a visualization in the command line.
+
+```sh
+git log --oneline --abbrev-commit --all --graph --decorate --color               
+```
+
+Which will show us this (using an image here because the color doesn't copy):
+
+![](images/Git-branching_command_viz.png)
