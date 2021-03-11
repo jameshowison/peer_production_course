@@ -392,6 +392,8 @@ insight_readings <- tribble(
 "Baker, M. J., Détienne, F., & Barcellini, F. (2017). Argumentation and Conflict Management in Online Epistemic Communities: A Narrative Approach to Wikipedia Debates. In Interpersonal Argumentation in Educational and Professional Contexts (pp. 141–157). Springer, Cham.",
    "https://doi.org/10.1007/978-3-319-59084-4_7",
    "Peer production in Wikipedia",
+"Should CC-Licensed Content be Used to Train AI? It Depends. (2021, March 4). Creative Commons.", "https://creativecommons.org/2021/03/04/should-cc-licensed-content-be-used-to-train-ai-it-depends/",
+    "Peer production in Wikipedia",
 #-----------------
 "Stodden, V. (2010). The Scientific Method in Practice: Reproducibility in the Computational Sciences (SSRN Scholarly Paper No. ID 1550193). Rochester, NY: Social Science Research Network.",
   "http://papers.ssrn.com/abstract=1550193",
