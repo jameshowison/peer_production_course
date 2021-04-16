@@ -370,6 +370,8 @@ So you can always add additional things before the person comes to pick them up.
 
 However, it is an issue if you *accidentally* add new commits to a branch before a pull request is accepted. Now your pull request has two sets of commits: the first set you meant to include and the second set you didn't. This mistake is particularly easy to make if you are developing on the `master` branch in your fork (which you shouldn't do), but also happens if you are have more than one contribution that you are working on, as when you are doing something else while waiting for a PR to be accepted.  If you’ve accidentally added too many files to your pull request—something that is easy to do if you use `git add *` or some variant—you'll also find yourself needing to remove content from your PR.
 
+First, take a look at this in the Learning Git Visualizer, I have created a level called [Split Pull Request](https://learngitbranching.js.org/?gist_level_id=f7b4b63960ed80fa9a76728d853f2546).
+
 ## Split before submit
 
 Things would be better if you had created a new branch for the first set of commits, then a second branch for your second set of commits, never adding either set to your master branch and following the "always work on a (short-lived) feature branch" rule. Then each set of commits would be "sent" through a different pull request.
