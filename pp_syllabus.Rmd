@@ -132,7 +132,7 @@ There are three graded components, each to be submitted via a pull request.
 
 1. Identifying and describing a peer production community. ~500 words. Authored in plain text or markdown (ensure file is encoded with Unicode UTF-8 encoding and Unix/LF-only line endings). This paper should clearly identify the community and argue for it being a peer production community. The paper should describe how the student thinks the peer production community works and their expectations about participation (including process and expectations of how you expect to feel during participation). Submit directly to Canvas assignment.  Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc).
 
-2. Participating and describing that participation in an experience report of ~500 ± 50 words, authored in RMarkdown, using the citation features. Students should describe their experience in the project. At a minimum the paper should desribe the work done, how it was contributed, as well as whether and how the work was reviewed. Students should compare their experience with their expectations described in the first paper and use at least two references from our conceptual literature to reflect on their experience. Create a folder in assignment_submission/experience_report/your_name and all files in that folder. Submit via a pull request from a branch created just for this submission (ie not master), and post that URL to the Canvas assignment, ensure this is a separate PR from your slide submission.  
+2. Participating and describing that participation in an experience report of ~500-1000 words, authored in RMarkdown, using the citation features. Students should describe their experience in the project. At a minimum the paper should desribe the work done, how it was contributed, as well as whether and how the work was reviewed. Students should compare their experience with their expectations described in the first paper and use at least two references from our conceptual literature to reflect on their experience. Create a folder in assignment_submission/experience_report/your_name and all files in that folder. Submit via a pull request from a branch created just for this submission (i.e., not master), and post that URL to the Canvas assignment, ensure this is a separate PR from your slide submission.  
 
 3. Creating and giving a presentation on their participation. Presentations are limited to 5 minutes, this should be approx 4-6 slides long and be authored using Markdown that produces slides. Presentations will occur in our final class meeting. Submit via a pull request from a branch created just for this submission (ie not master), and post that URL to the Canvas assignment.
 
@@ -415,7 +415,7 @@ insight_readings <- tribble(
 "Howison, J., & Herbsleb, J. D. (2013). Incentives and integration in scientific software production. In Proceedings of the ACM Conference on Computer Supported Cooperative Work (pp. 459–470). San Antonio, TX.",
    "https://doi.org/10.1145/2441776.2441828",
    "Peer production in Science",
-"Optional: Jupyter, Mathematica, and the Future of the Research Paper (Paul Romer, famous economist)",
+"Jupyter, Mathematica, and the Future of the Research Paper (Paul Romer, famous economist)",
 "https://paulromer.net/jupyter-mathematica-and-the-future-of-the-research-paper/",
 "Peer production in Science"
   )
@@ -434,7 +434,7 @@ skills_topics <- tribble(
   "Documentation and Q&A", "github flavored markdown",
   "Wikipedia Editing", "wiki syntax, referencing",
   "Executable Papers", "rmarkdown, knitr, rstudio",
-  "Rewinding Git and additional exercises", "[More Git exercises](docs/additional_git_exercises.html): git revert, rebase, cherry-pick",
+  "Rewinding Git and additional exercises", "[More Git exercises](docs/additional_git_exercises.html): git revert, rebase, cherry-pick. Also see [Commits are Snapshots not diffs](https://github.blog/2020-12-17-commits-are-snapshots-not-diffs/)",
   # "Reserved class", "none"
   # "Machine Readable Creative Commons Licenses", "CC web tools and xml"
 ) %>% rownames_to_column()
