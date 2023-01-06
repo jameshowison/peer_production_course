@@ -1,0 +1,44 @@
+---
+title: "Scribes of the Cairo Geniza"
+author: "Lucy Flamm"
+date: "12/1/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Please note the employed citation style is APA.*
+
+### Introduction
+###### Towards the end of the 19th century, 10th century manuscript fragments pertinent to the Jewish community of the Middle East was found in a synagogue’s attic in Cairo. Now known as the Cairo Geniza documents, the Scribes of the Cairo Geniza works to sort, transcribe, and analyze the materials. The University of Pennsylvania Libraries manages the open source project on a Zooniverse platform with an Apache License ("Apache License, Version 2.0," 2004). UPenn Libraries benefits from institutional and imaging partners including the Princeton Geniza Lab, the Library of the Jewish Theological Seminary, and the Genizah Research Unit at Cambridge University Library. Over the course of the last month and a half I completed Arabic transcriptions for the Scribes of the Cairo Geniza project. The initiative employs a clear workflow that is articulated in a transparent governance model (Gardler, 2010). Contributors can sort Arabic or Hebrew or mixed-language manuscript fragments, transcribe Hebrew fragments, or transcribe Arabic fragments. With a clear workflow outlined for contributors, I found my experience to mirror my initial expectations of both process and outcome. 
+
+### Contributions
+###### My efforts to transcribe Arabic manuscript fragments had multiple steps. To begin the transcription process for the fragment, I place a dot at the beginning and end of the line I am transcribing to identify the parameters of the image I am providing text for. I then type in an embedded keyboard which reflects a 1920s Arabic typewriter keyboard. This type of keyboard allows me to type the same letter in different ways because in Arabic a letter can look different depending on whether it is isolated or is in the initial, medial, or final position of a word. While typing, if a letter or word is unclear I can place modifiers and placeholders as a note to another contributor that this was a section lacking clarity. Once one line is complete I progress to the next line. Once an entire fragment is transcribed, I can make additional notes about bindings, whether the font is informal or formal, or visual aspects. These notes help further identify which manuscript fragments belong on the same page as others. One aspect which did not meet my initial expectations of contributing was platform design. Despite tutorials on how to utilize the platform for transcription, I found myself sometimes struggling to navigate between facets. 
+ 
+### Statistical Evidence 
+###### When I first proposed working with the Scribes of the Cairo Geniza platform, 97% of the sorting and 4% of the Arabic fragment transcriptions were completed. Now, statistics reveal the completed Arabic transcriptions at 6% complete with 32 out of 545 manuscript fragments. In analyzing the discussion forum, many participants share that they are linguists, transnational historians, or those simply interested in contributing. Many participants note that they do not have language expertise in Arabic. While I have no way of gauging specifically how many of the Arabic transcriptions are my own efforts, such comments lead me to hypothesize the value of my Arabic language contributions in the process. 
+ 
+### Motivational Analysis
+###### Having read scholarship on initial versus sustained motivational factors, it is interesting to consider how my motivation altered over time. My motivations for the first contribution reflected Oded Nov’s core categories of “fun” and “understanding” (2007, p. 1). However, my later motivations concerned the social motive of knowledge sharing. As a result, my experience affirms the contentions of  Crowston and Fagnot where early curiosity subsides and intrinsic interest and social contributions reign as the key factors towards generating contributions (2018, p. 90).
+
+### Review and Lingering Questions
+###### While I do not know whether or not my personal work has been reviewed, the governance model stipulates that all manuscript fragments will be transcribed by five independent contributors. This raises a question for me of how the overarching transcription is selected and commits are made. Five contributors derive transcriptions of the same manuscript fragment for the sake of efficacy and authenticity. However, I question how these diffs will then be reconciled with one another before the data becomes public. This is not stated in the governance model and might prove a challenge for the Scribes of Cairo Geniza team moving forward. As Karl Fogel identifies in his work on managing participants in open access projects, it remains imperative to “avoid mystery” in the process (2018). The lack of clarity concerning the authoritative transcription is worthy of note. 
+ 
+### Conclusion
+###### I appreciated the opportunity to apply my knowledge of Arabic towards the Scribes of the Cairo Geniza initiative. The open source project allowed me to consider aspects of user motivation, platform design, workflow, and governance models. With interest in seeing the project develop further, I can see myself contributing to the project in the future and helping to further transcribe Arabic manuscript fragments. 
+ 
+### Works Cited
+
+Apache License 2.0. (2004). Retrieved from http://www.apache.org/licenses/LICENSE-2.0. 
+
+Crowston, K., & Fagnot, I. (2018). Stages of motivation for contributing user-generated content: A theory and empirical test. *International Journal of Human-Computer Studies*, 109, 89–101.
+
+Fogel, K. (2009). *Producing Open Source Software: How to run a successful free software project*. Sebastopol, CA: O’Reilly.
+
+Gardler, R. & Hanganu, G. (2013). Governance models. Retrieved from http://oss-watch.ac.uk/resources/governancemodels.
+
+Nov, O. (2007). What motivates Wikipedians? *Communications of the ACM*, 50(11), ACM New York, NY, USA.
+ 
+
