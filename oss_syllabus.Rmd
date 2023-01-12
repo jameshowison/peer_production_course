@@ -5,7 +5,7 @@ subtitle: "I 320D - Topics in Human-Centered Data Science : Open Source Software
 always_allow_html: yes
 output:
   html_document:
-    toc: yes
+    toc: no
     toc_depth: 2
     toc_float:
       collapsed: no
@@ -39,7 +39,7 @@ library(knitr)
 
 Official, updated version of syllabus always online at:
 
-https://jameshowison.github.io/open_source_software_development/oss_syllabus.html
+https://howisonlab.github.io/open_source_software_course/oss_syllabus.html
 
 ```{r header_output}
 kable(header) %>%
@@ -439,7 +439,7 @@ skills_topics <- tribble(
   "Rewinding Git and additional exercises", "[More Git exercises](docs/additional_git_exercises.html): git revert, rebase, cherry-pick. Also see [Commits are Snapshots not diffs](https://github.blog/2020-12-17-commits-are-snapshots-not-diffs/)",
   # "Reserved class", "none"
   # "Machine Readable Creative Commons Licenses", "CC web tools and xml"
-) %>% rownames_to_column()
+) %>% mutate(topic = "Skills") %>%  rownames_to_column()
 
 insight_topics <- tribble(
   ~insight_topic,
@@ -457,19 +457,24 @@ insight_topics <- tribble(
   "Peer production in Science",
   # ""
   # "Peer production in Art and Culture"
-) %>% rownames_to_column()
+) %>% mutate(topic = "Insights") %>%  rownames_to_column()
 
-content_classes <- full_join(insight_topics, skills_topics, by="rowname") %>%
- #  mutate(skill_topic = glue_data(., "{skill_topic}{tech_commands}")) %>%
-  select(insight_topic, skill_topic, tech_commands) %>%
-  rownames_to_column(var = "class_name") %>%
-  mutate(class_name = str_c("Content", "class", class_name, sep=" "))
+introduction_topics <- tibble(introduction_topic = c("Syllabus Review", "Paper Plane conceptual exercise"), topic = "Introduction") %>%  rownames_to_column()
 
-first_class <- tibble(class_name = c("Introductory activity and Syllabus Review"))
+presentation_topics <- tibble(presentation_topic = c("Presentations", "Presentations"), topic = "Presentations") %>%  rownames_to_column()
 
-last_classes <- tibble(class_name = c("Presentations"))
 
-schedule <- bind_rows(first_class, content_classes, last_classes) %>% rownames_to_column()
+# content_classes <- full_join(insight_topics, skills_topics, by="rowname") %>%
+#  #  mutate(skill_topic = glue_data(., "{skill_topic}{tech_commands}")) %>%
+#   select(insight_topic, skill_topic, tech_commands) %>%
+#   rownames_to_column(var = "class_name") %>%
+#   mutate(class_name = str_c("Content", "class", class_name, sep=" "))
+# 
+first_class <- tibble(class_name = c("Syllabus Review and Paper Planes activities"))
+# 
+# last_classes <- tibble(class_name = c("Presentations"))
+# 
+# schedule <- bind_rows(first_class, content_classes, last_classes) %>% rownames_to_column()
 ```
 
 ```{r figure_class_meets, include=F}
@@ -492,13 +497,56 @@ first_class_day = parse_datetime("2023-01-09")
 
 last_class_day = parse_datetime("2023-04-21")
 
-# class Tuesday 9-11:45
-all_tuesdays <- seq(first_class_day, to = last_class_day, by = "week")
+first_mon = parse_datetime("2023-01-09")
 
-weekly_schedule <- tibble(class_day = all_tuesdays) %>%
+first_wed = parse_datetime("2023-01-11")
+
+# class Tuesday 9-11:45
+all_mon <- seq(first_mon, to = last_class_day, by = "week")
+all_wed <- seq(first_wed, to = last_class_day, by = "week")
+# all_thursdays <- c(parse_datetime("2020-08-27"))
+
+all_classes <- c(all_mon, all_wed, recursive = T) %>% sort 
+
+meets_schedule <- tibble(class_day = all_classes) %>%
   # add no meeting days to schedule
   left_join(no_meetings, by = c("class_day" = "days_list")) %>%
-  mutate(meets = if_else(is.na(class_name), TRUE, FALSE))
+  mutate(meets = if_else(is.na(class_name), TRUE, FALSE)) %>% 
+  mutate(week_num = isoweek(class_day) - 1,
+         day_of_week = wday(class_day, label=T)) %>% 
+  mutate(topic = case_when(
+                   week_num == 1 ~ "Introduction",
+                   week_num == max(week_num) ~ "Presentations",
+                   day_of_week == "Mon" & meets == T ~ "Insights",
+                   day_of_week == "Wed" & meets == T ~ "Skills",
+                   TRUE ~ "No Meeting"
+                   )
+         ) %>% 
+  group_by(topic) %>% 
+  mutate(topic_order = row_number() %>%  as.character) %>% 
+  left_join(insight_topics, by = c("topic", "topic_order" = "rowname")) %>% 
+  left_join(skills_topics, by = c("topic", "topic_order" = "rowname")) %>% 
+  left_join(introduction_topics, by = c("topic", "topic_order" = "rowname")) %>% 
+  left_join(presentation_topics, by = c("topic", "topic_order" = "rowname")) %>% 
+  mutate(class_name = coalesce(class_name, insight_topic, skill_topic, introduction_topic, presentation_topic))
+
+
+no_meet <- meets_schedule %>% filter(topic == "No Meeting")
+insights <- meets_schedule %>% filter(topic == "Insights") %>% rownames_to_column() %>% 
+  left_join(insight_topics) %>% 
+  mutate(class_name = insight_topic) %>% 
+  select(-insight_topic)
+
+skills <- meets_schedule %>% filter(topic == "Skills") %>% rownames_to_column() %>% 
+  left_join(skills_topics) %>% 
+  mutate(class_name = skill_topic) %>% 
+  select(-skill_topic)
+
+
+
+schedule %>% 
+  mutate(monday_class = mon_schedule, wed_class = wed_schedule)
+
 
 meetings <- weekly_schedule %>%
   filter(meets == T) %>%
@@ -511,13 +559,17 @@ meetings <- weekly_schedule %>%
 ```
 
 ```{r}
+library(lubridate)
+
 
 format_datetime <- function(x, format) { strftime(as.POSIXct(x), format, tz=lubridate::tz(x)) }
 
 meetings %>%
-  mutate(class_day = format_datetime(class_day, format = "%a %b %d")) %>%
+  mutate(additional_class = ,
+         class_day = class_day %>% format("%a %b %d"),
+         meeting_dates = str_c(format(class_day, "%a %b %d"), format(class_day + days(2), "%a %b %d"), sep = " & ")) %>%
 #   mutate(class_day = cell_spec(class_day, "html", color = ifelse(meets == TRUE, "green", "red"))) %>%
-  select(-meets) %>%
+  select(-meets, -additional_class) %>%
   replace_na(list(skill_topic = "none", insight_topic = "none", tech_commands = "none")) %>%
    kable("html", escape = FALSE) %>%
    kable_styling(bootstrap_options = c("responsive", "striped"))
