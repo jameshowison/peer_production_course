@@ -64,14 +64,30 @@ End point is that the repository now has v3 (with appropriate metadata), and the
 
 ## Step 4: Concurrent work
 
-**The Originator** is continuing their own work.  Notice they are working with v2.  They add a small blue postit note to the *right wing*.
+**The Originator** is continuing their own work.  Notice they are working with v2.  They add a small blue post-it note to the *right wing*.
 
 Follow the steps above to add this to the repository.  Place this copy to the right of v3 and mark it v4.
 
 > Notice the problem?  **Originator** has overwritten the work that **Improver 1** added.  This happens often with shared files.
 
+> What is needed to avoid this?  Somehow the repository needs to know that the incoming work is out of sync with the repository. We do this by keeping track of the spot that a working directory can slot into in the repository.
 
+The **metadata manager** should take small yellow post-it notes and add a *Parent* tag to each version in the repository (and on the working tables).  The Parent for v1 is "null" (meaning empty). The Parent for v2 is v1.  This means that the repo looks like null <- v1 <- v2 <- v3
 
-The *originator* hears about the new contribution and wants to have a play with it.  On their table, though, they only have v2.  They do not yet have the work from Improver 1.  To get it they have to synchronize their working table with the repository.  **Originator** asks **Repository manager** to provide the latest work.
+## Step 5: Synchronization (no conflict)
 
-**Repository manager** and **metadata manager** prepare a new copy of v3 and pass it to **Originator**.  (Put v2 aside)
+With the parent tags in place we can try again. The new rule is that **repository manager** will only accept work if the working directory is up to date. v2 on the originators table has v1 as the parent. Once we make changes to this work we update the parent tag to say v2 (so that this work can only be checked in as v3).
+
+When the originator tries to check in this work, the repository rejects it (because there is already something attached to v2, in the v3 slot).
+
+In this situation the *originator* has to update from the repository.  The repository manager/metadata manager should make a copy of v3 and pass to the originator.  Now the originator has the repositories v3 (with a pink post-it on the left wing) and their proposed v3 (with a blue post-it on the right wing).
+
+The system is able to automatically merge this work.  Simulate this by adding a pink post-it to the left wing of the proposed v3.  Now Originator is able to check this work in and the repository will accept it as v4.  Do this now.
+
+## Step 6: Synchronization (with conflict).
+
+The system is not always able to automatically merge changes.  We will simulate this by discarding the combined v4 made in Step 5 from the repository, resetting to the end of Step 3.
+
+This time, however, the originator places the blue post-it on the left wing (same place as the improver had placed the pink post-it.)
+
+When they synchronize, the system identifies a conflict, which the Originator has to resolve.  Note that they can do any work they want here, and check that in as the new v4.
