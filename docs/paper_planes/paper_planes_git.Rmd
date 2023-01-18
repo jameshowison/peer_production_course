@@ -56,12 +56,22 @@ To get started they need to get a copy of the latest version from the repository
 
 The **Repository manager** gets a new tray and makes a copy of the v2 tray, the **metadata manager** should add the metadata postits.  This copy is handed to the **Improver 1** on their working table.
 
-Improver 1 should make an improvement (e.g., adding turned up ends to the wings).  Then they should put a copy into the repository following the steps above. 
+Improver 1 should make an improvement by adding a small pink postit to the *left wing* of the plane.  Then they should put a copy into the repository following the steps above. 
 
 End point is that the repository now has v3 (with appropriate metadata), and the tray on the working table of Improver 1 is also marked v3.
 
-## Step 4: Synchronization
+> The **Originator** might have heard about the new work in the repository, and they could now update their working directory to v3 and then take turns with **Improver 1** to contribute work. However, the world is not always as neat. Often contributors are working at the same time.
+
+## Step 4: Concurrent work
+
+**The Originator** is continuing their own work.  Notice they are working with v2.  They add a small blue postit note to the *right wing*.
+
+Follow the steps above to add this to the repository.  Place this copy to the right of v3 and mark it v4.
+
+> Notice the problem?  **Originator** has overwritten the work that **Improver 1** added.  This happens often with shared files.
+
+
 
 The *originator* hears about the new contribution and wants to have a play with it.  On their table, though, they only have v2.  They do not yet have the work from Improver 1.  To get it they have to synchronize their working table with the repository.  **Originator** asks **Repository manager** to provide the latest work.
 
-**Repository manager** and **metadata manager** prepare a new copy of v3 and pass it to **Originator**.
+**Repository manager** and **metadata manager** prepare a new copy of v3 and pass it to **Originator**.  (Put v2 aside)
