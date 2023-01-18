@@ -1,0 +1,67 @@
+# Paper plane version management
+
+When people work together we need to manage versions.  Versions are the result of changes (improvements hopefully!) that people make.  
+
+In this exercise we will explore a physical analogy of versions and learn the basic elements of managing versions with git.
+
+# Set up
+
+Create a group of 5 or 6 students.  Figure out the alphabetical order of your first names.
+
+Roles:
+1. The originator
+2. Repository manager
+3. Improver 1
+4. Metadata manager
+
+Materials: 
+1. Paper (~20 sheets)
+2. Large Pink Postit 
+3. Small postit notes: yellow, pink, blue.
+4. 8 plastic trays
+
+Arrange three tables in a vertical row, so there is space to stand between each of them.
+
+The table on the left (facing the front) is the working area for **The originator**, they should sit at a seat.  This is where they will do their work.
+
+The table in the middle is our **repository**. This is where we will store versions of the work over time.
+
+The table on the right is where **Improver 1** will sit.
+
+The *Repository manager* and the *Metadata manager* will stand at either end of the repository table.
+
+## Step 1: Initial work
+
+*Originator* shall fold an initial plane, but with only one wing.  (Fold down the center, then add the front folds to the center, then fold down a single wing).
+
+To store this work in the repository we need to 
+1. make a copy and place it on a plastic tray. 
+2. Take a large pink postit and write a short descriptive note (e.g., "Just getting started")
+3. The tray is then handed to the *repository manager* who places it leftmost on the table.
+4. The *metadata manager* attaches a small yellow postit marked "v1" (meaning version 1), to the tray in the repository **and to the tray on the Originators table**.
+
+Phew, all that hard work is now stored in the repository.
+
+## Step 2: Complete the plane.
+
+The *Originator* should work with their remaining plane and fold down the second wing.  Store this in the repository following the steps above.  
+
+End point should have two trays in the repository, each with comments and a version number (v2). The tray on the originator's table is now also marked v2.
+
+## Step 3: Improvement
+
+**Improver 1** is now going to work.  They are sitting at the righthand table.
+
+To get started they need to get a copy of the latest version from the repository.
+
+The **Repository manager** gets a new tray and makes a copy of the v2 tray, the **metadata manager** should add the metadata postits.  This copy is handed to the **Improver 1** on their working table.
+
+Improver 1 should make an improvement (e.g., adding turned up ends to the wings).  Then they should put a copy into the repository following the steps above. 
+
+End point is that the repository now has v3 (with appropriate metadata), and the tray on the working table of Improver 1 is also marked v3.
+
+## Step 4: Synchronization
+
+The *originator* hears about the new contribution and wants to have a play with it.  On their table, though, they only have v2.  They do not yet have the work from Improver 1.  To get it they have to synchronize their working table with the repository.  **Originator** asks **Repository manager** to provide the latest work.
+
+**Repository manager** and **metadata manager** prepare a new copy of v3 and pass it to **Originator**.
