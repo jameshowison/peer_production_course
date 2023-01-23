@@ -8,22 +8,13 @@ Step 1.  Assign roles.  Need originator, improver1, improver2, folder for each. 
 
 1. Originator invents the paper plane by telling Folder1 what to do. They name it as Version 0. Writes down how to make it. Shows the plane (not the instructions) to Improver 1.
 
-   ![v0](images\v0.png)
-
 2. Improver 1 loves it and asks for one.  Originator gives them the plane (binary), licensed under an Open Source license.
-
 3. Improver 1 wants to make a change. Their folder doesn't know how to work with it. Improver 1 therefore requests the instructions from Originator.
-
 4. Originator gives the instructions to Improver 1.
-
-5. Improver 1 gives the instructions to their Folder and produces their own plane.![v0copy2improver1](images\v0_copy_to_improver1.png)
-
+5. Improver 1 gives the instructions to their Folder and produces their own plane.
 6. Improver 1 invents an improvement, appends the change to the instructions (yellow post-it note, step 3.5), making Version 1.
-
 7. Improver 1 shows the improved plane to Improver 2. They like it!
-
 8. Improver 2 asks for the instructions. Improver 1 passes on a copy of the original instructions, and appends a copy of the post-it with their change.
-
 9. Improver 2 makes a new improvement (adds another post-it note), making Version 2.  Doesn't show it to anyone.
 
 Originator and Improver 2 enter into a competition. Force the result to be that Version 2 beats Version 0.
@@ -44,9 +35,35 @@ Judge: "Well, now it matters which open source license you used. If GPL then Imp
 
 Now let's assume that there is no competition between plane flyers, it's all about the love (or if they do compete it's not on plane designs). Instructions flow around just for the asking. But since they rely on each other, eventually it makes sense to have a central place to gather the improvements, a central place to bring them together. (everyone either has to contribute improvements or wants to, no one can withdraw an improvement at a later date).
 
-Originator takes on that role.  Improver 1 sends their improvement to Originator.  Improver 2 gets that improvement along with the original, sends their improvement back to Originator, who accepts it, making Version 2 the official version. Now everyone can can work off that version, for future improvements.
+1. Originator invents the paper plane by telling Folder1 what to do. They name it as Version 0. 
 
-Everything is hunky dory until Improver 2 takes Version 2 and suggests adding a single flap to each wing, while simultaneously Improver 1 is also working with Version 2 and suggests adding two flaps to each wing.  Originator receives these improvements, sees that they are incompatible.  Now what?
+   ![v0](images\v0.png)
+
+2. Improver 1 loves it and asks for one copy.  The originator send a copy to Improver 1. ![v0copy2improver1](images\v0_copy_to_improver1.png)
+
+   
+
+3. Improver 1 invents an improvement, making Version 1. ![v1](images\v1.png)
+
+4. Improver 1 sends their improvement to Originator.  Originator make it official.![v1_official](images\v1_official.png)
+
+5. Improver 2 gets that improvement along with the original.![sendv1toi2](images\send_v1to_improver2.png)
+
+6. Improver sends their improvement back to Originator, who accepts it, making Version 2 the official version. Now everyone can can work off that version, for future improvements.![v2_official](images\v2_official.png)
+
+Everything is hunky dory until Improver 2 takes Version 2 and suggests adding a single flap to each wing, while simultaneously Improver 1 is also working with Version 2 and suggests adding two flaps to each wing.  
+
+![v2_to_i1](images\v2_to_i1.png)
+
+![v3](images\v3.png)
+
+
+
+Originator receives these improvements, sees that they are incompatible.  
+
+![conflict](images\conflict.png)
+
+Now what?![conflict](images\conflict_solved.png)
 
 - choose only one to be Version 3 (benevolent dictator choice).
 - make flap number into a configuration variable.
