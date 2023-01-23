@@ -1,0 +1,129 @@
+---
+title: "Syllabus for Open Source Software Development"
+author: "James Howison"
+---
+
+# Readings prior to class:
+
+- Nadia Eghbal. (2020, December 3). The Making and Maintenance of our Open Source Infrastructure | Nadia Eghbal. https://www.youtube.com/watch?v=5wLKnN3To-k
+
+- Richard Stallman. (2001, May 29). Richard M. Stallman’s speech: “Free Software: Freedom and Cooperation” [Speech Transcript]. https://www.gnu.org/philosophy/rms-nyu-2001-transcript.txt
+
+- VICE (Director). (2020, March 3). Farmers Are Hacking Their Tractors Because of a Repair Ban.
+https://www.youtube.com/watch?v=EPYy_g8NzmI
+Links to an external site.
+
+# Where is open source?
+
+Open source is everywhere.
+
+Famous pieces of open source software:
+
+- Firefox browser
+- Zotero reference manager
+- The `pandas` data manipulation framework
+
+Often it is fairly hidden from end users.  This can be because it is running on servers (and not installed by end-users), such as
+
+- `Apache httpd`
+- `postman`
+
+Sometimes it is just underneath a proprietary layer, such as
+
+- Chromium (underlies Chrome)
+- VS Codium (underlies Microsoft's VS Code)
+
+Often it is well 'below the surface' deeper in the dependencies.
+
+- Windows (many, many components, famously the internet stack)
+- MacOS (Darwin kernel)
+- Tableau (many components, see https://www.tableau.com/blog/tableau-and-open-source-advantage)
+- Snowflake (Apache Arrow)
+
+Open source is everywhere:
+
+- Laptops
+- Phones
+- Servers
+- Internet routers (email, BGP)
+- Wifi routers
+- Cars, Radios, Watches, Batteries
+
+https://thenewstack.io/the-open-source-lesson-of-the-linksys-wrt54g-router/
+
+- Datascience software.
+
+https://posit.co/products/open-source/rstudio/
+https://jupyter.org/governance/projectlicense.html
+
+# Why open source?
+
+## For the right to repair
+
+The readings focused on this, highlighting current challenges in repair.  You read about farmers who purchase John Deere farm equipment.  Many want to be able to work on their equipment on their own, right on the farm. This is both because they are at a great distance from dealers, the equipment is expensive to transport, and they have paid a lot for the equipment and object to paying more to keep it working.
+
+In many ways this is the same situation that Richard Stallman (found of the Free Software Foundation) faced when dealing with the printer in his office.  This is one of the foundational stories of the free software movement.
+
+Have you faced issues in trying to repair something?  What prevented you?
+
+Discussion: what is needed to repair a blender? A car? A list sorting algorithm? A web-page?
+
+What role does source code play? What else is needed?
+
+## To avoid "proprietary lock in"
+
+The popularity of open source can be understand as a kind of software escrow.  Producers of tools want their users to rely on the tool, but if the code is hidden then a user is taking on a significant risk. That is is that the software stops getting updated because the company disappears.  This means that maintenance stops, which means that the code suffers "bit rot" or "code collapse". 
+
+"Code collapse" occurs when software is not maintained. Not only do new features not appear, but security holes can be discovered which cannot be fixed.  More subtly the code gets out of sync with its ecosystem, so that the way it talks to other software might stop working as other software is updated.  If something changes in the software requirements (e.g., a change in the tax code) then the software cannot be updated.
+
+So the buyer of proprietary software want an assurance that the software will continue to be updated, but no firm can assure its customers that it will be around for ever.  To solve this purchasers used an approach called "Software Escrow".  Escrow means using a 3rd party (not the firm buying the software and not the firm building the software) to keep a copy of the software delivered.  That escrow agent keeps that code secret unless specific events occurs, such as the software producer going out of business or discontinuing the product.  In those cases the firm buying the code gets the source (and a license to use it). Escrow is a sort of insurance policy to help make relying on other people less risky.
+
+Open source shares some of these characteristics. When building on someone else's code, knowing it is open source means that the user can be sure they can taken over maintenance, even if the original developers stop working on the project.
+
+## Shared maintenance of infrastructure
+
+When organizations compete with each other they want you to purchase their product, and not the product of their competitor. To purchase "Extra" brand chewing gum, and not "Trident" brand.
+
+Yet much of the effort that goes into producing a product is spent on things that are not directly related to the product they are selling.  Think of things like the supply of office furniture, the repainting of lines in the parking lot.  These sort of efforts are known as "infrastructure".
+
+In many cases infrastructure is purchased from other companies, known as "contracting" or "out-sourcing". The general logic is that companies that specialize in office furniture will do a better and cheaper job than if the chewing gum company was to make (or even buy) its own furniture.  For example, Economics of scale mean that the outsourced furniture company can get bulk purchase discounts and pass them on to customers. They can also have full time people focused on monitoring safety issues with furniture and be responsible for fixing or replacing chairs that might injure people, saving the chewing gum company from lawsuits for dangerous chairs.
+
+Many users of open source are using open source software in the same way. For example IBM had a product called "WebSphere" which they sold to firms to run their "intranet" (internal corporate network publishing information or managing business processes). IBM originally wrote and maintained their own web server (as well as the application software that ran on top of it). Eventually, though, they changed to using the open source web server called `Apache httpd`. They argued that this saved them a lot of time maintaining their own infrastructure internally.
+
+IBM even started contributing changes that it needed or were helpful to their product back to httpd. They could have kept those changes secret, but then they would just have more infrastructure to maintain. Instead, they reasoned, they would contribute those changes back to httpd, effectively giving that work to their competitors (and everyone), but in return they received a lot more eyeballs on that code, ensuring that it was better tested and kept in sync.  
+
+They shared the cost of maintenance on the infrastructure to concentrate effort on their "secret sauce" of the WebSphere application layer, which was the thing that customers were really buying from them.
+
+## The smartest people don't work for you
+
+Each firm competes to hire great people. Yet it is unreasonable to think that you will have all the best people in the world working at your organization.  For this reason firms seek to access outside intelligence. Sometimes this is possible through outsourcing, but other times problems are quite specific and require engagement with information or requirements that are quite specific to the business.
+
+Bill Joy (from Sun Microsystems)is credited with the saying,
+
+> "no matter who you are, most of the smartest people work for someone else,
+
+Firms therefore wna to access those smart people.  Various approachs help, including "Crowdsourcing," "innovation contests," and "thought leadership" (publishing white papers and blogs that are discussed in public and then watching the discussion).  
+
+Open source projects are another place where expert outsiders can be found and engaged on topics of importance to firms.
+
+# Why is open source interesting?
+
+Open source is interesting to a wide group of thinkers, both academics and thinkers in business and software.
+
+1. Open source is successful. Almost all software has a foundation of open source, and open source tools successfully compete with proprietary software.
+
+2. That success is unexpected. Why "give it away", why "work for free"?
+
+3. Open source (and Free Software) are politically engaged, holding the belief that they can changed the world through openness and freedom.  Those building openly find this an emancipatory experience that they want to share with others (see [Dunbar-Hestor's "Hacking Diversity" book](https://worldcat.org/title/1100447435))
+
+4. Open source is the leading edge of distributed work.  Open source is done online, with participants that often don't know each other and are all around the world.  All the issues of remote work were encountered first in open source, which has developed interesting approaches to these problems.
+
+# Topics to be covered
+
+1. Motivations for participation
+2. Licences
+3. Coordination
+4. Governance
+5. Bias and lack of diversity
+6. Software collapse, packaging and dependencies
+7. Continuous Integration
