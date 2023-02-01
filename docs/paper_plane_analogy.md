@@ -1,5 +1,11 @@
 # Paper planes as an analogy for peer production
 
+These instructions are for two separate exercises.  Both have students folding paper planes as an analogy for (potentially) collaborative work.
+
+The first exercise focuses on collaborative innovation. It is designed to make concrete the idea of sharing work and building on the designs of others. Designs are expressed as both artifacts (planes) and source code (instructions). It gradually introduces the role that intellectual property can play (patents and copyright) and thus motivates open source licences.
+
+The second exercise focuses on version control. It is designed to make concrete the basics of git repositories and collaboration. The exercise introduces the idea of working spaces and repositories. The work continues to be making changes to paper planes, and different versions are placed on trays to be stored (as numbered versions) in the repository. We progress from individual work in the repository, to more than one person contributing to the repository. That enables us to introduce the idea of synchronizing with a shared repository. Currently the exercises ends with identifying and resolving a conflict.
+
 Instructions, photocopied.
 Materials, paper.
 Envelopes.
