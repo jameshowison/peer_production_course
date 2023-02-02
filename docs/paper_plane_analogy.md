@@ -6,6 +6,8 @@ The first exercise focuses on collaborative innovation. It is designed to make c
 
 The second exercise focuses on version control. It is designed to make concrete the basics of git repositories and collaboration. The exercise introduces the idea of working spaces and repositories. The work continues to be making changes to paper planes, and different versions are placed on trays to be stored (as numbered versions) in the repository. We progress from individual work in the repository, to more than one person contributing to the repository. That enables us to introduce the idea of synchronizing with a shared repository. Currently the exercises ends with identifying and resolving a conflict.
 
+## Exercise 1: Innovation and collaboration
+
 Instructions, photocopied.
 Materials, paper.
 Envelopes.
@@ -38,6 +40,8 @@ Originator: "Well, I should at least get the changes that Improver 2 made."
 Improver 2: "No, I think I'll sell copies (without instructions) for $100 a pop"
 
 Judge: "Well, now it matters which open source license you used. If GPL then Improver 2 has to give you the instructions for the improvement, if not (e.g., BSD 3 clause, or MIT license) then Improver 2 is within their rights." (or a Creative Commons version of this, did it have SA or not?)
+
+## Exercise 2: Version control and collaboration
 
 Now let's assume that there is no competition between plane flyers, it's all about the love (or if they do compete it's not on plane designs). Instructions flow around just for the asking. But since they rely on each other, eventually it makes sense to have a central place to gather the improvements, a central place to bring them together. (everyone either has to contribute improvements or wants to, no one can withdraw an improvement at a later date).
 
