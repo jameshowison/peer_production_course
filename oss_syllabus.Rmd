@@ -33,7 +33,7 @@ header <- tribble(
   "Location", "SZB 5.414",
   "Semester", "Spring 2023",
   "Unique No.", "28120",
-  "Office Hours", "Wed 3-4pm via Zoom",
+  "Office Hours", "Wed 3-4pm via Zoom at https://utexas.zoom.com/my/howisonlab",
   "Contact Email", "jhowison@ischool.utexas.edu"
 )
 library(knitr)
@@ -161,15 +161,15 @@ readings <- tribble(
   #----------------------------
   "DataCamp Git Chapter 1 - Basic Workflow",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/basic-workflow",
-    "Files. diffs, versions",
+    "Git basic workflow",
   
   "DataCamp Git Chapter 2 - Repositories",
     "https://campus.datacamp.com/courses/introduction-to-git-for-data-science/repositories",
-    "Commits, blobs, and tree",
+    "Git basic workflow",
   
   "Only the very first lesson of \"Learning Git Branching\" site (useful visualizations of trees)",
     "https://learngitbranching.js.org/",
-    "Commits, blobs, and tree",
+    "Git basic workflow",
   
   "Useful Blog on undo in git (keep for reference)",
     "https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/",
@@ -198,28 +198,35 @@ readings <- tribble(
   "TravisCI Getting Started",
     "https://docs.travis-ci.com/user/getting-started/",
     "Testing and Continuous Integration",
+  
   "Github Release Announcement",
     "https://github.com/blog/1547-release-your-software",
     "Release management",
+  
   "Github Help on Releases",
     "https://help.github.com/articles/creating-releases/",
     "Release management",
+  
   "Github Markdown",
     "https://guides.github.com/features/mastering-markdown/",
     "Documentation and Q&A",
+  
   "Commonmark Markdown Tutorial",
     "http://commonmark.org/help/tutorial/",
     "Documentation and Q&A",
+  
   "Citations and references in Markdown",
     "https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html",
     "Documentation and Q&A",
-  "Wikipedia Student Tutorial",
-    "https://en.wikipedia.org/wiki/Wikipedia:Training/For_students",
-    "Wikipedia Editing",
-  "Datacamp Rmarkdown - All 2 chapters",
-    "https://campus.datacamp.com/courses/communicating-with-data-in-the-tidyverse/introduction-to-rmarkdown?ex=1",
-    "Executable Papers",
-  # "Marking your work with a CC license",
+  
+  # "Wikipedia Student Tutorial",
+  #   "https://en.wikipedia.org/wiki/Wikipedia:Training/For_students",
+  #   "Wikipedia Editing",
+  # 
+  # "Datacamp Rmarkdown - All 2 chapters",
+  #   "https://campus.datacamp.com/courses/communicating-with-data-in-the-tidyverse/introduction-to-rmarkdown?ex=1",
+  #   "Executable Papers",
+  # # "Marking your work with a CC license",
   #   "https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license",
   #   "Machine Readable Creative Commons Licenses",
   # "CC Best practices for attribution",
@@ -438,18 +445,23 @@ insight_readings <- tribble(
 skills_topics <- tribble(
   ~skill_topic, ~tech_commands,
   #-------------------------------------
-  "Tech setup workshop", "[terminal, command line, git install, github account](./docs/tech_setup.html)",
-  "Files. diffs, versions", "git diff, add, commit (locally)",
-  "Commits, blobs, and tree", "git diff continued HEAD and HEAD~1",
+#  "Tech setup workshop", "[terminal, command line, git install, github account](./docs/tech_setup.html)",
+  "Paper Planes: Version Control", "git add, commit via paper planes and tables",  
+"Git basic workflow", "git add, commit (locally)",
+#  "Commits, blobs, and tree", "git diff continued HEAD and HEAD~1",
   "Rewinding work", "revert, other undos, checking out old versions, rewriting history",
   "Branching", "git checkout, merge. See [Local Branching](docs/branching_local.html)",  
   "Sharing and conflicts", "github fork, git clone, push, pull request, pull upstream, merge, conflicts, mark resolved, collaboration workflows",
-  "Testing and Continuous Integration", "Test suites, Travis CI integration, github bots",
-  "Release management", "[Git exercises](docs/additional_git_exercises.html) and github releases, git tag",
+  "Collaboration workflows", "git rebase",
   "Documentation and Q&A", "github flavored markdown",
-  "Wikipedia Editing", "wiki syntax, referencing",
-  "Executable Papers", "rmarkdown, knitr, rstudio",
-  "Rewinding Git and additional exercises", "[More Git exercises](docs/additional_git_exercises.html): git revert, rebase, cherry-pick. Also see [Commits are Snapshots not diffs](https://github.blog/2020-12-17-commits-are-snapshots-not-diffs/)",
+  "Unit Tests", "Test suites",
+  "Continuous Integration", "Travis CI integration, Github Actions",
+  "Release management", "[Git exercises](docs/additional_git_exercises.html) and github releases, git tag",
+  "Creating and distributing packages", "python packages, pypy pinning",
+  
+ # "Wikipedia Editing", "wiki syntax, referencing",
+#  "Executable Papers", "rmarkdown, knitr, rstudio",
+  # "Rewinding Git and additional exercises", "[More Git exercises](docs/additional_git_exercises.html): git revert, rebase, cherry-pick. Also see [Commits are Snapshots not diffs](https://github.blog/2020-12-17-commits-are-snapshots-not-diffs/)",
   # "Reserved class", "none"
   # "Machine Readable Creative Commons Licenses", "CC web tools and xml"
 ) %>% mutate(topic = "Skills") %>%  rownames_to_column()
@@ -457,22 +469,21 @@ skills_topics <- tribble(
 insight_topics <- tribble(
   ~insight_topic,
   #----------
-  "Peer production vs other organizational forms",
-  "Peer production case studies",
+  "What is open source?",
+  "Motivations and Asking questions people want to answer",
   "Licenses",
-  "Motivations",
   "Coordination",
-  "Governance",
-  "Agile and Test Driven Development",
-  "Knowledge Sharing",
+  "Governance and decision making",
+  "Knowledge sharing",
   "Bias and lack of diversity",
-  "Peer production in Wikipedia",
-  "Peer production in Science",
+  "Agile and test driven development",
+  "The stack and the stream",
+  "Cybersecurity and open source"
   # ""
   # "Peer production in Art and Culture"
 ) %>% mutate(topic = "Insights") %>%  rownames_to_column()
 
-introduction_topics <- tibble(introduction_topic = c("Syllabus Review", "Paper Plane conceptual exercise"), topic = "Introduction") %>%  rownames_to_column()
+introduction_topics <- tibble(introduction_topic = c("Syllabus Review", "Paper Planes: Innovation and collaboration"), topic = "Introduction") %>%  rownames_to_column()
 
 presentation_topics <- tibble(presentation_topic = c("Presentations", "Presentations"), topic = "Presentations") %>%  rownames_to_column()
 
@@ -501,6 +512,9 @@ no_meetings <- tribble(
   #--------------------
    "2023-01-16", "2023-01-16", "No meeting: MLK day",
    "2023-03-13", "2023-03-18", "No meeting: Spring Break",
+   "2023-01-31", "2023-02-02", "No meeting: Ice Storm",
+   "2023-02-20", "2023-02-20", "No meeting: Instructor Travel",
+  
 ) %>%
   mutate(days_list = map2(period_start, period_end, expand_days)) %>%
   select(class_name, days_list) %>%
