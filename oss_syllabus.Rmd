@@ -595,7 +595,9 @@ meets_schedule %>%
    kable_styling(bootstrap_options = c("responsive", "striped"))
 ```
 
-## Skills Readings
+## Readings
+
+Readings are posted via Canvas announcement.
 
 ```{r, eval=F}
 
@@ -624,9 +626,6 @@ dated_readings %>%
   {.}
 ```
 
-## Insight Readings
-
-Often I can link directly to websites or PDFs, but sometimes I will provide links to articles in journals etc. You must be able to get the article through the library, generally speaking using the [web VPN](http://vpn.utexas.edu) is the most convenient approach. Another option that can sometimes work is [UnPaywall](http://unpaywall.org/) which works to find an open access article version when looking at a publisher's page for the article.
 
 ```{r, eval=F}
 insight_dated <- insight_readings %>% left_join(meetings, by = c("topic_assigned" = "insight_topic"))
