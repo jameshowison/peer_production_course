@@ -7,7 +7,7 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - syllabus.Rmd
+    - oss_syllabus.Rmd
     # - paper_planes_innovation.qmd
     # - paper_planes_version_control.qmd
     - part: "Insights"
