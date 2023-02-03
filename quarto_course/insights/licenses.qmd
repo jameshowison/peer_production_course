@@ -1,0 +1,24 @@
+# Licenses {#sec-licenses}
+
+## Readings prior to class
+
+A chapter from a book, and four blog style articles. The book chapter should take between 1-2 hours to read, the blogs should take about another 20-40 minutes.
+
+1.  Chapter "Writing Copyright Licenses" of Kelty, C. M. (2008). Two Bits: The Cultural Significance of Free Software. Durham: Duke University Press Books. <https://twobits.net/pub/Kelty-TwoBits.pdf#page=195>\
+    *A medium length chapter describing how open source licenses came to be. Should take between 1 and 2 hours to read.*
+
+2.  The Open Source Definition. <https://opensource.org/osd>\
+    \
+    *Quick list of elements to be found in open source licenses*
+
+3.  FSF Settles Suit Against Cisco. <https://www.fsf.org/news/2009-05-cisco-settlement.html>
+
+    *A summary of the Free Software Foundation enforcing the GPL license*
+
+4.  Amazon: NOT OK - why we had to change Elastic licensing. (2021, January 19). Elastic Blog. <https://www.elastic.co/blog/why-license-change-AWS>\
+    \
+    *A summary of a recent trend in open source breaks with the "no field of use" restrictions, trying to sustain an open source business model funded by cloud service delivery.*
+
+5.  Carlos Munoz Ferrandis. (2022, August 31). OpenRAIL: Towards open and responsible AI licensing frameworks. Hugging Face Blog. <https://huggingface.co/blog/open_rail>\
+    \
+    *Machine learning leaders, huggingface (yes, that's their real company name), explaining why sharing trained AI/neutral network models/weights is both similar to sharing code and different, proposing a new license focused on ethical reuse of shared trained models.*

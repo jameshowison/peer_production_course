@@ -1,5 +1,6 @@
 ---
 title: "Syllabus for Open Source Software Development"
+label: #sec-syllabus
 author: "James Howison"
 subtitle: "I 320D - Topics in Human-Centered Data Science : Open Source Software Development"
 always_allow_html: yes
@@ -52,6 +53,8 @@ header <- tribble(
 library(knitr)
 ```
 
+## Syllabus {#sec-syllabus}
+
 Official, updated version of syllabus always online at:
 
 https://howisonlab.github.io/open_source_software_course/oss_syllabus.html
@@ -66,11 +69,11 @@ kable(header) %>%
 
 # Objectives and Assignments
 
-This course explores "open source software development" which is a name for the open collaborations that produce open source software.  Open source software is a thing that is built by people, an artifact. But the way that it is developed, the way that people work together to build it is of great interest. "The open source way" is of practical interest for everyone building software, because open source development has lead the creation of ways of working used throughout software work. For social and organizational scholars, "the open source way" is of inte3rest in advancing our theories of how people can work together and how technology matters.  
+This course explores "open source software development" which is a name for the open collaborations that produce open source software. Open source software is a thing that is built by people, an artifact. But the way that it is developed, the way that people work together to build it is of great interest. "The open source way" is of practical interest for everyone building software, because open source development has lead the creation of ways of working used throughout software work. For social and organizational scholars, "the open source way" is of inte3rest in advancing our theories of how people can work together and how technology matters.
 
 The "open source way" is also known as "peer production" and that way of working extends beyond open source, to places like Wikipedia. Perhaps not coincidentally the Wikipedia page on [Peer Production](https://en.wikipedia.org/wiki/Peer_production) is quite useful:
 
-> [A] way of producing goods and services that relies on self-organizing communities of individuals. In such communities, the labor of a large number of people is coordinated towards a shared outcome.
+> \[A\] way of producing goods and services that relies on self-organizing communities of individuals. In such communities, the labor of a large number of people is coordinated towards a shared outcome.
 
 As we learn about open source and peer production we'll learn to distinguish it from different kinds of online collaborations, such as crowdsourcing, citizen science, question and answer sites, and mere sharing of code. Near synonyms for the way of working taught in this course are: "The open source way", "Open collaboration", "Open mass production".
 
@@ -78,27 +81,27 @@ This is a course is about a sociotechnical phenomenon and it takes a sociotechni
 
 There are no prereqs for this course. While we will be discussing software development students will not be required to program. We will use the command line as we learn to use `git` and `github` everything will be covered in class. I try to build [a set of analogies for git and github](analogies_for_git.html), going beyond teaching the commands to give ways to think about git.
 
-Students will need access to a computer for classes, any version of Windows, Mac, or Linux will do.  Students facing difficulties with their IT should contact the iSchool help desk (via <help@ischool.utexas.edu>) who can refer on to other resources as available.
+Students will need access to a computer for classes, any version of Windows, Mac, or Linux will do. Students facing difficulties with their IT should contact the iSchool help desk (via [help\@ischool.utexas.edu](mailto:help@ischool.utexas.edu){.email}) who can refer on to other resources as available.
 
 ## Learning Objectives
 
 Students will be able to:
 
-- Understand what open source software is as an artifact
-- Understand what is distinctive about the way that it is produced
-- Know how to interact with open source software projects
-- Know how the open source way has informed modern software development work (including in data science)
-- Conceptually distinguish open source from other organizational forms or phenomena, such as corporations, crowdsourcing, open access publishing, and communities of practice.
-- Reason about how, why, and when open source peer production works (and when it does not!)
-- Engage critically with published research and popular discourse about open source
+-   Understand what open source software is as an artifact
+-   Understand what is distinctive about the way that it is produced
+-   Know how to interact with open source software projects
+-   Know how the open source way has informed modern software development work (including in data science)
+-   Conceptually distinguish open source from other organizational forms or phenomena, such as corporations, crowdsourcing, open access publishing, and communities of practice.
+-   Reason about how, why, and when open source peer production works (and when it does not!)
+-   Engage critically with published research and popular discourse about open source
 
 Practically students will be able to:
 
-- Install and use `git` to manage versions in their own work
-- Participate in `github` hosted peer production (making and receiving pull requests)
-- Create and publish documents in `markdown` and `wikitext` format
-- Ask technical questions that people want to answer
-- Analyze trace data from open source software projects
+-   Install and use `git` to manage versions in their own work
+-   Participate in `github` hosted peer production (making and receiving pull requests)
+-   Create and publish documents in `markdown` and `wikitext` format
+-   Ask technical questions that people want to answer
+-   Analyze trace data from open source software projects
 
 ## Assessments
 
@@ -113,11 +116,13 @@ assessments <- tribble(
   "Project presentation", "5%", "Presentations"
 )
 ```
+
 ```{r assessment_output}
 kable(assessments) %>%
   kable_styling(bootstrap_options = c("responsive", "striped"))
 ```
-There is no final exam for this course. 100-90:A, 90 > grade > 85: A-, 85 > grade > 80 B- and so on.  
+
+There is no final exam for this course. 100-90:A, 90 \> grade \> 85: A-, 85 \> grade \> 80 B- and so on.
 
 ### Participation in class discussion and activities
 
@@ -125,11 +130,10 @@ Students are expected to attend class and to participate in discussion and activ
 
 Hints on participation:
 
-- Useful participation can come from asking questions if you don't understand the point someone is making. If you have questions, very likely others do to.
-- You can also summarize discussion which helps everyone by giving them something to test their understanding of the discussion.
-- You can challenge or disagree with people, sometimes that can be introducing a counter-example or questioning whether evidence really means what the speaker originally thought.
-- I really welcome examples from your own experience. For example if there is an organization, movement, or line of thought (modern/traditional) in your culture that relates to open source development, I would love that to be part of the discussion.
-
+-   Useful participation can come from asking questions if you don't understand the point someone is making. If you have questions, very likely others do to.
+-   You can also summarize discussion which helps everyone by giving them something to test their understanding of the discussion.
+-   You can challenge or disagree with people, sometimes that can be introducing a counter-example or questioning whether evidence really means what the speaker originally thought.
+-   I really welcome examples from your own experience. For example if there is an organization, movement, or line of thought (modern/traditional) in your culture that relates to open source development, I would love that to be part of the discussion.
 
 ### Technical Challenges
 
@@ -139,19 +143,19 @@ The course will have assignments based on the technical topics we are learning, 
 
 For this assignment students will write a 1,000 word scholarly essay describing and analyzing efforts to adapt the "open source way" outside of software development. Students will be given a list of five projects they need to research and analyze to compare to "the open source way". Examples could include open hardware, open governance, open culture. The paper should draw on the conceptual literature to compare and contrast the challenge faced by these adaptation efforts to what we've learned about "the open source way". The paper will also describe the collaboration infrastructure used and compare it to the technologies we have learned in class).
 
-The paper will be authored in Plain Text or Markdown and submitted via a pull request to the class github.  Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc). Students are cautioned that as a scholarly paper proper citation and use of sources is required otherwise students will face academic misconduct proceedings. See ["Academic Integrity" presentation](https://utexas.zoom.us/rec/share/AjF6eoJH2heRWqQkTAHAQTfpp05UbE7WRhT-vQFw9wYevV8YBjpE2AJ_2PD07Mca.2v_7lGqZ0OoKbJzG) if at all unsure.
+The paper will be authored in Plain Text or Markdown and submitted via a pull request to the class github. Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc). Students are cautioned that as a scholarly paper proper citation and use of sources is required otherwise students will face academic misconduct proceedings. See ["Academic Integrity" presentation](https://utexas.zoom.us/rec/share/AjF6eoJH2heRWqQkTAHAQTfpp05UbE7WRhT-vQFw9wYevV8YBjpE2AJ_2PD07Mca.2v_7lGqZ0OoKbJzG) if at all unsure.
 
 ### Open Source Trace Data analysis Project
 
-Students will be introduced to datasets of archives of activity in open source projects and develop their own analysis.  For example, students might want to highlight those participants that are most active over time in a project, show whether leadership has changed within projects, or analyze license usage over time.
+Students will be introduced to datasets of archives of activity in open source projects and develop their own analysis. For example, students might want to highlight those participants that are most active over time in a project, show whether leadership has changed within projects, or analyze license usage over time.
 
-There are three graded components, each to be submitted via a pull request.  All components should reference the insight readings that we do throughout the course.
+There are three graded components, each to be submitted via a pull request. All components should reference the insight readings that we do throughout the course.
 
-1. Identifying and describing a project. ~500 words. Authored in plain text or markdown (ensure file is encoded with Unicode UTF-8 encoding and Unix/LF-only line endings). This paper should clearly identify the intended analysis and argue for its relevance, including using literature to identify expectations. Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc).
+1.  Identifying and describing a project. \~500 words. Authored in plain text or markdown (ensure file is encoded with Unicode UTF-8 encoding and Unix/LF-only line endings). This paper should clearly identify the intended analysis and argue for its relevance, including using literature to identify expectations. Include your name in the filename and at the top of the document, and include a note at the top of the file telling me which formal citation approach you are using (e.g., APA, MLA, etc).
 
-2. Implementing the analysis and report. ~500-1000 words, authored in RMarkdown, using the citation features. Students should describe the dataset, their analysis (possibly including graphs), and their interpretation. Students should compare their experience with their expectations described in the first paper and use at least two references from our conceptual literature to justify their inquiry. Create a folder in assignment_submission/trace_data_project/your_name and all files in that folder. Submit via a pull request from a branch created just for this submission (i.e., not master), and post that URL to the Canvas assignment, ensure this is a separate PR from your slide submission (below).  
+2.  Implementing the analysis and report. \~500-1000 words, authored in RMarkdown, using the citation features. Students should describe the dataset, their analysis (possibly including graphs), and their interpretation. Students should compare their experience with their expectations described in the first paper and use at least two references from our conceptual literature to justify their inquiry. Create a folder in assignment_submission/trace_data_project/your_name and all files in that folder. Submit via a pull request from a branch created just for this submission (i.e., not master), and post that URL to the Canvas assignment, ensure this is a separate PR from your slide submission (below).
 
-3. Creating and giving a presentation on their participation. Presentations are limited to 5 minutes, this should be approx 4-6 slides long and be authored using Markdown that produces slides. Presentations will occur in our final class meeting. Submit via a pull request from a branch created just for this submission (ie not master), and post that URL to the Canvas assignment.
+3.  Creating and giving a presentation on their participation. Presentations are limited to 5 minutes, this should be approx 4-6 slides long and be authored using Markdown that produces slides. Presentations will occur in our final class meeting. Submit via a pull request from a branch created just for this submission (ie not master), and post that URL to the Canvas assignment.
 
 ## Materials
 
@@ -159,7 +163,7 @@ There are no required texts for this course and no materials to purchase.
 
 Readings, tutorials, and will be provided via pages linked from the class calendar below.
 
-I will enroll the class in [DataCamp](https://www.datacamp.com/), giving students free access to the DataCamp courses (including their premium courses). In particular we will be using their interactive course on `git` during classes in the first half of the course.  I encourage students to explore their other course options during the semester.
+I will enroll the class in [DataCamp](https://www.datacamp.com/), giving students free access to the DataCamp courses (including their premium courses). In particular we will be using their interactive course on `git` during classes in the first half of the course. I encourage students to explore their other course options during the semester.
 
 # Course Outline
 
@@ -485,9 +489,9 @@ skills_topics <- tribble(
 insight_topics <- tribble(
   ~insight_topic,
   #----------
-  "What is open source?",
+  "What is open source? @sec-what-is-open-source",
   "Motivations and Asking questions people want to answer",
-  "Licenses",
+  "Licenses @sec-licenses",
   "Coordination",
   "Governance and decision making",
   "Knowledge sharing",
@@ -577,10 +581,12 @@ meets_schedule <- tibble(class_day = all_classes) %>%
 ```
 
 ```{r}
+#| results: asis
+
 meets_schedule %>%
   mutate(day_name = class_day %>% format("%a"),
         formatted_day = class_day %>% format("%a %b %d"),
-        formatted_day = cell_spec(formatted_day, "html", color = ifelse(meets == TRUE, "black", "#E66100"), strikeout = ! meets)) %>%
+        formatted_day = cell_spec(formatted_day, "html", color = ifelse(meets == TRUE, "#5D3A9B", "#E66100"), strikeout = ! meets)) %>%
   select(-meets) %>% 
   # Make Mon/Wed column to eventually be column header
  #  unite(column_header, day_name, topic, sep = " - ") %>% 
@@ -592,7 +598,8 @@ meets_schedule %>%
   # replace_na(list(skill_topic = "none", insight_topic = "none", tech_commands = "none")) %>%
    kable("html", escape = FALSE, col.names = c("Week", "Day", "Module", "Topic", "Day", "Module", "Topic")) %>%
    add_header_above(c(" ", "First Class" = 3, "Second Class" = 3)) %>% 
-   kable_styling(bootstrap_options = c("responsive", "striped"))
+   kable_styling(bootstrap_options = c("responsive", "striped")) |>
+   unclass() |> cat() # to make quarto references work https://github.com/quarto-dev/quarto-cli/issues/3340
 ```
 
 ## Skills Readings
@@ -661,25 +668,25 @@ Class Recordings: Class recordings are reserved only for students in this class 
 
 ## Academic Integrity
 
-Each student in the course is expected to abide by the University of Texas Honor Code: "As a student of The University of Texas at Austin, I shall abide by the core values of the University and uphold academic integrity." Plagiarism is taken very seriously at UT. Therefore, if you use words or ideas that are not your own (or that you have used in previous class), you must cite your sources. Otherwise you will be guilty of plagiarism and subject to academic disciplinary action, including failure of the course. In particular, students are reminded that proper citation requires mentioning sources when you use them, not just in a general list of references at the end of a document. You are responsible for understanding UT's Academic Honesty and the	University Honor Code which can be found at the following web address: http://deanofstudents.utexas.edu/sjs/acint_student.php
+Each student in the course is expected to abide by the University of Texas Honor Code: "As a student of The University of Texas at Austin, I shall abide by the core values of the University and uphold academic integrity." Plagiarism is taken very seriously at UT. Therefore, if you use words or ideas that are not your own (or that you have used in previous class), you must cite your sources. Otherwise you will be guilty of plagiarism and subject to academic disciplinary action, including failure of the course. In particular, students are reminded that proper citation requires mentioning sources when you use them, not just in a general list of references at the end of a document. You are responsible for understanding UT's Academic Honesty and the University Honor Code which can be found at the following web address: http://deanofstudents.utexas.edu/sjs/acint_student.php
 
 ## Student rights and responsibilities
 
--	You have a right to a learning environment that supports mental and physical wellness.
--	You have a right to respect.
--	You have a right to be assessed and graded fairly.
--	You have a right to freedom of opinion and expression.
--	You have a right to privacy and confidentiality.
--	You have a right to meaningful and equal participation, and to self-organize groups to improve your learning environment.
--	You have a right to learn in an environment that is welcoming to all people. No student shall be isolated, excluded or diminished in any way.
+-   You have a right to a learning environment that supports mental and physical wellness.
+-   You have a right to respect.
+-   You have a right to be assessed and graded fairly.
+-   You have a right to freedom of opinion and expression.
+-   You have a right to privacy and confidentiality.
+-   You have a right to meaningful and equal participation, and to self-organize groups to improve your learning environment.
+-   You have a right to learn in an environment that is welcoming to all people. No student shall be isolated, excluded or diminished in any way.
 
 With these rights come responsibilities:
 
-- You are responsible for taking care of yourself, managing your time, and communicating with the teaching team and with others if things start to feel out of control or overwhelming.
-- You are responsible for acting in a way that is worthy of respect and always respectful of others.
-- Your experience with this course is directly related to the quality of the energy that you bring to it, and your energy shapes the quality of your peers' experiences.
-- You are responsible for creating an inclusive environment and for speaking up when someone is excluded. In particular, you are responsible for ensuring that your participation does not exclude the participation of others. Office hours are available for in-depth further discussion of advanced topics or other interests that pursuing in depth during class would exclude others.
-- You are responsible for holding yourself accountable to these standards, holding each other to these standards, and holding the teaching team accountable as well.
+-   You are responsible for taking care of yourself, managing your time, and communicating with the teaching team and with others if things start to feel out of control or overwhelming.
+-   You are responsible for acting in a way that is worthy of respect and always respectful of others.
+-   Your experience with this course is directly related to the quality of the energy that you bring to it, and your energy shapes the quality of your peers' experiences.
+-   You are responsible for creating an inclusive environment and for speaking up when someone is excluded. In particular, you are responsible for ensuring that your participation does not exclude the participation of others. Office hours are available for in-depth further discussion of advanced topics or other interests that pursuing in depth during class would exclude others.
+-   You are responsible for holding yourself accountable to these standards, holding each other to these standards, and holding the teaching team accountable as well.
 
 ## Personal Pronoun Preference
 
@@ -697,36 +704,39 @@ Your success in this class is important to me. We will all need accommodations a
 
 ### Accessible/Compliant Statement:
 
-If you are a student with a disability, or think you may have a disability, and need accommodations please contact Disability and Access (D&A). You may refer to D&A’s website for contact and more information: http://diversity.utexas.edu/disability/. If you are already registered with D&A, please deliver your Accommodation Letter to me as early as possible in the semester so we can discuss your approved accommodations.
+If you are a student with a disability, or think you may have a disability, and need accommodations please contact Disability and Access (D&A). You may refer to D&A's website for contact and more information: http://diversity.utexas.edu/disability/. If you are already registered with D&A, please deliver your Accommodation Letter to me as early as possible in the semester so we can discuss your approved accommodations.
 
 ### Accessible, Inclusive, and Compliant Statement:
 
-The university is committed to creating an accessible and inclusive learning environment consistent with university policy and federal and state law. Please let me know if you experience any barriers to learning so I can work with you to ensure you have equal opportunity to participate fully in this course. If you are a student with a disability, or think you may have a disability, and need accommodations please contact Disability and Access (D&A). Please refer to D&A’s website for contact and more information: http://diversity.utexas.edu/disability/. If you are already registered with D&A , please deliver your Accommodation Letter to me as early as possible in the semester so we can discuss your approved accommodations and needs in this course.
+The university is committed to creating an accessible and inclusive learning environment consistent with university policy and federal and state law. Please let me know if you experience any barriers to learning so I can work with you to ensure you have equal opportunity to participate fully in this course. If you are a student with a disability, or think you may have a disability, and need accommodations please contact Disability and Access (D&A). Please refer to D&A's website for contact and more information: http://diversity.utexas.edu/disability/. If you are already registered with D&A , please deliver your Accommodation Letter to me as early as possible in the semester so we can discuss your approved accommodations and needs in this course.
 
 ### Counseling and Mental Health Center
 
 All of us benefit from support during times of struggle. You are not alone. There are many helpful resources available on campus and an important part of the college experience is learning how to ask for help. Asking for support sooner rather than later is often helpful.
 
-If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, we strongly encourage you to seek support.  http://www.cmhc.utexas.edu/individualcounseling.html
+If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, we strongly encourage you to seek support. http://www.cmhc.utexas.edu/individualcounseling.html
 
 ### The Sanger Learning Center
 
-All students, including graduate students, are welcome to take advantage of Sanger Center's classes and workshops, private learning specialist appointments, peer academic coaching, and tutoring for more than 70 courses in 15 different subject areas. For more information, please visit  https://ugs.utexas.edu/slc/grad or call 512-471-3614 (JES A332).
+All students, including graduate students, are welcome to take advantage of Sanger Center's classes and workshops, private learning specialist appointments, peer academic coaching, and tutoring for more than 70 courses in 15 different subject areas. For more information, please visit https://ugs.utexas.edu/slc/grad or call 512-471-3614 (JES A332).
 
-### [University Writing Center free programs for grad students]( http://uwc.utexas.edu/grad/)
+### [University Writing Center free programs for grad students](http://uwc.utexas.edu/grad/)
+
 ### [Libraries](http://www.lib.utexas.edu/)
+
 ### [IT services](http://www.utexas.edu/its/)
+
 ### [Student Emergency Services](http://deanofstudents.utexas.edu/emergency/)
 
 ### Important Safety Information
 
-If you have concerns about the safety or behavior of fellow students, TAs or Professors, call BCAL (the Behavior Concerns Advice Line):  512-232-5050. Your call can be anonymous.  If something doesn’t feel right—it probably isn’t.  Trust your instincts and share your concerns.
+If you have concerns about the safety or behavior of fellow students, TAs or Professors, call BCAL (the Behavior Concerns Advice Line): 512-232-5050. Your call can be anonymous. If something doesn't feel right---it probably isn't. Trust your instincts and share your concerns.
 
 The following recommendations regarding emergency evacuation from the Office of Campus Safety and Security, 512-471-5767, http://www.utexas.edu/safety/
 
 Occupants of buildings on The University of Texas at Austin campus are required to evacuate buildings when a fire alarm is activated. Alarm activation or announcement requires exiting and assembling outside.
 
-- Familiarize yourself with all exit doors of each classroom and building you may occupy. Remember that the nearest exit door may not be the one you used when entering the building.
-- Students requiring assistance in evacuation shall inform their instructor in writing during the first week of class.
-- In the event of an evacuation, follow the instruction of faculty or class instructors. Do not re-enter a building unless given instructions by the following: Austin Fire Department, The University of Texas at Austin Police Department, or Fire Prevention Services office.
-- Link to information regarding emergency evacuation routes and emergency procedures can be found at: http://www.utexas.edu/emergency
+-   Familiarize yourself with all exit doors of each classroom and building you may occupy. Remember that the nearest exit door may not be the one you used when entering the building.
+-   Students requiring assistance in evacuation shall inform their instructor in writing during the first week of class.
+-   In the event of an evacuation, follow the instruction of faculty or class instructors. Do not re-enter a building unless given instructions by the following: Austin Fire Department, The University of Texas at Austin Police Department, or Fire Prevention Services office.
+-   Link to information regarding emergency evacuation routes and emergency procedures can be found at: http://www.utexas.edu/emergency
