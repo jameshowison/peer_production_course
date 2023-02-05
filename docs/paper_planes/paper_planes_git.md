@@ -44,7 +44,7 @@ Phew, all that hard work is now stored in the repository.
 
 ## Step 2: Complete the plane.
 
-The *Originator* should work with their remaining plane and fold down the second wing.  Store this in the repository following the steps above.  ![s2_1](..\images\air_plane\s2_1.png)
+The *Originator* should work with their remaining plane and fold down the second wing.  Store this in the repository following the steps above.  
 
 End point should have two trays in the repository, each with comments and a version number (v2). The tray on the originator's table is now also marked v2.![s2_2](..\images\air_plane\s2_2.png)
 
