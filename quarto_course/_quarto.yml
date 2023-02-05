@@ -1,10 +1,13 @@
 project:
   type: book
+  output-dir: ../docs
 
 book:
   title: "Open Source Software Development: A socio-technical course"
   author: "James Howison (and contributing TAs)"
   page-navigation: true
+  sidebar:
+    style: "docked"
   chapters:
     - index.qmd
     - oss_syllabus.Rmd
