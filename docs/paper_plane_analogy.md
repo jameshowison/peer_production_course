@@ -1,30 +1,31 @@
 # Paper planes as an analogy for peer production
 
+These instructions are for two separate exercises.  Both have students folding paper planes as an analogy for (potentially) collaborative work.
+
+The first exercise focuses on collaborative innovation. It is designed to make concrete the idea of sharing work and building on the designs of others. Designs are expressed as both artifacts (planes) and source code (instructions). It gradually introduces the role that intellectual property can play (patents and copyright) and thus motivates open source licences.
+
+The second exercise focuses on version control. It is designed to make concrete the basics of git repositories and collaboration. The exercise introduces the idea of working spaces and repositories. The work continues to be making changes to paper planes, and different versions are placed on trays to be stored (as numbered versions) in the repository. We progress from individual work in the repository, to more than one person contributing to the repository. That enables us to introduce the idea of synchronizing with a shared repository. Currently the exercises ends with identifying and resolving a conflict.
+
+## Exercise 1: Innovation and collaboration
+
 Instructions, photocopied.
 Materials, paper.
 Envelopes.
 
 Step 1.  Assign roles.  Need originator, improver1, improver2, folder for each. Judge (ie., 7 roles).
 
-1. Originator invents the paper plane by telling Folder1 what to do. Writes down how to make it. Shows the plane (not the instructions) to Improver 1.
+1. Originator invents the paper plane by telling Folder1 what to do. They name it as Version 0. Writes down how to make it. Shows the plane (not the instructions) to Improver 1.
 
 2. Improver 1 loves it and asks for one.  Originator gives them the plane (binary), licensed under an Open Source license.
-
 3. Improver 1 wants to make a change. Their folder doesn't know how to work with it. Improver 1 therefore requests the instructions from Originator.
-
 4. Originator gives the instructions to Improver 1.
-
 5. Improver 1 gives the instructions to their Folder and produces their own plane.
-
-6. Improver 1 invents an improvement, appends the change to the instructions (yellow post-it note, step 3.5), making Version 2.
-
+6. Improver 1 invents an improvement, appends the change to the instructions (yellow post-it note, step 3.5), making Version 1.
 7. Improver 1 shows the improved plane to Improver 2. They like it!
-
 8. Improver 2 asks for the instructions. Improver 1 passes on a copy of the original instructions, and appends a copy of the post-it with their change.
+9. Improver 2 makes a new improvement (adds another post-it note), making Version 2.  Doesn't show it to anyone.
 
-9. Improver 2 makes a new improvement (adds another post-it note), making Version 3.  Doesn't show it to anyone.
-
-Originator and Improver 2 enter into a competition. Force the result to be that Version 3 beats Version 1.
+Originator and Improver 2 enter into a competition. Force the result to be that Version 2 beats Version 0.
 
 Originator appeals to the Judge. "They stole my design! I should win."
 
@@ -40,16 +41,44 @@ Improver 2: "No, I think I'll sell copies (without instructions) for $100 a pop"
 
 Judge: "Well, now it matters which open source license you used. If GPL then Improver 2 has to give you the instructions for the improvement, if not (e.g., BSD 3 clause, or MIT license) then Improver 2 is within their rights." (or a Creative Commons version of this, did it have SA or not?)
 
+## Exercise 2: Version control and collaboration
+
 Now let's assume that there is no competition between plane flyers, it's all about the love (or if they do compete it's not on plane designs). Instructions flow around just for the asking. But since they rely on each other, eventually it makes sense to have a central place to gather the improvements, a central place to bring them together. (everyone either has to contribute improvements or wants to, no one can withdraw an improvement at a later date).
 
-Originator takes on that role.  Improver 1 sends their improvement to Originator.  Improver 2 gets that improvement along with the original, sends their improvement back to Originator, who accepts it, making Version 3 the official version. Now everyone can can work off that version, for future improvements.
+1. Originator invents the paper plane by telling Folder1 what to do. They name it as Version 0. 
 
-Everything is hunky dory until Improver 3 takes Version 3 and suggests adding a single flap to each wing, while simultaneously Improver 1 is also working with Version 3 and suggests adding two flaps to each wing.  Originator receives these improvements, sees that they are incompatible.  Now what?
+   ![v0](images\v0.png)
 
-- choose only one to be Version 4 (benevolent dictator choice).
+2. Improver 1 loves it and asks for one copy.  The originator send a copy to Improver 1. ![v0copy2improver1](images\v0_copy_to_improver1.png)
+
+   
+
+3. Improver 1 invents an improvement, making Version 1. ![v1](images\v1.png)
+
+4. Improver 1 sends their improvement to Originator.  Originator make it official.![v1_official](images\v1_official.png)
+
+5. Improver 2 gets that improvement along with the original.![sendv1toi2](images\send_v1to_improver2.png)
+
+6. Improver sends their improvement back to Originator, who accepts it, making Version 2 the official version. Now everyone can can work off that version, for future improvements.![v2_official](images\v2_official.png)
+
+Everything is hunky dory until Improver 2 takes Version 2 and suggests adding a single flap to each wing, while simultaneously Improver 1 is also working with Version 2 and suggests adding two flaps to each wing.  
+
+![v2_to_i1](images\v2_to_i1.png)
+
+![v3](images\v3.png)
+
+
+
+Originator receives these improvements, sees that they are incompatible.  
+
+![conflict](images\conflict.png)
+
+Now what?![conflict](images\conflict_solved.png)
+
+- choose only one to be Version 3 (benevolent dictator choice).
 - make flap number into a configuration variable.
 
-Version 4 is released with configuration variable.  New improvements start coming in. Some are not problematic, such as wing-tips turned up. But some only work for the one flap config, so the project gets pretty complicated. Originator changes their mind and says that, actually, everything has to be single flap from now on.
+Version 3 is released with configuration variable.  New improvements start coming in. Some are not problematic, such as wing-tips turned up. But some only work for the one flap config, so the project gets pretty complicated. Originator changes their mind and says that, actually, everything has to be single flap from now on.
 
 The double flappers can either adapt or they can take the codebase, and start a new central "clearinghouse" for improvements.  A project schism.  
 
