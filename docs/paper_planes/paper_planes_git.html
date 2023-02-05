@@ -367,10 +367,133 @@ learn the basic elements of managing versions with git.</p>
 </div>
 <div id="set-up" class="section level1">
 <h1>Set up</h1>
+<p>Create a group of 5 or 6 students. Figure out the alphabetical order
+of your first names.</p>
+<p>Roles: 1. The originator 2. Repository manager 3. Improver 1 4.
+Metadata manager</p>
+<p>Materials: 1. Paper (~20 sheets) 2. Large Pink Postit 3. Small postit
+notes: yellow, pink, blue. 4. 8 plastic trays</p>
 <p>Arrange three tables in a vertical row, so there is space to stand
 between each of them.</p>
-<div class="line-block"> | |<br />
- | |</div>
+<p>The table on the left (facing the front) is the working area for
+<strong>The originator</strong>, they should sit at a seat. This is
+where they will do their work.</p>
+<p>The table in the middle is our <strong>repository</strong>. This is
+where we will store versions of the work over time.</p>
+<p>The table on the right is where <strong>Improver 1</strong> will
+sit.</p>
+<p>The <em>Repository manager</em> and the <em>Metadata manager</em>
+will stand at either end of the repository table.</p>
+<div id="step-1-initial-work" class="section level2">
+<h2>Step 1: Initial work</h2>
+<p><em>Originator</em> shall fold an initial plane, but with only one
+wing. (Fold down the center, then add the front folds to the center,
+then fold down a single wing).</p>
+<p>To store this work in the repository we need to 1. make a copy and
+place it on a plastic tray. 2. Take a large pink postit and write a
+short descriptive note (e.g., “Just getting started”) 3. The tray is
+then handed to the <em>repository manager</em> who places it leftmost on
+the table. 4. The <em>metadata manager</em> attaches a small yellow
+postit marked “v1” (meaning version 1), to the tray in the repository
+<strong>and to the tray on the Originators table</strong>.</p>
+<p>Phew, all that hard work is now stored in the repository.</p>
+</div>
+<div id="step-2-complete-the-plane." class="section level2">
+<h2>Step 2: Complete the plane.</h2>
+<p>The <em>Originator</em> should work with their remaining plane and
+fold down the second wing. Store this in the repository following the
+steps above.</p>
+<p>End point should have two trays in the repository, each with comments
+and a version number (v2). The tray on the originator’s table is now
+also marked v2.</p>
+</div>
+<div id="step-3-improvement" class="section level2">
+<h2>Step 3: Improvement</h2>
+<p><strong>Improver 1</strong> is now going to work. They are sitting at
+the righthand table.</p>
+<p>To get started they need to get a copy of the latest version from the
+repository.</p>
+<p>The <strong>Repository manager</strong> gets a new tray and makes a
+copy of the v2 tray, the <strong>metadata manager</strong> should add
+the metadata postits. This copy is handed to the <strong>Improver
+1</strong> on their working table.</p>
+<p>Improver 1 should make an improvement by adding a small pink postit
+to the <em>left wing</em> of the plane. Then they should put a copy into
+the repository following the steps above.</p>
+<p>End point is that the repository now has v3 (with appropriate
+metadata), and the tray on the working table of Improver 1 is also
+marked v3.</p>
+<blockquote>
+<p>The <strong>Originator</strong> might have heard about the new work
+in the repository, and they could now update their working directory to
+v3 and then take turns with <strong>Improver 1</strong> to contribute
+work. However, the world is not always as neat. Often contributors are
+working at the same time.</p>
+</blockquote>
+</div>
+<div id="step-4-concurrent-work" class="section level2">
+<h2>Step 4: Concurrent work</h2>
+<p><strong>The Originator</strong> is continuing their own work. Notice
+they are working with v2. They add a small blue post-it note to the
+<em>right wing</em>.</p>
+<p>Follow the steps above to add this to the repository. Place this copy
+to the right of v3 and mark it v4.</p>
+<blockquote>
+<p>Notice the problem? <strong>Originator</strong> has overwritten the
+work that <strong>Improver 1</strong> added. This happens often with
+shared files.</p>
+</blockquote>
+<blockquote>
+<p>What is needed to avoid this? Somehow the repository needs to know
+that the incoming work is out of sync with the repository. We do this by
+keeping track of the spot that a working directory can slot into in the
+repository.</p>
+</blockquote>
+<p>The <strong>metadata manager</strong> should take small yellow
+post-it notes and add a <em>Parent</em> tag to each version in the
+repository (and on the working tables). The Parent for v1 is “null”
+(meaning empty). The Parent for v2 is v1. This means that the repo looks
+like null &lt;- v1 &lt;- v2 &lt;- v3</p>
+</div>
+<div id="step-5-synchronization-no-conflict" class="section level2">
+<h2>Step 5: Synchronization (no conflict)</h2>
+<p>With the parent tags in place we can try again. The new rule is that
+<strong>repository manager</strong> will only accept work if the working
+directory is up to date. v2 on the originators table has v1 as the
+parent. Once we make changes to this work we update the parent tag to
+say v2 (so that this work can only be checked in as v3).</p>
+<p>When the originator tries to check in this work, the repository
+rejects it (because there is already something attached to v2, in the v3
+slot).</p>
+<p>In this situation the <em>originator</em> has to update from the
+repository. The repository manager/metadata manager should make a copy
+of v3 and pass to the originator. Now the originator has the
+repositories v3 (with a pink post-it on the left wing) and their
+proposed v3 (with a blue post-it on the right wing).</p>
+<p>The system is able to automatically merge this work. Simulate this by
+adding a pink post-it to the left wing of the proposed v3. Now
+Originator is able to check this work in and the repository will accept
+it as v4. Do this now.</p>
+</div>
+<div id="step-6-synchronization-with-conflict." class="section level2">
+<h2>Step 6: Synchronization (with conflict).</h2>
+<p>The system is not always able to automatically merge changes. We will
+simulate this by discarding the combined v4 made in Step 5 from the
+repository, resetting to the end of Step 3.</p>
+<p>This time, however, the originator places the blue post-it on the
+left wing (same place as the improver had placed the pink post-it.)</p>
+<p>When they synchronize, the system identifies a conflict, which the
+Originator has to resolve. Note that they can do any work they want
+here, and check that in as the new v4.</p>
+<p>added in class: v3 crossed out (to show dirty repository)</p>
+<p>doing it first on the shared table not that effective because
+elements were too small for the observers to see.</p>
+<p>have observers sit closer and have written instructions.</p>
+<p>Pre-make the commit messages and the version dirty markers could be
+pre-prepared.</p>
+<p>paper folding is too complicated. consider re-doing with rubber
+stamps.</p>
+</div>
 </div>
 
 
