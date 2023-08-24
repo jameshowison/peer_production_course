@@ -7,3 +7,7 @@ Add to the license section, focus on issues with changing the underlying fundame
 
 
 https://getconvoy.io/blog/why-open-source/
+
+
+https://www.technologyreview.com/2023/08/17/1077498/future-open-source/
+useful history and presentation of today's challenges.
